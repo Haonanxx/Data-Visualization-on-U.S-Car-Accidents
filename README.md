@@ -2,11 +2,11 @@
 
 ## Team
 
-Team name:
+Team name: Survivors
 
-Team members:
+Team members: Qianqian Tang, Yixiang Cao, 
 
-- Tommy Trojan <tommy@usc.edu>
+- Qianqian Tang <tangq@usc.edu>
 -
 -
 -
