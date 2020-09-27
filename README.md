@@ -8,7 +8,7 @@ Team members: Qianqian Tang, Yixiang Cao,
 
 - Qianqian Tang <tangq@usc.edu>
 - Yixiang Cao <yixiangc@usc.edu>
--
+- Haonan Xu <haonanxu@usc.edu>
 -
 
 ---
