@@ -9,7 +9,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="presentation.svg"
-   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
    id="svg8"
    version="1.1"
    viewBox="0 0 1459.2739 472.04333"
@@ -387,13 +387,13 @@
      inkscape:window-maximized="0"
      inkscape:window-y="23"
      inkscape:window-x="44"
-     inkscape:window-height="971"
-     inkscape:window-width="1920"
+     inkscape:window-height="706"
+     inkscape:window-width="1280"
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="414.19388"
-     inkscape:cx="155.15126"
+     inkscape:cy="324.44262"
+     inkscape:cx="227.18845"
      inkscape:zoom="1.6935696"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -409,7 +409,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -918,7 +918,7 @@
          y="-213.07765"
          x="-189.64445"
          sodipodi:role="line"
-         id="tspan1017">           Tommy Trojan I &lt;tommy1@usc.edu&gt;</tspan><tspan
+         id="tspan1017">           Yixiang Cao &lt;yixiangc@usc.edu&gt;</tspan><tspan
          style="font-size:6.35px;stroke-width:0.264583"
          y="-205.14015"
          x="-189.64445"
@@ -969,14 +969,14 @@
          y="-129.13251"
          style="stroke-width:0.264583" /></text>
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/andrew-neel-cckf4TsHAuw-unsplash.jpg"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/andrew-neel-cckf4TsHAuw-unsplash.jpg"
        xlink:href="images/andrew-neel-cckf4TsHAuw-unsplash.jpg"
-       y="-299.49286"
-       x="140.74048"
-       width="225.77777"
-       height="150.63611"
+       id="image1101"
        preserveAspectRatio="none"
-       id="image1101" />
+       height="150.63611"
+       width="225.77777"
+       x="140.74048"
+       y="-299.49286" />
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';stroke-width:0.264583"
@@ -989,14 +989,14 @@
          y="-151.74173"
          style="font-size:4.23333px;stroke-width:0.264583">Photo by Jeff Sheldon on Unsplash</tspan></text>
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/markus-winkler-Q2J2qQsoYH8-unsplash.jpg"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/markus-winkler-Q2J2qQsoYH8-unsplash.jpg"
        xlink:href="images/markus-winkler-Q2J2qQsoYH8-unsplash.jpg"
-       y="-299.49286"
-       x="366.51825"
-       width="225.77777"
-       height="150.63611"
+       id="image1115"
        preserveAspectRatio="none"
-       id="image1115" />
+       height="150.63611"
+       width="225.77777"
+       x="366.51825"
+       y="-299.49286" />
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';stroke-width:0.264583"
@@ -1009,14 +1009,14 @@
          y="-152.52443"
          style="font-size:4.23333px;stroke-width:0.264583">Thanks to Markus Winkler for sharing their work on Unsplash.</tspan></text>
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/alvaro-reyes-qWwpHwip31M-unsplash.jpg"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/alvaro-reyes-qWwpHwip31M-unsplash.jpg"
        xlink:href="images/alvaro-reyes-qWwpHwip31M-unsplash.jpg"
-       y="-299.49286"
-       x="592.29602"
-       width="225.77777"
-       height="150.63611"
+       id="image1129"
        preserveAspectRatio="none"
-       id="image1129" />
+       height="150.63611"
+       width="225.77777"
+       x="592.29602"
+       y="-299.49286" />
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';stroke-width:0.264583"
@@ -1050,50 +1050,50 @@
          y="-185.53786"
          style="stroke-width:0.264583" /></text>
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/jo-szczepanska-5aiRb5f464A-unsplash.jpg"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/jo-szczepanska-5aiRb5f464A-unsplash.jpg"
        xlink:href="images/jo-szczepanska-5aiRb5f464A-unsplash.jpg"
-       y="-148.85675"
+       id="image1163"
+       preserveAspectRatio="none"
+       height="150.63611"
+       width="225.77777"
        x="592.29602"
-       width="225.77777"
-       height="150.63611"
-       preserveAspectRatio="none"
-       id="image1163" />
+       y="-148.85675" />
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/xps-Gi3iUJ1FwxI-unsplash.jpg"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/xps-Gi3iUJ1FwxI-unsplash.jpg"
        xlink:href="images/xps-Gi3iUJ1FwxI-unsplash.jpg"
-       y="-130.15953"
-       x="1043.8516"
-       width="225.77777"
+       id="image1191"
+       preserveAspectRatio="none"
        height="127"
-       preserveAspectRatio="none"
-       id="image1191" />
-    <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/jo-szczepanska-9OKGEVJiTKk-unsplash.jpg"
-       xlink:href="images/jo-szczepanska-9OKGEVJiTKk-unsplash.jpg"
-       y="-148.85675"
-       x="818.07379"
        width="225.77777"
-       height="150.63611"
-       preserveAspectRatio="none"
-       id="image1205" />
-    <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/jeff-sheldon-JWiMShWiF14-unsplash.jpg"
-       xlink:href="images/jeff-sheldon-JWiMShWiF14-unsplash.jpg"
-       y="-299.49286"
        x="1043.8516"
-       width="225.77777"
-       height="169.33333"
-       preserveAspectRatio="none"
-       id="image1233" />
+       y="-130.15953" />
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/stanley-dai-73OZYNjVoNI-unsplash.jpg"
-       xlink:href="images/stanley-dai-73OZYNjVoNI-unsplash.jpg"
-       y="-299.49286"
-       x="818.07379"
-       width="225.77777"
-       height="150.63611"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/jo-szczepanska-9OKGEVJiTKk-unsplash.jpg"
+       xlink:href="images/jo-szczepanska-9OKGEVJiTKk-unsplash.jpg"
+       id="image1205"
        preserveAspectRatio="none"
-       id="image1247" />
+       height="150.63611"
+       width="225.77777"
+       x="818.07379"
+       y="-148.85675" />
+    <image
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/jeff-sheldon-JWiMShWiF14-unsplash.jpg"
+       xlink:href="images/jeff-sheldon-JWiMShWiF14-unsplash.jpg"
+       id="image1233"
+       preserveAspectRatio="none"
+       height="169.33333"
+       width="225.77777"
+       x="1043.8516"
+       y="-299.49286" />
+    <image
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/stanley-dai-73OZYNjVoNI-unsplash.jpg"
+       xlink:href="images/stanley-dai-73OZYNjVoNI-unsplash.jpg"
+       id="image1247"
+       preserveAspectRatio="none"
+       height="150.63611"
+       width="225.77777"
+       x="818.07379"
+       y="-299.49286" />
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';stroke-width:0.264583"
@@ -1150,14 +1150,14 @@
          id="tspan1259"
          sodipodi:role="line">Thanks to Jo Szczepanska for sharing their work on Unsplash.</tspan></text>
     <image
-       sodipodi:absref="/Users/luciano/repos/dsci-554-starter/a5-starter/images/ivan-bandura-Wv2U24G2F78-unsplash.jpg"
+       sodipodi:absref="/Users/cyx/inf554/project-survivors/presentations/proposal/images/ivan-bandura-Wv2U24G2F78-unsplash.jpg"
        xlink:href="images/ivan-bandura-Wv2U24G2F78-unsplash.jpg"
-       y="-148.85675"
-       x="366.51825"
-       width="225.77777"
-       height="169.33333"
+       id="image1277"
        preserveAspectRatio="none"
-       id="image1277" />
+       height="169.33333"
+       width="225.77777"
+       x="366.51825"
+       y="-148.85675" />
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';stroke-width:0.264583"
