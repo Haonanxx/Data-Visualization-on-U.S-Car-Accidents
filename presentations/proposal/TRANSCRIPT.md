@@ -20,7 +20,7 @@ The visualization we are gonna realize would be useful for everyone who lives in
 ## Slide 3
 By studying the cause and effect, people might be able to avoid or at least pay more attention when they are passing by the car accident hotspot locations and in adverse weather conditions that are related to pressure, visibility, wind direction, wind speed, or something like that.
 ## Slide 4
-The thing is we are planning to do feature selection manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
+The thing is our dataset has too many features, and we are planning to do feature selection manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
 ## Slide 5
 
 ## Slide 6
