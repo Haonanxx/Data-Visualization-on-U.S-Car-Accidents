@@ -28,14 +28,14 @@ The next two pictures shows what other visualizations have done on the same topi
 ## Slide 6
 More complex visulization involves displaying the data in one or more maps. And visualization can be interactive.
 ## Slide 7
-I will describe our plan. In general, The dataset we will use come from kaggle website. And based on our design, we will filter and reorganize the data using python script and SQL. Then we will use HTML, JavaScript, D3 library to develop the visualization interface. 
+I will describe our plan. In general, The dataset we will use come from kaggle website. And based on our design, we will filter and reorganize the data using python and SQL. Then we will use HTML, JavaScript, D3 library to develop the visualization interface. 
 ## Slide 8
-In details, our dataset contains many attributes, and we divided them into three class. For data related to location, we will use map to presented them. And for time-related data, we plan to use line chart to represented the trending of data. For normal attributes, pie charts and bar charts will be suitable to represent the 
+In details, our dataset contains many attributes, and we divided them into three classes. For data related to location, we will use map to represented them. And for time-related data, we plan to use line chart to represented the trending of data. For normal attributes, pie charts and bar charts will be suitable to represent the 
 Comparison between values. At the same time, we will also establish interaction between different graphs, and implement filtering, sorting and other functions to facilitate the use of users 
 ## Slide 9
-There are three students in our group, all of whom have rich experience in data analysis, processing, and front-end development. I believe that after learning about data visualization technology, we can complete this project with high quality. 
-We will design our visualization plan together to make it more comprehensive, Then divide labor according to different types of diagrams. 
-I will be responsible for the map graph，Qianqian Tang will mainly responsible for the time-related trend graphs and interactions. And Haonan Xu will be responsible for the links and comparison diagrams between accident-related variables.
+There are three students in our group, all of whom have rich experience in data analysis and front-end development. I believe that after learning about data visualization technology, we can complete this project with high quality. 
+We will design our visualization plan together to make it more comprehensive and divide labor according to different types of diagrams. 
+I will be responsible for the map graph. Qianqian Tang will mainly responsible for the time-related trend graphs and interactions. And Haonan Xu will be responsible for the links and comparison diagrams between accident-related variables.
 ## Slide 10
-Here is the time line we planed for our project. We will use one week to doing research of our dataset and the topic. Then we will use one week to design our visualization. 
-After completing the visual analysis, we will spend a week to optimize it, as well as video recording and paper writing 
+Here is the time line we planed for our project. We will spend one week doing research of our dataset and the topic. Then we will use one week to design our visualization. 
+After completing the visual analysis, we will spend a week to optimizing it, as well as finishing video recording and paper writing 
