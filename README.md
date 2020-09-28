@@ -9,7 +9,7 @@ Team members: Qianqian Tang, Yixiang Cao,
 - Qianqian Tang <tangq@usc.edu>
 - Yixiang Cao <yixiangc@usc.edu>
 - Haonan Xu <haonanxu@usc.edu>
--
+
 
 ---
 
@@ -35,10 +35,9 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.
 
 ## Proposal presentation
 
-- [Tommy Trojan](mailto:tommy@usc.edu) did this and that...
--
--
--
+- [Qianqian Tang](mailto:qianqiant@usc.edu) introduced the topic, dataset, goal, and challenges of our project.
+- [Haonan Xu](mailto:haonanxu@usc.edu) compared our plan with other visualizations in same area.
+- [Yixiang Cao](mailto:yixiangc@usc.edu) described our project development plan is fully mature, all team members contribute
 
 ## Final presentation
 
