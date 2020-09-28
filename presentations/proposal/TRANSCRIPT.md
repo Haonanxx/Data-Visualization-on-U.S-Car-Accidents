@@ -22,9 +22,9 @@ By studying the cause and effect, people might be able to avoid or at least pay 
 ## Slide 4
 The thing is our dataset has too many features, and we are planning to do feature selection manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
 ## Slide 5
-
+The next two pictures shows what other visualizations have done on the same topic which is U.S. car accident. Bar charts and pie charts are the most common visualizations for demostrating simple statistics such like number of accidents by states and types of severity  
 ## Slide 6
-
+More complex visulization involves displaying the data in one or more maps. And visualization can be interactive. 
 ## Slide 7
 
 ## Slide 8
