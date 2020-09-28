@@ -47,7 +47,9 @@ After completing the visual analysis, we will spend a week to optimize it, as we
 
 [3] (Slide3) http://www.sciotopost.com/breaking-traffic-alert-pickaway-county-u-s-23-762-two-vehicle-accident-injuries/
 
-[4] (Slide9) https://www.dbsacoloradosprings.org/support-groups/
+[4] (Slide5) https://www.kaggle.com/alenavorushilova/us-car-accidents-visualization
+
+[5] (Slide9) https://www.dbsacoloradosprings.org/support-groups/
 
 
  
