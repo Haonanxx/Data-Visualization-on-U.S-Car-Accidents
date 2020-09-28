@@ -37,7 +37,7 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.
 
 - [Qianqian Tang](mailto:qianqiant@usc.edu) introduced the topic, dataset, goal, and challenges of our project.
 - [Haonan Xu](mailto:haonanxu@usc.edu) compared our plan with other visualizations in same area.
-- [Yixiang Cao](mailto:yixiangc@usc.edu) described our project development plan is fully mature, all team members contribute
+- [Yixiang Cao](mailto:yixiangc@usc.edu) described our project development plan and all team members's contribution.
 
 ## Final presentation
 
