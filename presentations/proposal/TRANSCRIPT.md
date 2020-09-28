@@ -1,6 +1,6 @@
 # TRANSCRIPT
 
-Topic: US Traffic Accidents
+Topic: US Traffic Accident
 
 Team name: Survivors
 
