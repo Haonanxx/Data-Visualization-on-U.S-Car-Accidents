@@ -40,3 +40,14 @@ I will be responsible for the map graph. Qianqian Tang will mainly responsible f
 ## Slide 10
 Here is the timeline we planned for our project. We will use one week to doing research on our dataset and the topic. Then we will use one week to design our visualization. 
 After completing the visual analysis, we will spend a week to optimize it, as well as video recording and paper writing. 
+## Reference
+[1] (Slide1&4) Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, and Rajiv Ramnath. “A Countrywide Traffic Accident Dataset.”, 2019.
+
+[2] (Slide2) https://www.roadex.org/e-learning/lessons/environmental-considerations-for-low-volume-roads/environmental-issues-related-to-road-management/
+
+[3] (Slide3) http://www.sciotopost.com/breaking-traffic-alert-pickaway-county-u-s-23-762-two-vehicle-accident-injuries/
+
+[4] (Slide9) https://www.dbsacoloradosprings.org/support-groups/
+
+
+ 
