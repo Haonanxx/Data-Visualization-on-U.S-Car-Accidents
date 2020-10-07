@@ -24,9 +24,9 @@ We will show the graphs and charts like the map, bar chart, line chart, pie char
 ## Slide 4
 The challenge is our dataset has too many features, and we are planning to select features manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
 ## Slide 5
-The next two pictures show what other visualizations have done on the same topic that is the U.S. car accident. Bar charts and pie charts are the most common visualizations for demonstrating simple statistics such as the number of accidents by states and types of severity. Our project will combine what we have learned in this class adding new features and possibilities to existing work.
+The next two pictures show what other visualizations have done on the same topic that is the U.S. car accident. In the extensive research, We found that existing data visualization uses Traffic Message Channel(TMC) that is for delivering traffic and travel information to motor vehicle drivers. TMC is an interesting feature to look at when plotting the number of accidents vs TMC. Bar charts and pie charts are the most common visualizations for demonstrating simple statistics such as the number of accidents by states and types of severity.
 ## Slide 6
-More complex visualization involves displaying the data in one or more maps. And visualization can be interactive. In the extensive research, We found that existing data visualization uses Traffic Message Channel(TMC) that is for delivering traffic and travel information to motor vehicle drivers. TMC is an interesting feature to look at when plotting the number of accidents vs TMC. 
+Other than realizing the existing work, we also plan to combine the map and the line or bar chart to visualize the locations of accident occurrences and cause and effect of corresponding locations by clicking on the location on the map or operations like zooming in rather than only show simple charts.  
 ## Slide 7
 Basically, we will filter and reorganize the data using python and SQL based on our design. We will use HTML, CSS, JavaScript, D3 library, and Vega-Lite to develop the visualization interface.
 ## Slide 8
