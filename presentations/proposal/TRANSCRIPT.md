@@ -24,9 +24,9 @@ By studying the cause and effect, people might be able to avoid or at least pay 
 ## Slide 4
 The thing is our dataset has too many features, and we are planning to do feature selection manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
 ## Slide 5
-The next two pictures show what other visualizations have done on the same topic which is the U.S. car accident. Bar charts and pie charts are the most common visualizations for demonstrating simple statistics such as the number of accidents by states and types of severity.  
+The next two pictures show what other visualizations have done on the same topic which is the U.S. car accident. Bar charts and pie charts are the most common visualizations for demonstrating simple statistics such as the number of accidents by states and types of severity. Our project will combine what we have learned in this class adding new features and possibilities to existing work.
 ## Slide 6
-More complex visualization involves displaying the data in one or more maps. And visualization can be interactive.
+More complex visualization involves displaying the data in one or more maps. And visualization can be interactive.In the extensive reseach, I found that existing data visulization uses Traffic Message Channel(TMC) which is for delivering traffic and travel information to motor vehicle drivers. TMC is a interesting feature to look at when plotting number of accidents vs TMC. 
 ## Slide 7
 I will describe our plan. In general, The dataset we will use comes from the Kaggle website. And based on our design, we will filter and reorganize the data using python script and SQL. Then we will use HTML, JavaScript, D3 library to develop the visualization interface. 
 ## Slide 8
