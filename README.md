@@ -1,7 +1,4 @@
 # DSCI 554 Project
-
-Project topic: US Traffic Accident
-
 ## Teams
 
 Team name: Survivors
