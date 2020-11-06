@@ -1,0 +1,10 @@
+[{ "label": "MERCURY", "mass": 0.330, "dist": 57.9 },
+{ "label": "VENUS", "mass": 4.87, "dist": 108.2 },
+{ "label": "EARTH", "mass": 5.97, "dist": 149.6 },
+{ "label": "MOON", "mass": 0.073, "dist": 0.384 },
+{ "label": "MARS", "mass": 0.642, "dist": 227.9 },
+{ "label": "JUPITER", "mass": 1898, "dist": 778.6 },
+{ "label": "SATURN", "mass": 568, "dist": 1433.5 },
+{ "label": "URANUS", "mass": 86.8, "dist": 2872.5 },
+{ "label": "NEPTUNE", "mass": 102, "dist": 4495.1 },
+{ "label": "PLUTO", "mass": 0.0146, "dist": 5906.4 }]
