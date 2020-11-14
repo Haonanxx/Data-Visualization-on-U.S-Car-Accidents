@@ -5,7 +5,7 @@ module.exports = {
         devtool: 'source-map'
     },
     publicPath: process.env.NODE_ENV === 'production' ?
-        path.resolve(__dirname,'/dsci-554-projects/project-YOUR_REPO_NAME') //production path
+        path.resolve(__dirname,'/dsci-554-projects/project-survivors') //production path
         :
         '/' //development path
 }
