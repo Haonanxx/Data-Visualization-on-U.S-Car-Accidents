@@ -4,9 +4,7 @@
     <div>Here is the data: {{JSON.stringify(chartData)}}</div>
 
     <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
-    <svg width="500" height="500" id="chart"></svg>
-    <span id="chart2">total</span>
-    <svg width="500" height="500" id="chart3"></svg>
+    <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
   </div>
 </template>
 

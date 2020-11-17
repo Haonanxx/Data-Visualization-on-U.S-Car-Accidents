@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import * as topojson from 'topojson'
 import 'jquery'
-
+import * as rect from './rect'
 
 
 /////////////////////////////////////////////////////////////
@@ -38,8 +38,9 @@ function drawMap(values){
         .attr("fill", d => color(d.id%10+1))  //🚧  explain
         .attr("d", path)
         .on('click', function (d) {
-            d3.select('#chart2')
-            .text(JSON.stringify(this.__data__.id, null, 2));
+
+            //.text(JSON.stringify(this.__data__.id, null, 2));
+            rect.draw_Bar(this.__data__.id, this.__data__.properties.name);
 
             console.log(d)
     });
