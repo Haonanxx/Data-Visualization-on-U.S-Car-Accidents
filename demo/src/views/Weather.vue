@@ -67,7 +67,7 @@ export default {
       legend.append('text')
         .attr('x',830)
         .attr('y', 460)
-        .text('Average Temperature')
+        .text('Average Temperature (°F)')
       
       legend.append('rect')
         .attr('x', 800)
@@ -91,7 +91,7 @@ export default {
       legend.append('text')
         .attr('x',830)
         .attr('y', 480)
-        .text('Average Visibility')
+        .text('Average Visibility (mile)')
 
       //sel.append('text')
         //.attr('x', d => 90 + d.temperature )
