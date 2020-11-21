@@ -58,38 +58,38 @@ export default {
         .attr('class', 'legend');
       
       legend.append('rect')
-        .attr('x', 1100)
+        .attr('x', 800)
         .attr('y', 450)
         .attr('width', 20)
         .attr('height', 10)
         .style('fill', '#7abcff')
 
       legend.append('text')
-        .attr('x',1130)
+        .attr('x',830)
         .attr('y', 460)
         .text('Average Temperature')
       
       legend.append('rect')
-        .attr('x', 1100)
+        .attr('x', 800)
         .attr('y', 430)
         .attr('width', 20)
         .attr('height', 10)
         .style('fill', '#e9c050')
 
       legend.append('text')
-        .attr('x',1130)
+        .attr('x',830)
         .attr('y', 440)
         .text('Weighted Number (by population) of Accidents')
 
       legend.append('rect')
-        .attr('x', 1100)
+        .attr('x', 800)
         .attr('y', 470)
         .attr('width', 20)
         .attr('height', 10)
         .style('fill', '#e95050')
 
       legend.append('text')
-        .attr('x',1130)
+        .attr('x',830)
         .attr('y', 480)
         .text('Average Visibility')
 
@@ -137,6 +137,7 @@ export default {
       var svg = d3.select('#chart')
       svg.selectAll('rect').remove()
       svg.selectAll('text').remove()
+      svg.selectAll('.legend').remove()
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
@@ -172,38 +173,38 @@ export default {
         .attr('class', 'legend');
       
       legend.append('rect')
-        .attr('x', 1100)
+        .attr('x', 800)
         .attr('y', 450)
         .attr('width', 20)
         .attr('height', 10)
         .style('fill', '#7abcff');
 
       legend.append('text')
-        .attr('x',1130)
+        .attr('x',830)
         .attr('y', 460)
         .text('Average Temperature');
       
       legend.append('rect')
-        .attr('x', 1100)
+        .attr('x', 800)
         .attr('y', 430)
         .attr('width', 20)
         .attr('height', 10)
         .style('fill', '#e9c050');
 
       legend.append('text')
-        .attr('x', 1130)
+        .attr('x', 830)
         .attr('y', 440)
         .text('Weighted Number (by population) of Accidents');
 
       legend.append('rect')
-        .attr('x', 1100)
+        .attr('x', 800)
         .attr('y', 470)
         .attr('width', 20)
         .attr('height', 10)
         .style('fill', '#e95050');
 
       legend.append('text')
-        .attr('x', 1130)
+        .attr('x', 830)
         .attr('y', 480)
         .text('Average Visibility');
     }
