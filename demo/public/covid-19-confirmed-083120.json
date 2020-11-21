@@ -1,0 +1,12 @@
+[
+    { "label": "Los Angeles", "value": "240749" },
+    { "label": "Miami-Dade", "value": "156559" },
+    { "label": "Maricopa", "value": "133641" },
+    { "label": "Cook", "value": "126003" },
+    { "label": "Harris", "value": "105757" },
+    { "label": "Broward", "value": "70950" },
+    { "label": "Dallas", "value": "70810" },
+    { "label": "Queens", "value": "69370" },
+    { "label": "Kings", "value": "63974" },
+    { "label": "Clark", "value": "59153" }
+]
