@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<body>
-<script src="node_modules/d3/dist/d3.min.js"></script>
-<svg id="map" width="960",height="10"></svg>
-<div id="chart4"></div>
-<script>
+import * as d3 from 'd3';
+function draw_clander(){
     var svg2=d3.select("#map")
         .attr("height",30)
+        .attr('width',960)
     svg2.append("g")
         .selectAll("text")
         //定义标签文字(年份)的位置以及文字的旋转角度、文字内容
@@ -20,12 +17,12 @@
         .attr("text-anchor", "middle")
         .text(d=>d);
 
-    var width = 960,
-        height = 136,
-        cellSize = 17;   //定义每个方格的大小
+    var width = 960
+      var   height = 136
+       var  cellSize = 17   //定义每个方格的大小
 
     var formatPercent = d3.format(".1%"); //定义一个百分数格式函数，规定百分数精确度小数点后1位
-
+    console.log(formatPercent)
     // 定义颜色函数，使用量化比例尺映射，即定义域为连续的，从-0.05到0.05，而值域是离散的颜色值
     var color = d3.scaleQuantize()
         .domain([0, 5000])
@@ -47,7 +44,7 @@
         //定义标签文字(年份)的位置以及文字的旋转角度、文字内容
         .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 15)
         .attr("text-anchor", "middle")
         .text(function(d) { return d; });
 
@@ -78,14 +75,14 @@
         .attr("d", pathMonth);
 
 
-        rect.attr("fill", d=>{
-            //console.log(d)
-            if(d=='2018-04-10')
-            {return 'red'}
-            else{return 'gray'}
-        });
+    rect.attr("fill", d=>{
+        //console.log(d)
+        if(d=='2018-04-10')
+        {return 'red'}
+        else{return 'gray'}
+    });
     d3.json("clander.json").then(data => {
-       //console.log(data)
+        //console.log(data)
         rect.attr("fill", d=>{
             //console.log(d)
             //console.log(data[d])
@@ -93,19 +90,20 @@
             return color(data[d])
 
         });
-        });
+    });
 
-
-    // 定义月份分割线路径
-    function pathMonth(t0) {
-        var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
-            d0 = t0.getDay(), w0 = d3.timeWeek.count(d3.timeYear(t0), t0),
-            d1 = t1.getDay(), w1 = d3.timeWeek.count(d3.timeYear(t1), t1);
-        return "M" + (w0 + 1) * cellSize + "," + d0 * cellSize
-            + "H" + w0 * cellSize + "V" + 7 * cellSize
-            + "H" + w1 * cellSize + "V" + (d1 + 1) * cellSize
-            + "H" + (w1 + 1) * cellSize + "V" + 0
-            + "H" + (w0 + 1) * cellSize + "Z";
-    }
-
-</script>
+}
+function pathMonth(t0) {
+    var  cellSize = 17
+    var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
+        d0 = t0.getDay(), w0 = d3.timeWeek.count(d3.timeYear(t0), t0),
+        d1 = t1.getDay(), w1 = d3.timeWeek.count(d3.timeYear(t1), t1);
+    return "M" + (w0 + 1) * cellSize + "," + d0 * cellSize
+        + "H" + w0 * cellSize + "V" + 7 * cellSize
+        + "H" + w1 * cellSize + "V" + (d1 + 1) * cellSize
+        + "H" + (w1 + 1) * cellSize + "V" + 0
+        + "H" + (w0 + 1) * cellSize + "Z";
+}
+export {
+    draw_clander
+}

@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import * as topojson from 'topojson'
 import 'jquery'
-import * as rect from './rect'
+
 import * as line from './timeline'
 
 
@@ -17,7 +17,7 @@ function drawMap(values){
 
     var path = d3.geoPath()
 
-    var color = d3.scaleQuantize([1, 10], d3.schemeBlues[9])  //🚧  explain
+    var color = d3.scaleQuantize([1, Math.log(820000)], d3.schemeBlues[9])  //🚧  explain
 
     //original line from Observable
     //data = Object.assign(new Map(await d3.csv("unemployment.csv", ({id, rate}) => [id, +rate])), {title: "Unemployment rate (%)"})
@@ -29,7 +29,7 @@ function drawMap(values){
 
     // const svg = d3.create("svg")
     var svg = d3.select("#chart")
-        .attr("viewBox", [0, -100, 975, 610]);
+        .attr("viewBox", [0, 0, 975, 610]);
 
 
     var outstatelist=[]
@@ -39,7 +39,7 @@ function drawMap(values){
         .join("path")
         .attr("fill", d =>{
             //console.log(data.get(d.id)%10)
-            return color(data.get(d.id)%10+1)
+            return color(Math.log(data.get(d.id)))
 
         })  //🚧  explain
         .attr("d", path)
@@ -47,7 +47,6 @@ function drawMap(values){
             outstatelist.push(this.__data__.properties.name)
             console.log(outstatelist)
             //.text(JSON.stringify(this.__data__.id, null, 2));
-            rect.draw_Bar(this.__data__.id, this.__data__.properties.name);
             line.draw_timeline((outstatelist))
             console.log(d)
     });

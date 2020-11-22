@@ -5,7 +5,7 @@ function draw_Bar(id,name){
             console.log('hhh')
             console.log(data);
             var data_use=data[id];
-            var svg = d3.select("#chart3");
+            var svg = d3.select("#chart4");
 
             svg.append("rect")
 

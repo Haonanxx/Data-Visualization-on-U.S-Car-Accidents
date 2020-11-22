@@ -5,7 +5,10 @@
 
     <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
-    <div><svg width="1000" height="300" id="chart4"></svg>></div>
+    <div>
+      <svg id="map"></svg>
+      <div id="chart4"></div>
+    </div>
   </div>
 </template>
 
@@ -13,7 +16,8 @@
 
   import * as d3 from 'd3';
   import * as yixiang from '../../public/map.js'
-
+  import * as cland from '../../public/clander.js'
+  cland.draw_clander()
   export default {
     name: 'd3Chart',
     data: function () {
@@ -49,7 +53,7 @@
     },
     mounted: function () {
       console.log('mounted');
-
+      cland.draw_clander()
 
       var promises = [];
 
