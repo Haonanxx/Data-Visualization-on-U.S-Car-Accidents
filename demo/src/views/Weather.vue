@@ -177,33 +177,67 @@ export default {
         .delay(delay);
     },
     redraw(){
-      
-      var svg = d3.select('#chart')
-      svg.selectAll('rect').remove()
-      svg.selectAll('text').remove()
-      svg.selectAll('.legend').remove()
+      var svg = d3.select('#chart');
+      svg.selectAll('rect').remove();
+      svg.selectAll('text').remove();
+      svg.selectAll('.legend').remove();
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
+
+      var tip1 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Accidents:</strong> <span style='color:red'>" + d.target.__data__.accidents
+           + "</span> <br /> Poppulation: " + d.target.__data__.population;
+        });
+
+      var tip2 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Temperature:</strong> <span style='color:red'>" + d.target.__data__.temperature
+           + "</span>";
+        });
+
+      var tip3 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Visibility:</strong> <span style='color:red'>" + d.target.__data__.visibility
+           + "</span>";
+        });
+      
+      svg.call(tip1);
+      svg.call(tip2);
+      svg.call(tip3);
+
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + 3*i * 10)
         .attr('height', d => d.accidents / d.population * 10000 + 100 )
-        .transition()
-        .duration(750)
-        .attr('class', 'bar3');
+        //.transition()
+        //.duration(750)
+        .attr('class', 'bar3')
+        .on('mouseover', tip1.show)
+        .on('mouseout', tip1.hide);
       
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+1) * 10)
         .attr('height', d => d.temperature * 4 )
-        .attr('class', 'bar');
+        .attr('class', 'bar')
+        .on('mouseover', tip2.show)
+        .on('mouseout', tip2.hide);
 
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+2) * 10)
         .attr('height', d => d.visibility * 100 - 750)
-        .attr('class', 'bar2');
+        .attr('class', 'bar2')
+        .on('mouseover', tip3.show)
+        .on('mouseout', tip3.hide);
 
       sel.append('text')
         .attr('y', 40)
