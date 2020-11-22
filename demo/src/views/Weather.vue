@@ -1,18 +1,24 @@
 <template>
   <div class="d3chart">
     <div class="title">Accidents and Weather</div>
+    <div class="sub-title">(Data from February 2016 to June 2020)</div>
     <div class="commands">
       <span class="sort" id="accidents">Sort by Number of Accidents</span>
       <span class="sort" id="temperature">Sort by Temperature</span>
       <span class="sort" id="visibility">Sort by Visibility</span>
     </div>
-    <svg width="1600" height="1600" id="chart"></svg>
+    <svg width="1600" height="800" id="chart"></svg>
   </div>
 </template>
 
 <script>
 
-import * as d3 from 'd3';
+import * as d3module from 'd3';
+import d3tip from 'd3-tip';
+const d3 = {
+  ...d3module,
+  tip: d3tip
+}
 
 export default {
   name: 'd3Chart',
@@ -23,28 +29,65 @@ export default {
   },
   methods: {
     barChart() {
+      
       var svg = d3.select('#chart');
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
+      
+      var tip1 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Accidents:</strong> <span style='color:red'>" + d.target.__data__.accidents
+           + "</span> <br /> Population: " + d.target.__data__.population;
+        });
+
+      var tip2 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Temperature:</strong> <span style='color:red'>" + d.target.__data__.temperature
+           + "</span>";
+        });
+
+      var tip3 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Visibility:</strong> <span style='color:red'>" + d.target.__data__.visibility
+           + "</span>";
+        });
 
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + 3*i * 10)
         .attr('height', d => d.accidents / d.population * 10000 + 100 )
-        .attr('class', 'bar3');
+        .attr('class', 'bar3')
+        .on('mouseover', tip1.show)
+        .on('mouseout', tip1.hide);
+      
+      svg.call(tip1);
       
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+1) * 10)
         .attr('height', d => d.temperature * 4 )
-        .attr('class', 'bar');
+        .attr('class', 'bar')
+        .on('mouseover', tip2.show)
+        .on('mouseout', tip2.hide);
+      
+      svg.call(tip2);
 
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+2) * 10)
-        .attr('height', d => d.visibility * 100 - 750)
-        .attr('class', 'bar2');
+        .attr('height', d => d.visibility * 30)
+        .attr('class', 'bar2')
+        .on('mouseover', tip3.show)
+        .on('mouseout', tip3.hide);
+
+      svg.call(tip3);
 
       sel.append('text')
         .attr('y', 40)
@@ -67,14 +110,14 @@ export default {
       legend.append('text')
         .attr('x',830)
         .attr('y', 460)
-        .text('Average Temperature')
+        .text('Average Temperature (°F)')
       
       legend.append('rect')
         .attr('x', 800)
         .attr('y', 430)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e9c050')
+        .style('fill', '#e95050')
 
       legend.append('text')
         .attr('x',830)
@@ -86,12 +129,12 @@ export default {
         .attr('y', 470)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e95050')
+        .style('fill', '#e9c050')
 
       legend.append('text')
         .attr('x',830)
         .attr('y', 480)
-        .text('Average Visibility')
+        .text('Average Visibility (mile)')
 
       //sel.append('text')
         //.attr('x', d => 90 + d.temperature )
@@ -134,32 +177,67 @@ export default {
         .delay(delay);
     },
     redraw(){
-      var svg = d3.select('#chart')
-      svg.selectAll('rect').remove()
-      svg.selectAll('text').remove()
-      svg.selectAll('.legend').remove()
+      var svg = d3.select('#chart');
+      svg.selectAll('rect').remove();
+      svg.selectAll('text').remove();
+      svg.selectAll('.legend').remove();
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
+
+      var tip1 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Accidents:</strong> <span style='color:red'>" + d.target.__data__.accidents
+           + "</span> <br /> Population: " + d.target.__data__.population;
+        });
+
+      var tip2 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Temperature:</strong> <span style='color:red'>" + d.target.__data__.temperature
+           + "</span>";
+        });
+
+      var tip3 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Visibility:</strong> <span style='color:red'>" + d.target.__data__.visibility
+           + "</span>";
+        });
+      
+      svg.call(tip1);
+      svg.call(tip2);
+      svg.call(tip3);
+
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + 3*i * 10)
         .attr('height', d => d.accidents / d.population * 10000 + 100 )
-        .transition()
-        .duration(750)
-        .attr('class', 'bar3');
+        //.transition()
+        //.duration(750)
+        .attr('class', 'bar3')
+        .on('mouseover', tip1.show)
+        .on('mouseout', tip1.hide);
       
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+1) * 10)
         .attr('height', d => d.temperature * 4 )
-        .attr('class', 'bar');
+        .attr('class', 'bar')
+        .on('mouseover', tip2.show)
+        .on('mouseout', tip2.hide);
 
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+2) * 10)
-        .attr('height', d => d.visibility * 100 - 750)
-        .attr('class', 'bar2');
+        .attr('height', d => d.visibility * 30)
+        .attr('class', 'bar2')
+        .on('mouseover', tip3.show)
+        .on('mouseout', tip3.hide);
 
       sel.append('text')
         .attr('y', 40)
@@ -189,7 +267,7 @@ export default {
         .attr('y', 430)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e9c050');
+        .style('fill', '#e95050');
 
       legend.append('text')
         .attr('x', 830)
@@ -201,7 +279,7 @@ export default {
         .attr('y', 470)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e95050');
+        .style('fill', '#e9c050');
 
       legend.append('text')
         .attr('x', 830)
@@ -297,14 +375,14 @@ export default {
 >>> rect.bar2 {
   text-align: right;  /* pull value text to the end of the bar */
   vertical-align: middle;  /* align value text with middle of the bar */
-  fill:#e95050;
+  fill:#e9c050;
   width: 5px;  /* bar height, this can stay fixed */
 }
 
 >>> rect.bar3 {
   text-align: right;  /* pull value text to the end of the bar */
   vertical-align: middle;  /* align value text with middle of the bar */
-  fill:#e9c050;
+  fill:#e95050;
   width: 5px;  /* bar height, this can stay fixed */
 }
 
@@ -335,5 +413,34 @@ label {
   color: #444;
   padding: 5px;
   margin: 5px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
 }
 </style>
