@@ -37,6 +37,7 @@ function drawMap(values){
         .selectAll("path")
         .data(topojson.feature(us, us.objects.states).features)  //🚧  explain
         .join("path")
+        .attr("stroke", "black")
         .attr("fill", d =>{
             //console.log(data.get(d.id)%10)
             return color(Math.log(data.get(d.id)))
@@ -47,7 +48,7 @@ function drawMap(values){
             outstatelist.push(this.__data__.properties.name)
             console.log(outstatelist)
             //.text(JSON.stringify(this.__data__.id, null, 2));
-            line.draw_timeline((outstatelist))
+            line.draw_timeline([this.__data__.properties.name])
             console.log(d)
     });
 
@@ -57,7 +58,7 @@ function drawMap(values){
     svg.append("path")
         .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))  //🚧  explain
         .attr("fill", "none")
-        .attr("stroke", "white")
+        .attr("stroke", "black")
         .attr("stroke-linejoin", "round")
         .attr("d", path);
     line.draw_timeline(-1)
