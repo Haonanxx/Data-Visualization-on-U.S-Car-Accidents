@@ -11,6 +11,7 @@ function isInArray(arr,value){
 
 function draw_timeline(list){
     d3.json("line_chart.json").then(data => {
+        document.getElementById("chart3").innerHTML=""
         var dateParse = d3.timeParse("%H:%M");
         data.date.forEach(
             function(d,i){data.date[i]=dateParse(d)}
@@ -22,6 +23,9 @@ function draw_timeline(list){
         //var data = {series: [{name: "A", value: [1, 2, 3, 4]}, {name: "B", value: [2, 4, 6, 8]}], date: [1, 2, 3, 4]}
         var svg = d3.select('#chart3')
             .attr("viewBox", [0, 0, width, height]);
+        svg.append('text')
+            .text(list[0])
+            .attr("font-size", 25)
         var x = d3.scaleTime()
             .domain([dateParse('00:01'),dateParse('23:00')])
             .range([margin.left, width - margin.right]);
@@ -58,7 +62,7 @@ function draw_timeline(list){
             .selectAll("path")
             .data(data.series)
             .join("path")
-            .style("mix-blend-mode", "multiply")
+            .style("mix-blend-mode", "null")
             .attr("d", d => line(d.value))
             .attr("stroke", "steelblue");
         if(list==-1){
