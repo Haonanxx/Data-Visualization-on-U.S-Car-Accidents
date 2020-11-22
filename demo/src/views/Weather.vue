@@ -40,7 +40,7 @@ export default {
         .offset([500, 0])
         .html(function(d){console.log(d);
           return "<strong>Accidents:</strong> <span style='color:red'>" + d.target.__data__.accidents
-           + "</span> <br /> Poppulation: " + d.target.__data__.population;
+           + "</span> <br /> Population: " + d.target.__data__.population;
         });
 
       var tip2 = d3.tip()
@@ -82,7 +82,7 @@ export default {
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+2) * 10)
-        .attr('height', d => d.visibility * 100 - 750)
+        .attr('height', d => d.visibility * 30)
         .attr('class', 'bar2')
         .on('mouseover', tip3.show)
         .on('mouseout', tip3.hide);
@@ -117,7 +117,7 @@ export default {
         .attr('y', 430)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e9c050')
+        .style('fill', '#e95050')
 
       legend.append('text')
         .attr('x',830)
@@ -129,7 +129,7 @@ export default {
         .attr('y', 470)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e95050')
+        .style('fill', '#e9c050')
 
       legend.append('text')
         .attr('x',830)
@@ -190,7 +190,7 @@ export default {
         .offset([500, 0])
         .html(function(d){console.log(d);
           return "<strong>Accidents:</strong> <span style='color:red'>" + d.target.__data__.accidents
-           + "</span> <br /> Poppulation: " + d.target.__data__.population;
+           + "</span> <br /> Population: " + d.target.__data__.population;
         });
 
       var tip2 = d3.tip()
@@ -234,7 +234,7 @@ export default {
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+2) * 10)
-        .attr('height', d => d.visibility * 100 - 750)
+        .attr('height', d => d.visibility * 30)
         .attr('class', 'bar2')
         .on('mouseover', tip3.show)
         .on('mouseout', tip3.hide);
@@ -267,7 +267,7 @@ export default {
         .attr('y', 430)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e9c050');
+        .style('fill', '#e95050');
 
       legend.append('text')
         .attr('x', 830)
@@ -279,7 +279,7 @@ export default {
         .attr('y', 470)
         .attr('width', 20)
         .attr('height', 10)
-        .style('fill', '#e95050');
+        .style('fill', '#e9c050');
 
       legend.append('text')
         .attr('x', 830)
@@ -375,14 +375,14 @@ export default {
 >>> rect.bar2 {
   text-align: right;  /* pull value text to the end of the bar */
   vertical-align: middle;  /* align value text with middle of the bar */
-  fill:#e95050;
+  fill:#e9c050;
   width: 5px;  /* bar height, this can stay fixed */
 }
 
 >>> rect.bar3 {
   text-align: right;  /* pull value text to the end of the bar */
   vertical-align: middle;  /* align value text with middle of the bar */
-  fill:#e9c050;
+  fill:#e95050;
   width: 5px;  /* bar height, this can stay fixed */
 }
 
