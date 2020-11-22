@@ -1,6 +1,7 @@
 <template>
   <div class="d3chart">
     <div class="title">Accidents and Weather</div>
+    <div class="sub-title">(Data from February 2016 to June 2020)</div>
     <div class="commands">
       <span class="sort" id="accidents">Sort by Number of Accidents</span>
       <span class="sort" id="temperature">Sort by Temperature</span>
