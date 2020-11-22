@@ -7,13 +7,18 @@
       <span class="sort" id="temperature">Sort by Temperature</span>
       <span class="sort" id="visibility">Sort by Visibility</span>
     </div>
-    <svg width="1600" height="1600" id="chart"></svg>
+    <svg width="1600" height="800" id="chart"></svg>
   </div>
 </template>
 
 <script>
 
-import * as d3 from 'd3';
+import * as d3module from 'd3';
+import d3tip from 'd3-tip';
+const d3 = {
+  ...d3module,
+  tip: d3tip
+}
 
 export default {
   name: 'd3Chart',
@@ -24,16 +29,27 @@ export default {
   },
   methods: {
     barChart() {
+      
+
       var svg = d3.select('#chart');
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
 
+      var tip1 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){return "<strong>Test:</strong> <span style='color:red'>" + d.accidents + "</span>";});
+
+      svg.call(tip1);
+
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + 3*i * 10)
         .attr('height', d => d.accidents / d.population * 10000 + 100 )
-        .attr('class', 'bar3');
+        .attr('class', 'bar3')
+        .on('mouseover', tip1.show)
+        .on('mouseout', tip1.hide);
       
       sel.append('rect')
         .attr('y', 50)
@@ -336,5 +352,34 @@ label {
   color: #444;
   padding: 5px;
   margin: 5px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
 }
 </style>
