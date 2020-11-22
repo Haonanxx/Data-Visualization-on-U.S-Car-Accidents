@@ -30,18 +30,34 @@ export default {
   methods: {
     barChart() {
       
-
       var svg = d3.select('#chart');
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
-
+      
       var tip1 = d3.tip()
         .attr('class', 'd3-tip')
         .offset([500, 0])
-        .html(function(d){return "<strong>Test:</strong> <span style='color:red'>" + d.accidents + "</span>";});
+        .html(function(d){console.log(d);
+          return "<strong>Accidents:</strong> <span style='color:red'>" + d.target.__data__.accidents
+           + "</span> <br /> Poppulation: " + d.target.__data__.population;
+        });
 
-      svg.call(tip1);
+      var tip2 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Temperature:</strong> <span style='color:red'>" + d.target.__data__.temperature
+           + "</span>";
+        });
+
+      var tip3 = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([500, 0])
+        .html(function(d){console.log(d);
+          return "<strong>Visibility:</strong> <span style='color:red'>" + d.target.__data__.visibility
+           + "</span>";
+        });
 
       sel.append('rect')
         .attr('y', 50)
@@ -51,17 +67,27 @@ export default {
         .on('mouseover', tip1.show)
         .on('mouseout', tip1.hide);
       
+      svg.call(tip1);
+      
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+1) * 10)
         .attr('height', d => d.temperature * 4 )
-        .attr('class', 'bar');
+        .attr('class', 'bar')
+        .on('mouseover', tip2.show)
+        .on('mouseout', tip2.hide);
+      
+      svg.call(tip2);
 
       sel.append('rect')
         .attr('y', 50)
         .attr('x', (d, i) => 20 + (3*i+2) * 10)
         .attr('height', d => d.visibility * 100 - 750)
-        .attr('class', 'bar2');
+        .attr('class', 'bar2')
+        .on('mouseover', tip3.show)
+        .on('mouseout', tip3.hide);
+
+      svg.call(tip3);
 
       sel.append('text')
         .attr('y', 40)
@@ -151,6 +177,7 @@ export default {
         .delay(delay);
     },
     redraw(){
+      
       var svg = d3.select('#chart')
       svg.selectAll('rect').remove()
       svg.selectAll('text').remove()
