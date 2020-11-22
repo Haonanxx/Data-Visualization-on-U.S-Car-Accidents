@@ -1,6 +1,6 @@
 <template>
   <div style="height:100%;width:100%;text-align:left;">
-    <div ref="basicMapbox" style="height:500px;width:1100px;"></div>
+    <div ref="basicMapbox" style="height:500px;width:800px;"></div>
   </div>
 </template>
 <script>
@@ -28,8 +28,8 @@ export default {
       const map = new mapboxgl.Map({
         container: this.$refs.basicMapbox,
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-98.583333,39.833333], // starting position [lng, lat]
-        zoom: 3.5 // starting zoom
+        center: [-95,39.833333], // starting position [lng, lat]
+        zoom: 3.2 // starting zoom
       })
       console.log(map)
     }
