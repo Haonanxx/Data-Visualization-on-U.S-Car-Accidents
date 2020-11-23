@@ -2,6 +2,8 @@
 
 Update this README as needed.
 
+__🍿  Proposal presentation__ [Transcript](presentations/proposal/TRANSCRIPT.md) | [PDF](presentations/proposal/presentation.pdf)
+
 ## Contributions
 
 ## Proposal presentation
