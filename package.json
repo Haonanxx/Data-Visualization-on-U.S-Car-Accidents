@@ -12,6 +12,7 @@
     "d3": "^6.1.1",
     "d3-geo-projection": "^3.0.0",
     "highlightjs": "^9.16.2",
+    "mapbox-gl": "^1.13.0",
     "shapefile": "^0.6.6",
     "topojson": "^3.0.2",
     "topojson-server": "^3.0.1"

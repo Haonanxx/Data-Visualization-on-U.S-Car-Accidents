@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/weather">Weather</router-link> |
-      <router-link to="/mapbox">Mapbox</router-link>
+      <router-link to="/">Driver</router-link> |
+      <router-link to="/about">Location</router-link> |
+      <router-link to="/weather">Time&Date</router-link> |
+      <router-link to="/mapbox">Weather</router-link>
     </div>
     <router-view/>
   </div>
