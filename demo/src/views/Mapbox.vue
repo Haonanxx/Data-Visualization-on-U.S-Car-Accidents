@@ -1,21 +1,32 @@
 <template>
-  <div style="height:100%;width:100%;text-align:left;">
-    <div ref="basicMapbox" style="height:500px;width:800px;">
-      <div id="state-legend" class="legend">
-			<h4>Severity</h4>
-			<div><span style="background-color: #800026"></span>4</div>
-			<div><span style="background-color:#bd0026"></span>3</div>
-			<div><span style="background-color:#e31a1c"></span>2</div>
-			<div><span style="background-color: #fc4e2a"></span>1</div>
-			<div><span style="background-color: #fd8d3c"></span>0</div>	
-		</div>
-		<div id="map-overlay" class="map-overlay"></div>
+  <div style="display: table-row;">
+
+    <div style="display: table-cell;height:100%;width:100%;">
+      <div ref="basicMapbox" style="height:500px;width:800px;">
+        <div id="state-legend" class="legend">
+        <h4>Severity</h4>
+        <div><span style="background-color: #800026"></span>4</div>
+        <div><span style="background-color:#bd0026"></span>3</div>
+        <div><span style="background-color:#e31a1c"></span>2</div>
+        <div><span style="background-color: #fc4e2a"></span>1</div>
+        <div><span style="background-color: #fd8d3c"></span>0</div>	
+      </div>
+      <div id="map-overlay" class="map-overlay"></div>
+      </div>
     </div>
+
+    <div style="display: table-cell;">
+        <svg id="pie_chart" width="960" height="500"></svg>
+        <div id = "tooltip"></div>
+      </div>
+
   </div>
 </template>
 <script>
 import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
+import * as d3 from 'd3';
+// import * as pie from '../../public/pie_chart.js'
 
 export default {
   props: {
@@ -31,9 +42,117 @@ export default {
     }
   },
   mounted () {
+    this.drawPieChart('OH')
     this.init()
+    
   },
   methods: {
+    drawPieChart(){
+    d3.csv('state_road_condition.csv', d => {
+        d.value = +d.OH;
+        d.condition = d.Condition;
+        return d;
+    }).then(data => {
+        var svg = d3.select('#pie_chart'),
+            width = +svg.attr('width'),
+            height = +svg.attr('height'),
+            radius = Math.min(width, height) / 2,
+            g = svg.append('g')
+                .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+    
+        var div = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip");
+    
+        var color = d3.scaleOrdinal(["#88CCEE", "#882255", "#332288", "#117733", "#44AA99", "#CC6677", "#DDCC77", "#AA4499", "#b2df8a", "#865EDA"]);
+        //pie layout
+        var pie = d3.pie()
+            .value(d => {
+                return d.value
+            })
+            .sortValues(d3.descending);
+    
+        var path = d3.arc()
+            .outerRadius(radius)
+            .innerRadius(radius - 90);
+    
+        var arc = g.selectAll('.arc')
+            .data(pie(data))
+            .enter()
+            .append('g')
+            .attr('class', 'arc');
+    
+        var conditions = []
+        var total_value = 0; //size of this slice
+        var pieData = pie(data);
+        pieData.filter(filterData);
+    
+        function filterData(element) {
+            total_value += element.value;
+            if (element.value > 0) {
+                conditions.push(element.data.Condition)
+            }
+            return (element.value > 0);
+        }
+    
+        arc.append('path')
+            .attr('d', path)
+            .attr('fill', d => color(d.data.condition))
+            .attr("cursor", "pointer")
+            .on('mousemove', function (d) {
+                var percent = this.__data__.value / total_value * 100
+                d3.select(this).transition()
+                    .duration('50')
+                    .attr('opacity', '.7');
+                div.style("display", "none");
+                div.html("road condition: " + this.__data__.data.condition + "</br>" + "percentage: " + percent.toFixed(2) + '%')
+                    .style("left", (d.pageX + 12) + "px")
+                    .style("top", (d.pageY - 10) + "px")
+                    .style("opacity", 1)
+                    .style("display", "block");
+            })
+            .on('mouseout', function () {
+                d3.select(this).transition()
+                    .duration('50')
+                    .attr('opacity', '1');
+                div.html(" ").style("display", "none");
+            })
+    
+        var legend = g.selectAll('legend_colors')
+            .data(color.domain())
+            .enter()
+    
+        legend.append('circle')
+            .attr('cx', -50)
+            .attr('cy', function (d, i) {
+                return i * 25 - 110;
+            })
+            .attr('r', '.5rem')
+            .style('fill', function (d) {
+                if (conditions.includes(d)) {
+                    return color(d);
+                }
+                else {
+                    return "#D0CED2"
+                }
+            })
+    
+        legend.append('text')
+            .attr('x', -20)
+            .attr('y', function (d, i) {
+                return i * 25 - 105;
+            })
+            .text(d => d)
+            .style('fill', function (d) {
+                if (conditions.includes(d)) {
+                    return "black";
+                }
+                else {
+                    return "#D0CED2"
+                }
+            })
+    });
+},
     // initialize
     init () {
       mapboxgl.accessToken = 'pk.eyJ1IjoicWlhbnFpYW4tdGFuZyIsImEiOiJja2dxNzFwdWkwbzRiMnlxaTFzdzhydDRuIn0.aHbdzBJHQVLpFv6h1i1PkQ'
@@ -139,6 +258,14 @@ export default {
             .addTo(map);
         });
 
+        map.on('click', 'states', function (e) {
+          var feature = e.features[0];
+          // drawPieChart('OH')
+          console.log(feature.properties.name);
+          });
+
+
+
         map.on('mouseleave', 'states', function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
@@ -190,6 +317,8 @@ export default {
                 map.setFilter('highlighted', ['==', 'id', '']);
                 overlay.style.display = 'none';
                 });
+
+            
 
         })
       )
@@ -249,5 +378,7 @@ width: 10px;
     padding: 10px;
     display: none;
     }
+  
+
 
 </style>
