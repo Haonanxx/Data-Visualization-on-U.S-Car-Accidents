@@ -378,6 +378,29 @@ width: 10px;
     padding: 10px;
     display: none;
     }
+
+.arc text {
+    font: 20px sans-serif;
+    text-anchor: middle;
+}
+
+.arc path {
+    stroke: #fff;
+}
+.tooltip{
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 0 none;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: -3px 3px 15px #888888;
+    color: black;
+    font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 5px;
+    text-align: center; 
+    }
   
 
 
