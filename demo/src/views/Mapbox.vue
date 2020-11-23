@@ -68,7 +68,7 @@ export default {
             'fill-color': [ 'interpolate', ['linear'], ['*', ['get', 'severity'], 1], 0,"#fd8d3c",1,"#fc4e2a",2,"#e31a1c",3,"#bd0026",4,"#800026"],  //OK - interpolate color proportional to AREA property with a factor of 0.6
             'fill-opacity': 0.6
             }
-          });
+          },'settlement-label');
 
           map.addLayer({
             'id': 'counties',
@@ -84,7 +84,7 @@ export default {
             'fill-color': [ 'interpolate', ['linear'], ['*', ['get', 'severity'], 1], 0,"#fd8d3c",1,"#fc4e2a",2,"#e31a1c",3,"#bd0026",4,"#800026"],  //OK - interpolate color proportional to AREA property with a factor of 0.6
             'fill-opacity': 0.6
             }
-          });
+          },'settlement-label');
 
           map.addLayer({
             'id': 'highlighted',
