@@ -7,13 +7,10 @@
 			<div><span style="background-color:#bd0026"></span>3</div>
 			<div><span style="background-color:#e31a1c"></span>2</div>
 			<div><span style="background-color: #fc4e2a"></span>1</div>
-			<div><span style="background-color: #fd8d3c"></span>0</div>
-			
+			<div><span style="background-color: #fd8d3c"></span>0</div>	
 		</div>
-
 		<div id="map-overlay" class="map-overlay"></div>
     </div>
-    
   </div>
 </template>
 <script>
@@ -128,7 +125,7 @@ export default {
         overlay.appendChild(severity);
         overlay.style.display = 'block';
          
-        // Add features that share the same county name to the highlighted layer.
+        // Add features that share the same state name to the highlighted layer.
         map.setFilter('counties-highlighted', [
         '==',
         'id',
@@ -180,7 +177,7 @@ export default {
             feature.properties.id
             ]);
                 
-            // Display a popup with the name of the state
+            // Display a popup with the name of the county
             popup
             .setLngLat(e.lngLat)
             .setText(feature.properties.name)
@@ -194,13 +191,8 @@ export default {
                 // overlay.style.display = 'none';
                 });
 
-
-          
-
         })
       )
-
-      
 
     }
   },
@@ -208,7 +200,6 @@ export default {
 }
 </script>
 <style>
-/* @import url('https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css'); */
   .basicMapbox {
       position: relative;
       height: 700px;
