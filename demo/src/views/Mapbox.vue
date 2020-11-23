@@ -97,6 +97,7 @@ export default {
             filter: ['==', 'id', ''],
             paint:{
             'fill-color':  '#4575b4',  //fixed color
+            'fill-opacity': 0.7
             }
           });
 
