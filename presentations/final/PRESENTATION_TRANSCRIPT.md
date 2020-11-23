@@ -16,17 +16,17 @@ Team members: Qianqian Tang, Yixiang Cao, Haonan Xu
 ---
 
 ## Slide 1
-Our visualization project is gonna be based on a car accident dataset from Kaggle, which contains 3.5 million accident records. The data are collected from February 2016 to June 2020, covering 49 states of the USA.
+Our visualization is about traffic accidents that happened in the US.
 ## Slide 2
-Our end users are drivers in the US. Our goal is to show the car accident hotspot locations, casualty analysis, and the cause and effect of car accidents like environmental factors by data visualization to prevent the drivers from car accidents.
+Our end users are people who want to know about the possible causes of traffic accidents. For example, the local department of transportation can get visualization analysis like the road conditions of most accidents in a specific state or county. Then they take measures to avoid accidents as much as possible.
 ## Slide 3
-We will show the graphs and charts like the map, bar chart, line chart, pie chart, etc. to realize our goal. Drivers would be able to avoid or at least pay more attention when they are passing by the car accident hotspot locations and in adverse environmental conditions that are related to pressure, visibility, wind direction, wind speed, or something like that.
+For now, Yixiang made a choropleth map, a line chart, and a calendar heatmap. Haonan made an interactive grouped bar chart. I made a Mapbox map and a pie chart for now.
 ## Slide 4
-The challenge is our dataset has too many features, and we are planning to select features manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
+The data we are using contains 3.5 million accident records which are collected for almost five years, covering 49 states of the US. We used the data to show the hotspot locations and to analyze the possible causes of traffic accidents like the road conditions and the natural environmental factors.
 ## Slide 5
-In our research, we were looking for the most important data that are relevant to our topic besides the number of accidents. To best utilize and visualize these data, we got inspired by some of the visualization on this slide. Other visualizations have used maps to show the number of accidents in a region; timeline to reflect the trend of accidents in 24 hours; and proportional area to show how weather conditions are related to accidents.
+In our research, we were looking for the most important data that are relevant to our topic besides the number of accidents. To best utilize and visualize these data, we got inspired by some of the visualizations on this slide. Other visualizations have used maps to show the number of accidents in a region; a timeline to reflect the trend of accidents in 24 hours, and a proportional area to show how weather conditions are related to accidents.
 ## Slide 6
-The original part about our project is that we integrated maps and line charts so that we can look at the number of accidents among states and more details in a specific state. To show the relevance of accidents and weather conditions, instead using total number of accidents versus every weather condition, we have an interactive bar chart to look at how each weather condition affect the number of accidents in each state.
+The original part about our project is that we integrated maps and line charts so that we can look at the number of accidents among states and more details in a specific state. To show the relevance of accidents and weather conditions, instead of using the total number of accidents versus every weather condition, we have an interactive bar chart to look at how each weather condition affects the number of accidents in each state.
 ## Slide 7
 Basically, we will filter and reorganize the data using python and SQL based on our design. We will use HTML, CSS, JavaScript, D3 library, and Vega-Lite to develop the visualization interface.
 ## Slide 8
