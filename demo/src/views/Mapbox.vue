@@ -143,7 +143,7 @@ export default {
             map.getCanvas().style.cursor = '';
             popup.remove();
             map.setFilter('counties-highlighted', ['==', 'id', '']);
-            // overlay.style.display = 'none';
+            overlay.style.display = 'none';
             });
 
         map.on('mousemove', 'counties', function (e) {
@@ -155,7 +155,7 @@ export default {
             var feature = e.features[0];
                 
             // Render found features in an overlay.
-            // overlay.innerHTML = '';
+            overlay.innerHTML = '';
                 
             var title = document.createElement('strong');
             title.textContent =
@@ -166,9 +166,9 @@ export default {
             severity.textContent =
             'Severity: ' + feature.properties.severity.toLocaleString();
                 
-            // overlay.appendChild(title);
-            // overlay.appendChild(severity);
-            // overlay.style.display = 'block';
+            overlay.appendChild(title);
+            overlay.appendChild(severity);
+            overlay.style.display = 'block';
                 
             // Add features that share the same county name to the highlighted layer.
             map.setFilter('counties-highlighted', [
@@ -188,7 +188,7 @@ export default {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
                 map.setFilter('counties-highlighted', ['==', 'id', '']);
-                // overlay.style.display = 'none';
+                overlay.style.display = 'none';
                 });
 
         })
