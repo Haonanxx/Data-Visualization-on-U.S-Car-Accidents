@@ -29,12 +29,12 @@ In our research, we were looking for the most important data that are relevant t
 The original part about our project is that we integrated maps and line charts so that we can look at the number of accidents among states and more details in a specific state. To show the relevance of accidents and weather conditions, instead of using the total number of accidents versus every weather condition, we have an interactive bar chart to look at how each weather condition affects the number of accidents in each state.
 ## Slide 6
 Let me introduce our story, we can analyze the traffic accident data from four dimensions: driver, location, time and date, and weather. 
-They all might affect traffic accidents. Based on these four dimensions, we design and develop our structure of the system. Here is the screenshot of it. 
+They all might affect traffic accidents. Based on these four dimensions, we design and develop our structure of the system. 
 ## Slide 7
-Here are screenshots of our visualization graphs. We draw a d3 map and a Mapbox map. And we use a calendar to show the number of accidents each day during the 4 years,  which is not a simple generator. What's more, we build some line charts, bar charts, and pie charts to help to analyze, and we also implement the interactions between graphs. 
+We draw a d3 map and a Mapbox map. And we use a calendar to show the number of accidents each day during the 4 years,  which is not a simple generator. What's more, we build some line charts, bar charts, and pie charts to help to analyze, and we also implement the interactions between graphs. 
 ## Slide 8
-To complete the visualization, we use a lot of tools. We preprocessing data with python script and pandas library. And use JavaScript, HTML, D3 library, Node.js, GeoJSON, and Mapbox to draw graphs. And finally, structure our system by VUE.
+To complete the visualization, we use a lot of tools. We pre-processing data with python script and pandas library. And use JavaScript, HTML, D3 library, Node.js, GeoJSON, and Mapbox to draw graphs. And finally, structure our system by VUE.
 ## Slide 9
 We divided labor according to different dimensions of analysis. Qianqian Tang is responsible for data visualization of places and landmarks. Haonan Xu is responsible for data visualization of data related to weather. And I am responsible for the driver and time part. 
 ## Slide 10
-What we need to improve is the visualization of data related to the driver, which is because of the lack of data about the driver. Currently, we only analyze the relationship between the population and the accident. In the future, we will enrich our data sources and visualize data from factors such as the drivers' age, gender, educational background, driving time, etc.
+What we need to improve is the visualization of data related to the driver, which is because of the lack of data about it. Currently, we only analyze the relationship between the population and the accident. In the future, we will enrich our data sources and visualize data about drivers' age, gender, educational background, driving time, etc.
