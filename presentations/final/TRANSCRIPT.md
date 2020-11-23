@@ -24,9 +24,9 @@ We will show the graphs and charts like the map, bar chart, line chart, pie char
 ## Slide 4
 The challenge is our dataset has too many features, and we are planning to select features manually for the moment because we are focusing on the variables which we are interested in, so we might omit the interaction of features. If we try to use feature selection techniques extra, it might be time-consuming.
 ## Slide 5
-The next two pictures show what other visualizations have done on the same topic that is the U.S. car accident. In the extensive research, We found that existing data visualization uses Traffic Message Channel(TMC) that is for delivering traffic and travel information to motor vehicle drivers. TMC is an interesting feature to look at when plotting the number of accidents vs TMC. Bar charts and pie charts are the most common visualizations for demonstrating simple statistics such as the number of accidents by states and types of severity.
+In our research, we were looking for the most important data that are relevant to our topic besides the number of accidents. To best utilize and visualize these data, we got inspired by some of the visualization on this slide. Other visualizations have used maps to show the number of accidents in a region; timeline to reflect the trend of accidents in 24 hours; and proportional area to show how weather conditions are related to accidents.
 ## Slide 6
-Other than realizing the existing work, we also plan to combine the map and the line or bar chart to visualize the locations of accident occurrences and cause and effect of corresponding locations by clicking on the location on the map or operations like zooming in rather than only show simple charts.  
+The original part about our project is that we integrated maps and line charts so that we can look at the number of accidents among states and more details in a specific state. To show the relevance of accidents and weather conditions, instead using total number of accidents versus every weather condition, we have an interactive bar chart to look at how each weather condition affect the number of accidents in each state.
 ## Slide 7
 Basically, we will filter and reorganize the data using python and SQL based on our design. We will use HTML, CSS, JavaScript, D3 library, and Vega-Lite to develop the visualization interface.
 ## Slide 8
