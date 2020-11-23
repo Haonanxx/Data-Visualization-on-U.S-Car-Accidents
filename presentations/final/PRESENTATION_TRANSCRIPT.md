@@ -20,7 +20,7 @@ Our visualization is about traffic accidents that happened in the US.
 ## Slide 1
 Our end users are people who want to know about the possible causes of traffic accidents. For example, the local department of transportation can get visualization analysis like the road conditions of most accidents in a specific state or county. Then they take measures to avoid accidents as much as possible.
 ## Slide 2
-For now, Yixiang made a choropleth map, a line chart, and a calendar heatmap. Haonan made an interactive grouped bar chart. I made a Mapbox map and a pie chart for now.
+For now, Yixiang made a choropleth map, a line chart, and a calendar heatmap. Haonan made an interactive grouped bar chart. I made a Mapbox map and a pie chart.
 ## Slide 3
 The data we are using contains 3.5 million accident records that are collected for almost five years, covering 49 states of the US. We used the data to show the hotspot locations and to analyze the possible causes of traffic accidents like the road conditions and the natural environmental factors.
 ## Slide 4
