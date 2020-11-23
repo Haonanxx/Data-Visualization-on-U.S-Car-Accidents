@@ -87,13 +87,12 @@ export default {
           });
 
           map.addLayer({
-            'id': 'counties-highlighted',
+            'id': 'highlighted',
             'type': 'fill',
             source:{
               type: 'geojson',
               data: res.data
             },
-            minzoom: zoomThreshold,
             layout:{},
             filter: ['==', 'id', ''],
             paint:{
@@ -103,46 +102,46 @@ export default {
 
           map.on('mousemove', 'states', function (e) {
 
-        // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
-         
-        // Single out the first found feature.
-        var feature = e.features[0];
-         
-        // Render found features in an overlay.
-        overlay.innerHTML = '';
-         
-        var title = document.createElement('strong');
-        title.textContent =
-        feature.properties.name +
-        ' State';
-         
-        var severity = document.createElement('div');
-        severity.textContent =
-        'Severity: ' + feature.properties.severity.toLocaleString();
-         
-        overlay.appendChild(title);
-        overlay.appendChild(severity);
-        overlay.style.display = 'block';
-         
-        // Add features that share the same state name to the highlighted layer.
-        map.setFilter('counties-highlighted', [
-        '==',
-        'id',
-        feature.properties.id
-        ]);
-         
-        // Display a popup with the name of the state
-        popup
-        .setLngLat(e.lngLat)
-        .setText(feature.properties.name)
-        .addTo(map);
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+            
+            // Single out the first found feature.
+            var feature = e.features[0];
+            
+            // Render found features in an overlay.
+            overlay.innerHTML = '';
+            
+            var title = document.createElement('strong');
+            title.textContent =
+            feature.properties.name +
+            ' State';
+            
+            var severity = document.createElement('div');
+            severity.textContent =
+            'Severity: ' + feature.properties.severity.toLocaleString();
+            
+            overlay.appendChild(title);
+            overlay.appendChild(severity);
+            overlay.style.display = 'block';
+            
+            // Add features that share the same state name to the highlighted layer.
+            map.setFilter('highlighted', [
+            '==',
+            'id',
+            feature.properties.id
+            ]);
+            
+            // Display a popup with the name of the state
+            popup
+            .setLngLat(e.lngLat)
+            .setText(feature.properties.name)
+            .addTo(map);
         });
 
         map.on('mouseleave', 'states', function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
-            map.setFilter('counties-highlighted', ['==', 'id', '']);
+            map.setFilter('highlighted', ['==', 'id', '']);
             overlay.style.display = 'none';
             });
 
@@ -171,7 +170,7 @@ export default {
             overlay.style.display = 'block';
                 
             // Add features that share the same county name to the highlighted layer.
-            map.setFilter('counties-highlighted', [
+            map.setFilter('highlighted', [
             '==',
             'id',
             feature.properties.id
@@ -187,7 +186,7 @@ export default {
             map.on('mouseleave', 'counties', function () {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
-                map.setFilter('counties-highlighted', ['==', 'id', '']);
+                map.setFilter('highlighted', ['==', 'id', '']);
                 overlay.style.display = 'none';
                 });
 
