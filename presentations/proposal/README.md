@@ -6,7 +6,7 @@ Update this README as needed.
 
 ## Proposal presentation
 
-- [Qianqian Tang](mailto:qianqiant@usc.edu) 
+- [Qianqian Tang](mailto:tangq@usc.edu) 
 Slide 1, 2, 3, 4
 Introduced the topic, dataset, goal, and challenges of our project.
 - [Haonan Xu](mailto:haonanxu@usc.edu)
