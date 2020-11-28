@@ -14,19 +14,16 @@
       <div id="map-overlay" class="map-overlay"></div>
       </div>
     </div>
-
     <div style="display: table-cell;">
         <svg id="pie_chart" width="960" height="500"></svg>
         <div id = "tooltip"></div>
       </div>
-
   </div>
 </template>
 <script>
 import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
 import * as d3 from 'd3';
-// import * as pie from '../../public/pie_chart.js'
 
 export default {
   props: {
@@ -42,59 +39,62 @@ export default {
     }
   },
   mounted () {
-    this.drawPieChart('OH')
+    this.drawPieChart('West Virginia')
     this.init()
-    
   },
   methods: {
-    drawPieChart(){
-    d3.csv('state_road_condition.csv', d => {
-        d.value = +d.OH;
-        d.condition = d.Condition;
-        return d;
-    }).then(data => {
+    drawPieChart(state_name){
+     d3.json('state_road_condition.json').then(jsondata => {
+        var data = jsondata.find(d=>d.state==state_name)
+        // console.log(data.conditions);
+
         var svg = d3.select('#pie_chart'),
             width = +svg.attr('width'),
             height = +svg.attr('height'),
             radius = Math.min(width, height) / 2,
             g = svg.append('g')
                 .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
-    
+
         var div = d3.select("body")
             .append("div")
             .attr("class", "tooltip");
-    
+
         var color = d3.scaleOrdinal(["#88CCEE", "#882255", "#332288", "#117733", "#44AA99", "#CC6677", "#DDCC77", "#AA4499", "#b2df8a", "#865EDA"]);
         //pie layout
         var pie = d3.pie()
             .value(d => {
+                // console.log(d.value);
                 return d.value
             })
             .sortValues(d3.descending);
-    
+
         var path = d3.arc()
             .outerRadius(radius)
             .innerRadius(radius - 90);
-    
+
         var arc = g.selectAll('.arc')
-            .data(pie(data))
+            .data(pie(data.conditions))
             .enter()
             .append('g')
-            .attr('class', 'arc');
-    
-        var conditions = []
+            .attr('class', 'arc'); 
+
+        var positive_conditions = []
         var total_value = 0; //size of this slice
-        var pieData = pie(data);
+        var pieData = pie(data.conditions);
+
         pieData.filter(filterData);
-    
+        // console.log(filteredPieData);
+        // console.log(pieData);
+
         function filterData(element) {
             total_value += element.value;
             if (element.value > 0) {
-                conditions.push(element.data.Condition)
+                // console.log(element.data.condition);
+                positive_conditions.push(element.data.condition)
             }
             return (element.value > 0);
         }
-    
+
         arc.append('path')
             .attr('d', path)
             .attr('fill', d => color(d.data.condition))
@@ -117,11 +117,11 @@ export default {
                     .attr('opacity', '1');
                 div.html(" ").style("display", "none");
             })
-    
+
         var legend = g.selectAll('legend_colors')
             .data(color.domain())
             .enter()
-    
+
         legend.append('circle')
             .attr('cx', -50)
             .attr('cy', function (d, i) {
@@ -129,14 +129,14 @@ export default {
             })
             .attr('r', '.5rem')
             .style('fill', function (d) {
-                if (conditions.includes(d)) {
+                if (positive_conditions.includes(d)) {
                     return color(d);
                 }
                 else {
                     return "#D0CED2"
                 }
             })
-    
+
         legend.append('text')
             .attr('x', -20)
             .attr('y', function (d, i) {
@@ -144,17 +144,20 @@ export default {
             })
             .text(d => d)
             .style('fill', function (d) {
-                if (conditions.includes(d)) {
+                if (positive_conditions.includes(d)) {
                     return "black";
                 }
                 else {
                     return "#D0CED2"
                 }
             })
+
     });
 },
     // initialize
     init () {
+      const vue = this
+      // console.log(vue);
       mapboxgl.accessToken = 'pk.eyJ1IjoicWlhbnFpYW4tdGFuZyIsImEiOiJja2dxNzFwdWkwbzRiMnlxaTFzdzhydDRuIn0.aHbdzBJHQVLpFv6h1i1PkQ'
       const map = new mapboxgl.Map({
         container: this.$refs.basicMapbox,
@@ -163,7 +166,7 @@ export default {
         zoom: 3.2 // starting zoom
       })
 
-      console.log(map)
+      // console.log(map)
       var zoomThreshold = 4;
       var overlay = document.getElementById('map-overlay');
       // Create a popup, but don't add it to the map yet.
@@ -260,11 +263,9 @@ export default {
 
         map.on('click', 'states', function (e) {
           var feature = e.features[0];
-          // drawPieChart('OH')
-          console.log(feature.properties.name);
+          vue.drawPieChart(feature.properties.name)
+          // console.log(feature.properties.name);
           });
-
-
 
         map.on('mouseleave', 'states', function () {
             map.getCanvas().style.cursor = '';
@@ -317,8 +318,7 @@ export default {
                 map.setFilter('highlighted', ['==', 'id', '']);
                 overlay.style.display = 'none';
                 });
-
-            
+                
 
         })
       )
@@ -401,7 +401,4 @@ width: 10px;
     padding: 5px;
     text-align: center; 
     }
-  
-
-
 </style>
