@@ -6,8 +6,7 @@
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
 
     <div>
-      <div id="calander"></div>
-      <svg id="maphead"></svg>
+      <div id="calander"> Number of Accidents in different ages</div>
       <svg id="chart4"></svg>
     </div>
   </div>
@@ -92,7 +91,6 @@
   text.gravity {
     text-anchor: middle;
     fill: black;
-    font-size: 0.5em;
   }
 
   #chart4 {

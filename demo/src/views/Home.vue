@@ -6,7 +6,9 @@
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
 
     <div>
+
       <div id="calander"></div>
+      <div><svg id="bar" height="50" width="1000"></svg></div>
       <svg id="maphead"></svg>
       <div id="chart4"></div>
     </div>

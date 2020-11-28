@@ -22,12 +22,11 @@ function drawbarchart() {
         return {
             name: d.name,
             gravity: +d.gravity,
-            temperature: +d.temperature,
-            distance: +d.distance,
+
         };
     }).then(function (data) {
 
-        var margin = { top: 10, left: 40, bottom: 40, right: 20 };
+        var margin = { top: 10, left: 60, bottom: 40, right: 20 };
         var width = parseInt(d3.select('#chart4').style('width')) - margin.left - margin.right;
         var height = parseInt(d3.select('#chart4').style('height')) - margin.top - margin.bottom;
 
@@ -54,9 +53,13 @@ function drawbarchart() {
 
         svg.append('g')
             .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + height + ')')
-            .call(xAxis);
-
+            .attr('transform', 'translate(0,' + (height+20) + ')')
+        svg.append('text')
+            .attr("transform", `translate(${width/3},${height+30})`)
+            .text('range of age')
+        svg.append('text')
+            .attr("transform", `translate(-60,${height/2}) rotate(90)`)
+            .text('num of Accidents')
         svg.append('g')
             .attr('class', 'y axis')
             .call(yAxis)
@@ -146,6 +149,7 @@ function drawbarchart() {
                 console.log(d)
                 return height + 10;
             })
+            .style('font-size', '0.7em');
 
         svg.selectAll('.gravity')
             .data(data, function (d) {
@@ -154,7 +158,7 @@ function drawbarchart() {
             .enter()
             .append('text')
             .text(function (d) {
-                return d.gravity + ' ms';
+                return d.gravity;
             })
             .attr('class', 'gravity')
             .attr('x', function (d) {
@@ -162,9 +166,8 @@ function drawbarchart() {
             })
             .attr('y', function (d) {
                 console.log(d)
-                return height + 20;
+                return height -100;
             })
-            .append('tspan').text('-2')
             .style('baseline-shift', 'super')
             .style('font-size', '0.7em');
 
@@ -231,8 +234,7 @@ function drawbarchart() {
                         return pScale(d.name);
                     })
                     .attr('y', function (d) {
-                        console.log(d)
-                        return height + 30;
+                        return yScale(d.gravity);
                     })
                     .style('display', 'initial');
 
