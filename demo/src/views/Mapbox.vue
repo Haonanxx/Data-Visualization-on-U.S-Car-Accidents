@@ -11,6 +11,7 @@
         <div><span style="background-color: #fc4e2a"></span>1</div>
         <div><span style="background-color: #fd8d3c"></span>0</div>	
       </div>
+      <button id="total" class="map-button">total</button>
       <div id="map-overlay" class="map-overlay"></div>
       </div>
     </div>
@@ -63,6 +64,7 @@ export default {
       var popup = new mapboxgl.Popup({
       closeButton: false
       });
+
 
       var condition_list = ['Amenity', 'Bump', 'Crossing', 'Give_Way', 'Junction', 'No_Exit', 'Railway',
                 'Station', 'Stop', 'Traffic_Signal']
@@ -349,11 +351,24 @@ export default {
           //   }
           // },'settlement-label');
 
+          var total = document.getElementById('total');
+
+          // var tot = document.createElement('button');
+
+          total.addEventListener('click', function () {
+          drawPieChart("total")
+          map.setFilter('click_state_highlighted', ['==', 'id', '']);
+          });
+          // total.appendChild(tot);
+
+
+
           map.on('click', 'states', function (e) {
           var feature = e.features[0];
           // Add feature that has the same state name to the highlighted layer.
-            map.setFilter('click_state_highlighted', ['==', 'id', feature.properties.id]);
+          map.setFilter('click_state_highlighted', ['==', 'id', feature.properties.id]);
           drawPieChart(feature.properties.name)
+
           });
 
           // map.on('click', 'counties', function (e) {
@@ -498,6 +513,30 @@ display: inline-block;
 height: 10px;
 margin-right: 5px;
 width: 10px;
+}
+
+.map-button {
+  font: 20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #414040;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    box-shadow: 0 5px #999;
+    border-radius: 10px;
+    position: absolute;
+    /* width: 300; */
+    top: 10px;
+    right: 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    /* padding: 10px; */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.map-button:hover {
+    background-color: rgb(103, 103, 103); /* Green */
+    color:  white;
 }
 
 .map-overlay {
