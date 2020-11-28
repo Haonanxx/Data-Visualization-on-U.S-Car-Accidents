@@ -1,7 +1,7 @@
 <template>
   <div style="display: table-row;">
 
-    <div style="display: table-cell;height:100%;width:100%;">
+    <div style="display: table-cell;">
       <div ref="basicMapbox" style="height:500px;width:800px;">
         <div id="state-legend" class="legend">
         <h4>Severity</h4>
@@ -16,8 +16,8 @@
       </div>
     </div>
     <div style="display: table-cell;">
-        <svg id="pie_chart" width="800" height="500"></svg>
-        <div id = "tooltip"></div>
+        <div id = "pie-title"></div>
+        <svg id = "pie_chart" width="600" height="450"></svg>
       </div>
   </div>
 </template>
@@ -60,6 +60,7 @@ export default {
       // console.log(map)
       var zoomThreshold = 4;
       var overlay = document.getElementById('map-overlay');
+      var pie_title = document.getElementById('pie-title');
       // Create a popup, but don't add it to the map yet.
       var popup = new mapboxgl.Popup({
       closeButton: false
@@ -213,9 +214,9 @@ export default {
                       .enter()
 
                   legend.append('circle')
-                      .attr('cx', -50)
+                      .attr('cx', -45)
                       .attr('cy', function (d, i) {
-                          return i * 25 - 110;
+                          return i * 22 - 100;
                       })
                       .attr('r', '.5rem')
                       .style('fill', function (d) {
@@ -228,9 +229,9 @@ export default {
                       })
 
                   legend.append('text')
-                      .attr('x', -20)
+                      .attr('x', -25)
                       .attr('y', function (d, i) {
-                          return i * 25 - 105;
+                          return i * 22 - 94;
                       })
                       .text(d => d)
                       .style('fill', function (d) {
@@ -352,23 +353,39 @@ export default {
           // },'settlement-label');
 
           var total = document.getElementById('total');
+          var title_state = document.createElement('strong');
+            title_state.textContent = 'the US'
+          pie_title.innerHTML = '';
+          pie_title.textContent =
+            'The percentage of road conditions of traffic accidents in ';
+            
+            pie_title.appendChild(title_state);
 
           // var tot = document.createElement('button');
 
           total.addEventListener('click', function () {
           drawPieChart("total")
           map.setFilter('click_state_highlighted', ['==', 'id', '']);
+          var title_state = document.createElement('strong');
+            title_state.textContent = 'the US'
+          pie_title.innerHTML = '';
+          pie_title.textContent =
+            'The percentage of road conditions of traffic accidents in ';
+            pie_title.appendChild(title_state);
+          
           });
-          // total.appendChild(tot);
-
-
 
           map.on('click', 'states', function (e) {
           var feature = e.features[0];
           // Add feature that has the same state name to the highlighted layer.
           map.setFilter('click_state_highlighted', ['==', 'id', feature.properties.id]);
           drawPieChart(feature.properties.name)
-
+          var title_state = document.createElement('strong');
+            title_state.textContent = feature.properties.name.toLocaleString()
+          pie_title.innerHTML = '';
+          pie_title.textContent =
+            'The percentage of road conditions of traffic accidents in ';
+            pie_title.appendChild(title_state);         
           });
 
           // map.on('click', 'counties', function (e) {
