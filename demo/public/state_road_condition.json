@@ -1,0 +1,1129 @@
+[
+  {"state": "Ohio", "conditions": [
+      {"condition": "Amenity", "value": "941"
+      },
+      {"condition": "Bump", "value": "5"
+      },
+      {"condition": "Crossing", "value": "4601"
+      },
+      {"condition": "Give_Way", "value": "30"
+      },
+      {"condition": "Junction", "value": "4540"
+      },
+      {"condition": "No_Exit", "value": "47"
+      },
+      {"condition": "Railway", "value": "162"
+      },
+      {"condition": "Station", "value": "1344"
+      },
+      {"condition": "Stop", "value": "216"
+      },
+      {"condition": "Traffic_Signal", "value": "11700"
+      }
+    ]
+  },
+  {"state": "West Virginia", "conditions": [
+      {"condition": "Amenity", "value": "3"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "20"
+      },
+      {"condition": "Give_Way", "value": "2"
+      },
+      {"condition": "Junction", "value": "345"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "17"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "3"
+      },
+      {"condition": "Traffic_Signal", "value": "54"
+      }
+    ]
+  },
+  {"state": "California", "conditions": [
+      {"condition": "Amenity", "value": "5330"
+      },
+      {"condition": "Bump", "value": "174"
+      },
+      {"condition": "Crossing", "value": "26045"
+      },
+      {"condition": "Give_Way", "value": "680"
+      },
+      {"condition": "Junction", "value": "109868"
+      },
+      {"condition": "No_Exit", "value": "339"
+      },
+      {"condition": "Railway", "value": "9296"
+      },
+      {"condition": "Station", "value": "16181"
+      },
+      {"condition": "Stop", "value": "14782"
+      },
+      {"condition": "Traffic_Signal", "value": "66480"
+      }
+    ]
+  },
+  {"state": "Florida", "conditions": [
+      {"condition": "Amenity", "value": "914"
+      },
+      {"condition": "Bump", "value": "8"
+      },
+      {"condition": "Crossing", "value": "30176"
+      },
+      {"condition": "Give_Way", "value": "297"
+      },
+      {"condition": "Junction", "value": "14729"
+      },
+      {"condition": "No_Exit", "value": "367"
+      },
+      {"condition": "Railway", "value": "1018"
+      },
+      {"condition": "Station", "value": "8079"
+      },
+      {"condition": "Stop", "value": "941"
+      },
+      {"condition": "Traffic_Signal", "value": "72367"
+      }
+    ]
+  },
+  {"state": "Georgia", "conditions": [
+      {"condition": "Amenity", "value": "513"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "4970"
+      },
+      {"condition": "Give_Way", "value": "150"
+      },
+      {"condition": "Junction", "value": "7683"
+      },
+      {"condition": "No_Exit", "value": "10"
+      },
+      {"condition": "Railway", "value": "513"
+      },
+      {"condition": "Station", "value": "355"
+      },
+      {"condition": "Stop", "value": "346"
+      },
+      {"condition": "Traffic_Signal", "value": "10276"
+      }
+    ]
+  },
+  {"state": "South Carolina", "conditions": [
+      {"condition": "Amenity", "value": "791"
+      },
+      {"condition": "Bump", "value": "1"
+      },
+      {"condition": "Crossing", "value": "6827"
+      },
+      {"condition": "Give_Way", "value": "18"
+      },
+      {"condition": "Junction", "value": "6339"
+      },
+      {"condition": "No_Exit", "value": "66"
+      },
+      {"condition": "Railway", "value": "2116"
+      },
+      {"condition": "Station", "value": "674"
+      },
+      {"condition": "Stop", "value": "1365"
+      },
+      {"condition": "Traffic_Signal", "value": "24503"
+      }
+    ]
+  },
+  {"state": "Nebraska", "conditions": [
+      {"condition": "Amenity", "value": "392"
+      },
+      {"condition": "Bump", "value": "12"
+      },
+      {"condition": "Crossing", "value": "6801"
+      },
+      {"condition": "Give_Way", "value": "135"
+      },
+      {"condition": "Junction", "value": "212"
+      },
+      {"condition": "No_Exit", "value": "139"
+      },
+      {"condition": "Railway", "value": "59"
+      },
+      {"condition": "Station", "value": "576"
+      },
+      {"condition": "Stop", "value": "899"
+      },
+      {"condition": "Traffic_Signal", "value": "9575"
+      }
+    ]
+  },
+  {"state": "Iowa", "conditions": [
+      {"condition": "Amenity", "value": "56"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "181"
+      },
+      {"condition": "Give_Way", "value": "21"
+      },
+      {"condition": "Junction", "value": "675"
+      },
+      {"condition": "No_Exit", "value": "2"
+      },
+      {"condition": "Railway", "value": "29"
+      },
+      {"condition": "Station", "value": "8"
+      },
+      {"condition": "Stop", "value": "76"
+      },
+      {"condition": "Traffic_Signal", "value": "1047"
+      }
+    ]
+  },
+  {"state": "Illinois", "conditions": [
+      {"condition": "Amenity", "value": "1666"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "6768"
+      },
+      {"condition": "Give_Way", "value": "2"
+      },
+      {"condition": "Junction", "value": "6170"
+      },
+      {"condition": "No_Exit", "value": "106"
+      },
+      {"condition": "Railway", "value": "1667"
+      },
+      {"condition": "Station", "value": "5598"
+      },
+      {"condition": "Stop", "value": "1336"
+      },
+      {"condition": "Traffic_Signal", "value": "34763"
+      }
+    ]
+  },
+  {"state": "Missouri", "conditions": [
+      {"condition": "Amenity", "value": "127"
+      },
+      {"condition": "Bump", "value": "1"
+      },
+      {"condition": "Crossing", "value": "571"
+      },
+      {"condition": "Give_Way", "value": "219"
+      },
+      {"condition": "Junction", "value": "6249"
+      },
+      {"condition": "No_Exit", "value": "41"
+      },
+      {"condition": "Railway", "value": "89"
+      },
+      {"condition": "Station", "value": "210"
+      },
+      {"condition": "Stop", "value": "122"
+      },
+      {"condition": "Traffic_Signal", "value": "3461"
+      }
+    ]
+  },
+  {"state": "Wisconsin", "conditions": [
+      {"condition": "Amenity", "value": "167"
+      },
+      {"condition": "Bump", "value": "2"
+      },
+      {"condition": "Crossing", "value": "869"
+      },
+      {"condition": "Give_Way", "value": "84"
+      },
+      {"condition": "Junction", "value": "1906"
+      },
+      {"condition": "No_Exit", "value": "70"
+      },
+      {"condition": "Railway", "value": "63"
+      },
+      {"condition": "Station", "value": "94"
+      },
+      {"condition": "Stop", "value": "193"
+      },
+      {"condition": "Traffic_Signal", "value": "1708"
+      }
+    ]
+  },
+  {"state": "Indiana", "conditions": [
+      {"condition": "Amenity", "value": "252"
+      },
+      {"condition": "Bump", "value": "6"
+      },
+      {"condition": "Crossing", "value": "2347"
+      },
+      {"condition": "Give_Way", "value": "127"
+      },
+      {"condition": "Junction", "value": "1700"
+      },
+      {"condition": "No_Exit", "value": "51"
+      },
+      {"condition": "Railway", "value": "196"
+      },
+      {"condition": "Station", "value": "370"
+      },
+      {"condition": "Stop", "value": "242"
+      },
+      {"condition": "Traffic_Signal", "value": "6500"
+      }
+    ]
+  },
+  {"state": "Michigan", "conditions": [
+      {"condition": "Amenity", "value": "764"
+      },
+      {"condition": "Bump", "value": "1"
+      },
+      {"condition": "Crossing", "value": "4448"
+      },
+      {"condition": "Give_Way", "value": "4"
+      },
+      {"condition": "Junction", "value": "8277"
+      },
+      {"condition": "No_Exit", "value": "113"
+      },
+      {"condition": "Railway", "value": "284"
+      },
+      {"condition": "Station", "value": "644"
+      },
+      {"condition": "Stop", "value": "215"
+      },
+      {"condition": "Traffic_Signal", "value": "11095"
+      }
+    ]
+  },
+  {"state": "New Jersey", "conditions": [
+      {"condition": "Amenity", "value": "363"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "1705"
+      },
+      {"condition": "Give_Way", "value": "23"
+      },
+      {"condition": "Junction", "value": "5344"
+      },
+      {"condition": "No_Exit", "value": "25"
+      },
+      {"condition": "Railway", "value": "285"
+      },
+      {"condition": "Station", "value": "408"
+      },
+      {"condition": "Stop", "value": "143"
+      },
+      {"condition": "Traffic_Signal", "value": "6989"
+      }
+    ]
+  },
+  {"state": "New York", "conditions": [
+      {"condition": "Amenity", "value": "3888"
+      },
+      {"condition": "Bump", "value": "2"
+      },
+      {"condition": "Crossing", "value": "7618"
+      },
+      {"condition": "Give_Way", "value": "498"
+      },
+      {"condition": "Junction", "value": "18175"
+      },
+      {"condition": "No_Exit", "value": "118"
+      },
+      {"condition": "Railway", "value": "1279"
+      },
+      {"condition": "Station", "value": "3371"
+      },
+      {"condition": "Stop", "value": "2032"
+      },
+      {"condition": "Traffic_Signal", "value": "24191"
+      }
+    ]
+  },
+  {"state": "Connecticut", "conditions": [
+      {"condition": "Amenity", "value": "159"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "588"
+      },
+      {"condition": "Give_Way", "value": "42"
+      },
+      {"condition": "Junction", "value": "2887"
+      },
+      {"condition": "No_Exit", "value": "3"
+      },
+      {"condition": "Railway", "value": "29"
+      },
+      {"condition": "Station", "value": "18"
+      },
+      {"condition": "Stop", "value": "140"
+      },
+      {"condition": "Traffic_Signal", "value": "917"
+      }
+    ]
+  },
+  {"state": "Massachusetts", "conditions": [
+      {"condition": "Amenity", "value": "1039"
+      },
+      {"condition": "Bump", "value": "1"
+      },
+      {"condition": "Crossing", "value": "2281"
+      },
+      {"condition": "Give_Way", "value": "39"
+      },
+      {"condition": "Junction", "value": "4430"
+      },
+      {"condition": "No_Exit", "value": "26"
+      },
+      {"condition": "Railway", "value": "353"
+      },
+      {"condition": "Station", "value": "2838"
+      },
+      {"condition": "Stop", "value": "235"
+      },
+      {"condition": "Traffic_Signal", "value": "4977"
+      }
+    ]
+  },
+  {"state": "Rhode Island", "conditions": [
+      {"condition": "Amenity", "value": "24"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "50"
+      },
+      {"condition": "Give_Way", "value": "4"
+      },
+      {"condition": "Junction", "value": "1850"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "86"
+      },
+      {"condition": "Station", "value": "2"
+      },
+      {"condition": "Stop", "value": "13"
+      },
+      {"condition": "Traffic_Signal", "value": "541"
+      }
+    ]
+  },
+  {"state": "New Hampshire", "conditions": [
+      {"condition": "Amenity", "value": "41"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "159"
+      },
+      {"condition": "Give_Way", "value": "5"
+      },
+      {"condition": "Junction", "value": "323"
+      },
+      {"condition": "No_Exit", "value": "1"
+      },
+      {"condition": "Railway", "value": "16"
+      },
+      {"condition": "Station", "value": "65"
+      },
+      {"condition": "Stop", "value": "131"
+      },
+      {"condition": "Traffic_Signal", "value": "443"
+      }
+    ]
+  },
+  {"state": "Pennsylvania", "conditions": [
+      {"condition": "Amenity", "value": "2193"
+      },
+      {"condition": "Bump", "value": "8"
+      },
+      {"condition": "Crossing", "value": "10051"
+      },
+      {"condition": "Give_Way", "value": "1165"
+      },
+      {"condition": "Junction", "value": "5139"
+      },
+      {"condition": "No_Exit", "value": "157"
+      },
+      {"condition": "Railway", "value": "757"
+      },
+      {"condition": "Station", "value": "1291"
+      },
+      {"condition": "Stop", "value": "3345"
+      },
+      {"condition": "Traffic_Signal", "value": "21806"
+      }
+    ]
+  },
+  {"state": "Kentucky", "conditions": [
+      {"condition": "Amenity", "value": "341"
+      },
+      {"condition": "Bump", "value": "7"
+      },
+      {"condition": "Crossing", "value": "1573"
+      },
+      {"condition": "Give_Way", "value": "5"
+      },
+      {"condition": "Junction", "value": "1688"
+      },
+      {"condition": "No_Exit", "value": "10"
+      },
+      {"condition": "Railway", "value": "43"
+      },
+      {"condition": "Station", "value": "963"
+      },
+      {"condition": "Stop", "value": "233"
+      },
+      {"condition": "Traffic_Signal", "value": "3798"
+      }
+    ]
+  },
+  {"state": "Maryland", "conditions": [
+      {"condition": "Amenity", "value": "463"
+      },
+      {"condition": "Bump", "value": "11"
+      },
+      {"condition": "Crossing", "value": "2518"
+      },
+      {"condition": "Give_Way", "value": "60"
+      },
+      {"condition": "Junction", "value": "6284"
+      },
+      {"condition": "No_Exit", "value": "29"
+      },
+      {"condition": "Railway", "value": "128"
+      },
+      {"condition": "Station", "value": "1407"
+      },
+      {"condition": "Stop", "value": "222"
+      },
+      {"condition": "Traffic_Signal", "value": "7836"
+      }
+    ]
+  },
+  {"state": "Virginia", "conditions": [
+      {"condition": "Amenity", "value": "953"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "5639"
+      },
+      {"condition": "Give_Way", "value": "879"
+      },
+      {"condition": "Junction", "value": "7404"
+      },
+      {"condition": "No_Exit", "value": "68"
+      },
+      {"condition": "Railway", "value": "236"
+      },
+      {"condition": "Station", "value": "927"
+      },
+      {"condition": "Stop", "value": "648"
+      },
+      {"condition": "Traffic_Signal", "value": "16555"
+      }
+    ]
+  },
+  {"state": "District Of Columbia", "conditions": [
+      {"condition": "Amenity", "value": "453"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "672"
+      },
+      {"condition": "Give_Way", "value": "3"
+      },
+      {"condition": "Junction", "value": "634"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "73"
+      },
+      {"condition": "Station", "value": "260"
+      },
+      {"condition": "Stop", "value": "95"
+      },
+      {"condition": "Traffic_Signal", "value": "1472"
+      }
+    ]
+  },
+  {"state": "Delaware", "conditions": [
+      {"condition": "Amenity", "value": "64"
+      },
+      {"condition": "Bump", "value": "3"
+      },
+      {"condition": "Crossing", "value": "571"
+      },
+      {"condition": "Give_Way", "value": "16"
+      },
+      {"condition": "Junction", "value": "197"
+      },
+      {"condition": "No_Exit", "value": "28"
+      },
+      {"condition": "Railway", "value": "39"
+      },
+      {"condition": "Station", "value": "9"
+      },
+      {"condition": "Stop", "value": "129"
+      },
+      {"condition": "Traffic_Signal", "value": "1607"
+      }
+    ]
+  },
+  {"state": "Texas", "conditions": [
+      {"condition": "Amenity", "value": "6002"
+      },
+      {"condition": "Bump", "value": "58"
+      },
+      {"condition": "Crossing", "value": "25459"
+      },
+      {"condition": "Give_Way", "value": "1988"
+      },
+      {"condition": "Junction", "value": "17905"
+      },
+      {"condition": "No_Exit", "value": "378"
+      },
+      {"condition": "Railway", "value": "3076"
+      },
+      {"condition": "Station", "value": "5018"
+      },
+      {"condition": "Stop", "value": "5859"
+      },
+      {"condition": "Traffic_Signal", "value": "94696"
+      }
+    ]
+  },
+  {"state": "Washington", "conditions": [
+      {"condition": "Amenity", "value": "5529"
+      },
+      {"condition": "Bump", "value": "21"
+      },
+      {"condition": "Crossing", "value": "9869"
+      },
+      {"condition": "Give_Way", "value": "291"
+      },
+      {"condition": "Junction", "value": "3820"
+      },
+      {"condition": "No_Exit", "value": "282"
+      },
+      {"condition": "Railway", "value": "1447"
+      },
+      {"condition": "Station", "value": "4807"
+      },
+      {"condition": "Stop", "value": "2024"
+      },
+      {"condition": "Traffic_Signal", "value": "11923"
+      }
+    ]
+  },
+  {"state": "Oregon", "conditions": [
+      {"condition": "Amenity", "value": "1770"
+      },
+      {"condition": "Bump", "value": "79"
+      },
+      {"condition": "Crossing", "value": "7065"
+      },
+      {"condition": "Give_Way", "value": "41"
+      },
+      {"condition": "Junction", "value": "4032"
+      },
+      {"condition": "No_Exit", "value": "48"
+      },
+      {"condition": "Railway", "value": "1495"
+      },
+      {"condition": "Station", "value": "3290"
+      },
+      {"condition": "Stop", "value": "1200"
+      },
+      {"condition": "Traffic_Signal", "value": "5999"
+      }
+    ]
+  },
+  {"state": "Alabama", "conditions": [
+      {"condition": "Amenity", "value": "182"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "1059"
+      },
+      {"condition": "Give_Way", "value": "316"
+      },
+      {"condition": "Junction", "value": "1414"
+      },
+      {"condition": "No_Exit", "value": "6"
+      },
+      {"condition": "Railway", "value": "113"
+      },
+      {"condition": "Station", "value": "320"
+      },
+      {"condition": "Stop", "value": "339"
+      },
+      {"condition": "Traffic_Signal", "value": "8759"
+      }
+    ]
+  },
+  {"state": "Tennessee", "conditions": [
+      {"condition": "Amenity", "value": "1109"
+      },
+      {"condition": "Bump", "value": "3"
+      },
+      {"condition": "Crossing", "value": "6370"
+      },
+      {"condition": "Give_Way", "value": "37"
+      },
+      {"condition": "Junction", "value": "4446"
+      },
+      {"condition": "No_Exit", "value": "100"
+      },
+      {"condition": "Railway", "value": "270"
+      },
+      {"condition": "Station", "value": "327"
+      },
+      {"condition": "Stop", "value": "319"
+      },
+      {"condition": "Traffic_Signal", "value": "8389"
+      }
+    ]
+  },
+  {"state": "North Carolina", "conditions": [
+      {"condition": "Amenity", "value": "2422"
+      },
+      {"condition": "Bump", "value": "37"
+      },
+      {"condition": "Crossing", "value": "28370"
+      },
+      {"condition": "Give_Way", "value": "1182"
+      },
+      {"condition": "Junction", "value": "6944"
+      },
+      {"condition": "No_Exit", "value": "321"
+      },
+      {"condition": "Railway", "value": "2348"
+      },
+      {"condition": "Station", "value": "5338"
+      },
+      {"condition": "Stop", "value": "1861"
+      },
+      {"condition": "Traffic_Signal", "value": "60311"
+      }
+    ]
+  },
+  {"state": "Kansas", "conditions": [
+      {"condition": "Amenity", "value": "3"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "154"
+      },
+      {"condition": "Give_Way", "value": "13"
+      },
+      {"condition": "Junction", "value": "1522"
+      },
+      {"condition": "No_Exit", "value": "1"
+      },
+      {"condition": "Railway", "value": "14"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "17"
+      },
+      {"condition": "Traffic_Signal", "value": "287"
+      }
+    ]
+  },
+  {"state": "Louisiana", "conditions": [
+      {"condition": "Amenity", "value": "462"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "1544"
+      },
+      {"condition": "Give_Way", "value": "4"
+      },
+      {"condition": "Junction", "value": "1718"
+      },
+      {"condition": "No_Exit", "value": "113"
+      },
+      {"condition": "Railway", "value": "1359"
+      },
+      {"condition": "Station", "value": "206"
+      },
+      {"condition": "Stop", "value": "27"
+      },
+      {"condition": "Traffic_Signal", "value": "4738"
+      }
+    ]
+  },
+  {"state": "Oklahoma", "conditions": [
+      {"condition": "Amenity", "value": "570"
+      },
+      {"condition": "Bump", "value": "49"
+      },
+      {"condition": "Crossing", "value": "16709"
+      },
+      {"condition": "Give_Way", "value": "301"
+      },
+      {"condition": "Junction", "value": "1204"
+      },
+      {"condition": "No_Exit", "value": "135"
+      },
+      {"condition": "Railway", "value": "465"
+      },
+      {"condition": "Station", "value": "1455"
+      },
+      {"condition": "Stop", "value": "6132"
+      },
+      {"condition": "Traffic_Signal", "value": "21755"
+      }
+    ]
+  },
+  {"state": "Colorado", "conditions": [
+      {"condition": "Amenity", "value": "832"
+      },
+      {"condition": "Bump", "value": "53"
+      },
+      {"condition": "Crossing", "value": "9965"
+      },
+      {"condition": "Give_Way", "value": "353"
+      },
+      {"condition": "Junction", "value": "2954"
+      },
+      {"condition": "No_Exit", "value": "451"
+      },
+      {"condition": "Railway", "value": "303"
+      },
+      {"condition": "Station", "value": "1001"
+      },
+      {"condition": "Stop", "value": "1449"
+      },
+      {"condition": "Traffic_Signal", "value": "11647"
+      }
+    ]
+  },
+  {"state": "Utah", "conditions": [
+      {"condition": "Amenity", "value": "191"
+      },
+      {"condition": "Bump", "value": "1"
+      },
+      {"condition": "Crossing", "value": "4302"
+      },
+      {"condition": "Give_Way", "value": "2"
+      },
+      {"condition": "Junction", "value": "1848"
+      },
+      {"condition": "No_Exit", "value": "6"
+      },
+      {"condition": "Railway", "value": "183"
+      },
+      {"condition": "Station", "value": "113"
+      },
+      {"condition": "Stop", "value": "343"
+      },
+      {"condition": "Traffic_Signal", "value": "8283"
+      }
+    ]
+  },
+  {"state": "Arizona", "conditions": [
+      {"condition": "Amenity", "value": "882"
+      },
+      {"condition": "Bump", "value": "59"
+      },
+      {"condition": "Crossing", "value": "31169"
+      },
+      {"condition": "Give_Way", "value": "158"
+      },
+      {"condition": "Junction", "value": "2830"
+      },
+      {"condition": "No_Exit", "value": "680"
+      },
+      {"condition": "Railway", "value": "1071"
+      },
+      {"condition": "Station", "value": "1376"
+      },
+      {"condition": "Stop", "value": "3442"
+      },
+      {"condition": "Traffic_Signal", "value": "32538"
+      }
+    ]
+  },
+  {"state": "Minnesota", "conditions": [
+      {"condition": "Amenity", "value": "83"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "2737"
+      },
+      {"condition": "Give_Way", "value": "224"
+      },
+      {"condition": "Junction", "value": "8723"
+      },
+      {"condition": "No_Exit", "value": "38"
+      },
+      {"condition": "Railway", "value": "159"
+      },
+      {"condition": "Station", "value": "1232"
+      },
+      {"condition": "Stop", "value": "555"
+      },
+      {"condition": "Traffic_Signal", "value": "4684"
+      }
+    ]
+  },
+  {"state": "Mississippi", "conditions": [
+      {"condition": "Amenity", "value": "13"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "238"
+      },
+      {"condition": "Give_Way", "value": "105"
+      },
+      {"condition": "Junction", "value": "538"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "0"
+      },
+      {"condition": "Station", "value": "40"
+      },
+      {"condition": "Stop", "value": "65"
+      },
+      {"condition": "Traffic_Signal", "value": "946"
+      }
+    ]
+  },
+  {"state": "Nevada", "conditions": [
+      {"condition": "Amenity", "value": "40"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "1257"
+      },
+      {"condition": "Give_Way", "value": "26"
+      },
+      {"condition": "Junction", "value": "347"
+      },
+      {"condition": "No_Exit", "value": "9"
+      },
+      {"condition": "Railway", "value": "4"
+      },
+      {"condition": "Station", "value": "62"
+      },
+      {"condition": "Stop", "value": "185"
+      },
+      {"condition": "Traffic_Signal", "value": "2364"
+      }
+    ]
+  },
+  {"state": "Maine", "conditions": [
+      {"condition": "Amenity", "value": "2"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "8"
+      },
+      {"condition": "Give_Way", "value": "13"
+      },
+      {"condition": "Junction", "value": "191"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "0"
+      },
+      {"condition": "Station", "value": "1"
+      },
+      {"condition": "Stop", "value": "3"
+      },
+      {"condition": "Traffic_Signal", "value": "8"
+      }
+    ]
+  },
+  {"state": "Arkansas", "conditions": [
+      {"condition": "Amenity", "value": "10"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "30"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "312"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "13"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "5"
+      },
+      {"condition": "Traffic_Signal", "value": "32"
+      }
+    ]
+  },
+  {"state": "Idaho", "conditions": [
+      {"condition": "Amenity", "value": "0"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "34"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "143"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "8"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "4"
+      },
+      {"condition": "Traffic_Signal", "value": "51"
+      }
+    ]
+  },
+  {"state": "Vermont", "conditions": [
+      {"condition": "Amenity", "value": "5"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "10"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "21"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "0"
+      },
+      {"condition": "Station", "value": "2"
+      },
+      {"condition": "Stop", "value": "8"
+      },
+      {"condition": "Traffic_Signal", "value": "17"
+      }
+    ]
+  },
+  {"state": "New Mexico", "conditions": [
+      {"condition": "Amenity", "value": "77"
+      },
+      {"condition": "Bump", "value": "4"
+      },
+      {"condition": "Crossing", "value": "121"
+      },
+      {"condition": "Give_Way", "value": "2"
+      },
+      {"condition": "Junction", "value": "341"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "11"
+      },
+      {"condition": "Station", "value": "41"
+      },
+      {"condition": "Stop", "value": "36"
+      },
+      {"condition": "Traffic_Signal", "value": "1514"
+      }
+    ]
+  },
+  {"state": "North Dakota", "conditions": [
+      {"condition": "Amenity", "value": "0"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "0"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "8"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "0"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "0"
+      },
+      {"condition": "Traffic_Signal", "value": "1"
+      }
+    ]
+  },
+  {"state": "Wyoming", "conditions": [
+      {"condition": "Amenity", "value": "1"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "3"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "53"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "1"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "1"
+      },
+      {"condition": "Traffic_Signal", "value": "5"
+      }
+    ]
+  },
+  {"state": "South Dakota", "conditions": [
+      {"condition": "Amenity", "value": "0"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "1"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "4"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "0"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "0"
+      },
+      {"condition": "Traffic_Signal", "value": "8"
+      }
+    ]
+  },
+  {"state": "Montana", "conditions": [
+      {"condition": "Amenity", "value": "0"
+      },
+      {"condition": "Bump", "value": "0"
+      },
+      {"condition": "Crossing", "value": "3"
+      },
+      {"condition": "Give_Way", "value": "0"
+      },
+      {"condition": "Junction", "value": "83"
+      },
+      {"condition": "No_Exit", "value": "0"
+      },
+      {"condition": "Railway", "value": "2"
+      },
+      {"condition": "Station", "value": "0"
+      },
+      {"condition": "Stop", "value": "0"
+      },
+      {"condition": "Traffic_Signal", "value": "7"
+      }
+    ]
+  }
+]
