@@ -70,7 +70,7 @@ export default {
       var filteredPieData = []
       console.log(oldPieData);
       console.log(filteredPieData);
-      drawPieChart("Ohio")
+      drawPieChart("total")
       function drawPieChart(state_name){
               d3.json('state_road_condition.json').then(jsondata => {
                   var data = jsondata.find(d=>d.state==state_name)
@@ -263,6 +263,7 @@ export default {
             paint:{
             'fill-color': [ 'interpolate', ['linear'], ['*', ['get', 'severity'], 1], 0,"#fd8d3c",1,"#fc4e2a",2,"#e31a1c",3,"#bd0026",4,"#800026"],  //OK - interpolate color proportional to AREA property with a factor of 0.6
             // 'fill-opacity': 0.6
+            'fill-outline-color': 'white'
             }
           },'settlement-label');
 
@@ -279,6 +280,8 @@ export default {
             paint:{
             'fill-color': [ 'interpolate', ['linear'], ['*', ['get', 'severity'], 1], 0,"#fd8d3c",1,"#fc4e2a",2,"#e31a1c",3,"#bd0026",4,"#800026"],  //OK - interpolate color proportional to AREA property with a factor of 0.6
             // 'fill-opacity': 0.6
+            'fill-outline-color': 'white'
+
             }
           },'settlement-label');
 
