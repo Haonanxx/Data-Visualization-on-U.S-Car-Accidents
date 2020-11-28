@@ -1,5 +1,27 @@
 [
-  {"state": "Ohio", "conditions": [
+  {"state": "total", "conditions": [
+    {"condition": "Amenity", "value": "42082"
+    },
+    {"condition": "Bump", "value": "606"
+    },
+    {"condition": "Crossing", "value": "274526"
+    },
+    {"condition": "Give_Way", "value": "9564"
+    },
+    {"condition": "Junction", "value": "284449"
+    },
+    {"condition": "No_Exit", "value": "4384"
+    },
+    {"condition": "Railway", "value": "31175"
+    },
+    {"condition": "Station", "value": "70321"
+    },
+    {"condition": "Stop", "value": "51976"
+    },
+    {"condition": "Traffic_Signal", "value": "623623"
+    }
+  ]
+},{"state": "Ohio", "conditions": [
       {"condition": "Amenity", "value": "941"
       },
       {"condition": "Bump", "value": "5"
