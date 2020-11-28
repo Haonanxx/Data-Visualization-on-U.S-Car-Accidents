@@ -1,12 +1,13 @@
 <template>
   <div class="d3Chart">
 
-    <div>Here is the data: {{JSON.stringify(chartData)}}</div>
-
-    <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
+    <div class="title">Accidents and Time&Date</div>
+    <div class="sub-title">(Data from February 2016 to June 2020)</div>
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
+
     <div>
-      <svg id="map"></svg>
+      <div id="calander"></div>
+      <svg id="maphead"></svg>
       <div id="chart4"></div>
     </div>
   </div>
@@ -93,8 +94,9 @@
     height: 20px;  /* bar height, this can stay fixed */
   }
 
+
   .title {
     margin-bottom: 0px;
-    font-size: 12px;
+    font-size: 24px;
   }
 </style>
