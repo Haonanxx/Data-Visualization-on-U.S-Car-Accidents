@@ -148,8 +148,8 @@ export default {
                   arc.on('mousemove', function (d) {
                           var percent = this.__data__.value / total_value * 100
                           // console.log(this);
-                          d3.select(this)
-                              .attr('opacity', '.7');
+                          // d3.select(this)
+                          //     .attr('opacity', '.7');
                           div.style("display", "none");
                           div.html("road condition: " + this.__data__.data.condition + "</br>" + "percentage: " + percent.toFixed(2) + '%')
                               .style("left", (d.pageX + 12) + "px")
@@ -159,9 +159,9 @@ export default {
                       })
 
                   arc.on('mouseout', function () {
-                      d3.select(this).transition()
-                          .duration('50')
-                          .attr('opacity', '1');
+                      // d3.select(this).transition()
+                      //     .duration('50')
+                      //     .attr('opacity', '1');
                       div.html(" ").style("display", "none");
                   })
 
