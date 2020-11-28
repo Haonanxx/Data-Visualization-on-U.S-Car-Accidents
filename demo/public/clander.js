@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 function draw_clander(){
-    var svg2=d3.select("#map")
+    var svg2=d3.select("#maphead")
         .attr("height",30)
         .attr('width',960)
     svg2.append("g")
@@ -39,7 +39,17 @@ function draw_clander(){
         .attr("transform", "translate(" + ((width - cellSize * 53) / 2) + "," + (height - cellSize * 7 - 1) + ")");
 
     // 定义每个年份对应的group旁边的标签
-
+    var list=[]
+    var svgtitle=d3.select("#calander")
+        var titletext=svgtitle.append('text')
+            .attr('x',180)
+            .attr('y',0)
+            .attr("font-size", 35)
+    if(typeof (list[0])=='undefined')
+    {titletext.text("the calender of Accident in U.S.")}
+    else{
+        titletext.text("the time line of Accident in "+list[0])
+    }
     svg.append("text")
         //定义标签文字(年份)的位置以及文字的旋转角度、文字内容
         .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")

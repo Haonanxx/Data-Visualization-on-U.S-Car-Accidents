@@ -24,8 +24,18 @@ function draw_timeline(list){
         var svg = d3.select('#chart3')
             .attr("viewBox", [0, 0, width, height]);
         svg.append('text')
-            .text(list[0])
+            .text('Num')
             .attr("font-size", 25)
+
+        var titletext=svg.append('text')
+            .attr('x',180)
+            .attr('y',0)
+            .attr("font-size", 35)
+        if(typeof (list[0])=='undefined')
+        {titletext.text("the time line of Accident in U.S.")}
+        else{
+            titletext.text("the time line of Accident in "+list[0])
+        }
         var x = d3.scaleTime()
             .domain([dateParse('00:01'),dateParse('23:00')])
             .range([margin.left, width - margin.right]);
