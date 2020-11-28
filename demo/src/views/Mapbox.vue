@@ -15,7 +15,7 @@
       </div>
     </div>
     <div style="display: table-cell;">
-        <svg id="pie_chart" width="960" height="500"></svg>
+        <svg id="pie_chart" width="800" height="500"></svg>
         <div id = "tooltip"></div>
       </div>
   </div>
@@ -39,124 +39,14 @@ export default {
     }
   },
   mounted () {
-    this.drawPieChart('West Virginia')
+    // this.drawPieChart('West Virginia')
     this.init()
   },
   methods: {
-    drawPieChart(state_name){
-     d3.json('state_road_condition.json').then(jsondata => {
-        var data = jsondata.find(d=>d.state==state_name)
-        // console.log(data.conditions);
-
-        var svg = d3.select('#pie_chart'),
-            width = +svg.attr('width'),
-            height = +svg.attr('height'),
-            radius = Math.min(width, height) / 2,
-            g = svg.append('g')
-                .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
-
-        var div = d3.select("body")
-            .append("div")
-            .attr("class", "tooltip");
-
-        var color = d3.scaleOrdinal(["#88CCEE", "#882255", "#332288", "#117733", "#44AA99", "#CC6677", "#DDCC77", "#AA4499", "#b2df8a", "#865EDA"]);
-        //pie layout
-        var pie = d3.pie()
-            .value(d => {
-                // console.log(d.value);
-                return d.value
-            })
-            .sortValues(d3.descending);
-
-        var path = d3.arc()
-            .outerRadius(radius)
-            .innerRadius(radius - 90);
-
-        var arc = g.selectAll('.arc')
-            .data(pie(data.conditions))
-            .enter()
-            .append('g')
-            .attr('class', 'arc'); 
-
-        var positive_conditions = []
-        var total_value = 0; //size of this slice
-        var pieData = pie(data.conditions);
-
-        pieData.filter(filterData);
-        // console.log(filteredPieData);
-        // console.log(pieData);
-
-        function filterData(element) {
-            total_value += element.value;
-            if (element.value > 0) {
-                // console.log(element.data.condition);
-                positive_conditions.push(element.data.condition)
-            }
-            return (element.value > 0);
-        }
-
-        arc.append('path')
-            .attr('d', path)
-            .attr('fill', d => color(d.data.condition))
-            .attr("cursor", "pointer")
-            .on('mousemove', function (d) {
-                var percent = this.__data__.value / total_value * 100
-                d3.select(this).transition()
-                    .duration('50')
-                    .attr('opacity', '.7');
-                div.style("display", "none");
-                div.html("road condition: " + this.__data__.data.condition + "</br>" + "percentage: " + percent.toFixed(2) + '%')
-                    .style("left", (d.pageX + 12) + "px")
-                    .style("top", (d.pageY - 10) + "px")
-                    .style("opacity", 1)
-                    .style("display", "block");
-            })
-            .on('mouseout', function () {
-                d3.select(this).transition()
-                    .duration('50')
-                    .attr('opacity', '1');
-                div.html(" ").style("display", "none");
-            })
-
-        var legend = g.selectAll('legend_colors')
-            .data(color.domain())
-            .enter()
-
-        legend.append('circle')
-            .attr('cx', -50)
-            .attr('cy', function (d, i) {
-                return i * 25 - 110;
-            })
-            .attr('r', '.5rem')
-            .style('fill', function (d) {
-                if (positive_conditions.includes(d)) {
-                    return color(d);
-                }
-                else {
-                    return "#D0CED2"
-                }
-            })
-
-        legend.append('text')
-            .attr('x', -20)
-            .attr('y', function (d, i) {
-                return i * 25 - 105;
-            })
-            .text(d => d)
-            .style('fill', function (d) {
-                if (positive_conditions.includes(d)) {
-                    return "black";
-                }
-                else {
-                    return "#D0CED2"
-                }
-            })
-
-    });
-},
+    // ,
     // initialize
     init () {
-      const vue = this
+      // const vue = this
       // console.log(vue);
       mapboxgl.accessToken = 'pk.eyJ1IjoicWlhbnFpYW4tdGFuZyIsImEiOiJja2dxNzFwdWkwbzRiMnlxaTFzdzhydDRuIn0.aHbdzBJHQVLpFv6h1i1PkQ'
       const map = new mapboxgl.Map({
@@ -173,6 +63,190 @@ export default {
       var popup = new mapboxgl.Popup({
       closeButton: false
       });
+
+      var condition_list = ['Amenity', 'Bump', 'Crossing', 'Give_Way', 'Junction', 'No_Exit', 'Railway',
+                'Station', 'Stop', 'Traffic_Signal']
+      var oldPieData = []
+      var filteredPieData = []
+      console.log(oldPieData);
+      console.log(filteredPieData);
+      drawPieChart("Ohio")
+      function drawPieChart(state_name){
+              d3.json('state_road_condition.json').then(jsondata => {
+                  var data = jsondata.find(d=>d.state==state_name)
+                  // console.log(data.conditions);
+
+                  var svg = d3.select('#pie_chart'),
+                      width = +svg.attr('width'),
+                      height = +svg.attr('height'),
+                      radius = Math.min(width, height) / 2,
+                      g = svg.append('g')
+                          .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+
+                  var div = d3.select("body")
+                      .append("div")
+                      .attr("class", "tooltip");
+
+                  var color = d3.scaleOrdinal(["#88CCEE", "#882255", "#332288", "#117733", "#44AA99", "#CC6677", "#f2ff00", "#AA4499", "#b2df8a", "#865EDA"]);
+                  //pie layout
+                  var pie = d3.pie()
+                      .value(d => {
+                          // console.log(d.value);
+                          return d.value
+                      })
+                      .sortValues(d3.descending);
+
+                  var path = d3.arc()
+                      .outerRadius(radius)
+                      .innerRadius(radius - 90);
+
+                  
+
+                  var positive_conditions = []
+                  var total_value = 0; //size of this slice
+                  var pieData = pie(data.conditions);
+                  oldPieData = filteredPieData
+                  // console.log(oldPieData);
+                  filteredPieData = pieData.filter(filterData);
+                  // console.log(filteredPieData);
+                  // console.log(pieData);
+                  
+
+                  function filterData(element) {
+                      total_value += element.value;
+                      if (element.value > 0) {
+                          // console.log(element.data.condition);
+                          positive_conditions.push(element.data.condition)
+                      }
+                      // console.log(total_value);
+                      return (element.value > 0);
+                  }
+
+                  var arc = g.selectAll('.arc')
+                      .data(filteredPieData)
+                      .enter()
+                      .append('g')
+                      .attr('class', 'arc'); 
+
+                  arc.append('path')
+                      .attr('d', path)
+                      .attr("cursor", "pointer")
+                      .attr('fill', d => color(d.data.condition))
+                      .transition()
+                      .duration(1000)
+                      .attrTween("d", pieTween);
+                  // arc.transition()
+                  //     .duration(1000)
+                  //     .attrTween("d", pieTween);
+                  arc.exit()
+                      .transition()
+                      .duration(1000)
+                      .attrTween("d", removePieTween)
+                      .remove();
+
+
+                  arc.on('mousemove', function (d) {
+                          var percent = this.__data__.value / total_value * 100
+                          // console.log(this);
+                          d3.select(this)
+                              .attr('opacity', '.7');
+                          div.style("display", "none");
+                          div.html("road condition: " + this.__data__.data.condition + "</br>" + "percentage: " + percent.toFixed(2) + '%')
+                              .style("left", (d.pageX + 12) + "px")
+                              .style("top", (d.pageY - 10) + "px")
+                              .style("opacity", 1)
+                              .style("display", "block");
+                      })
+
+                  arc.on('mouseout', function () {
+                      d3.select(this).transition()
+                          .duration('50')
+                          .attr('opacity', '1');
+                      div.html(" ").style("display", "none");
+                  })
+
+                  function pieTween(d, i) {
+                      var start_angel;
+                      var end_angel;
+                      console.log(d);
+                      //   console.log(i);
+                      if (oldPieData[i]) {
+                            // console.log(oldPieData[i]);
+                          start_angel = oldPieData[i].startAngle;
+                          end_angel = oldPieData[i].endAngle;
+                      } else if (!(oldPieData[i]) && oldPieData[i-1]) {
+                          start_angel = oldPieData[i-1].endAngle;
+                          end_angel = oldPieData[i-1].endAngle;
+                      } else if (!(oldPieData[i - 1]) && oldPieData.length > 0) {
+                          start_angel = oldPieData[oldPieData.length - 1].endAngle;
+                          end_angel = oldPieData[oldPieData.length - 1].endAngle;
+                      } else {
+                          start_angel = 0;
+                          end_angel = 0;
+                      }
+
+                      var ip = d3.interpolate({ startAngle: start_angel, endAngle: end_angel }, { startAngle: d.startAngle, endAngle: d.endAngle });
+                      return function (t) {
+                          //   console.log(t);
+                          var b = ip(t);
+                          // console.log("hhhhhh");
+                          return path(b);
+                      };
+                  }
+
+                  function removePieTween(d) {
+                    console.log("RRR");
+                      var start_angel = 2 * Math.PI;
+                      var end_angel = 2 * Math.PI;
+                      var ip = d3.interpolate({ startAngle: d.startAngle, endAngle: d.endAngle }, { startAngle: start_angel, endAngle: end_angel });
+                      return function (t) {
+                          var b = ip(t);
+                          console.log("REmove");
+                          return path(b);
+                      };
+                  }
+
+                  var legend = g.selectAll('legend_colors')
+                      .data(condition_list)
+                      .enter()
+
+                  legend.append('circle')
+                      .attr('cx', -50)
+                      .attr('cy', function (d, i) {
+                          return i * 25 - 110;
+                      })
+                      .attr('r', '.5rem')
+                      .style('fill', function (d) {
+                          if (positive_conditions.includes(d)) {
+                              return color(d);
+                          }
+                          else {
+                              return "#D0CED2"
+                          }
+                      })
+
+                  legend.append('text')
+                      .attr('x', -20)
+                      .attr('y', function (d, i) {
+                          return i * 25 - 105;
+                      })
+                      .text(d => d)
+                      .style('fill', function (d) {
+                          if (positive_conditions.includes(d)) {
+                              return "black";
+                          }
+                          else {
+                              return "#D0CED2"
+                          }
+                      })
+          // console.log(filteredPieData);
+                  // return filteredPieData
+
+              });
+          }
+            // drawPieChart('Ohio')
+            // console.log(ad);
+
 
       axios.get('state_county.json').then(res=>
         map.on("load", ()=>{
@@ -218,9 +292,44 @@ export default {
             layout:{},
             filter: ['==', 'id', ''],
             paint:{
-            'fill-color':  '#4575b4',  //fixed color
-            'fill-opacity': 0.7
+            'fill-color':  '#00ffff',  //fixed color
+            'fill-opacity': 0.6
             }
+          },'settlement-label');
+
+          map.addLayer({
+            'id': 'click_highlighted',
+            'type': 'fill',
+            source:{
+              type: 'geojson',
+              data: res.data
+            },
+            layout:{},
+            filter: ['==', 'id', ''],
+            paint:{
+            'fill-color':  '#00ffff',  //fixed color
+            'fill-opacity': 1
+            }
+          },'settlement-label');
+
+          map.on('click', 'states', function (e) {
+
+
+          var feature = e.features[0];
+
+          // Add feature that has the same state name to the highlighted layer.
+            map.setFilter('click_highlighted', [
+            '==',
+            'id',
+            feature.properties.id
+            ]);
+          
+          drawPieChart(feature.properties.name)
+
+          
+          
+          // console.log(old);
+          // console.log(feature.properties.name);
           });
 
           map.on('mousemove', 'states', function (e) {
@@ -247,7 +356,7 @@ export default {
             overlay.appendChild(severity);
             overlay.style.display = 'block';
             
-            // Add features that share the same state name to the highlighted layer.
+            // Add feature that has the same state name to the highlighted layer.
             map.setFilter('highlighted', [
             '==',
             'id',
@@ -260,12 +369,6 @@ export default {
             .setText(feature.properties.name)
             .addTo(map);
         });
-
-        map.on('click', 'states', function (e) {
-          var feature = e.features[0];
-          vue.drawPieChart(feature.properties.name)
-          // console.log(feature.properties.name);
-          });
 
         map.on('mouseleave', 'states', function () {
             map.getCanvas().style.cursor = '';
