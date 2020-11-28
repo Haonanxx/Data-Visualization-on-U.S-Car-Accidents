@@ -4,7 +4,7 @@
       <router-link to="/">Driver</router-link> |
       <router-link to="/about">Location</router-link> |
       <router-link to="/weather">Time&Date</router-link> |
-      <router-link to="/mapbox">Weather</router-link>
+      <router-link to="/mapbox">Mapbox&Road</router-link>
     </div>
     <router-view/>
   </div>
