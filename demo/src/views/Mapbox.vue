@@ -262,7 +262,7 @@ export default {
             filter: ['==', 'type', 'state'],
             paint:{
             'fill-color': [ 'interpolate', ['linear'], ['*', ['get', 'severity'], 1], 0,"#fd8d3c",1,"#fc4e2a",2,"#e31a1c",3,"#bd0026",4,"#800026"],  //OK - interpolate color proportional to AREA property with a factor of 0.6
-            'fill-opacity': 0.6
+            // 'fill-opacity': 0.6
             }
           },'settlement-label');
 
@@ -278,17 +278,18 @@ export default {
             filter: ['==', 'type', 'county'],
             paint:{
             'fill-color': [ 'interpolate', ['linear'], ['*', ['get', 'severity'], 1], 0,"#fd8d3c",1,"#fc4e2a",2,"#e31a1c",3,"#bd0026",4,"#800026"],  //OK - interpolate color proportional to AREA property with a factor of 0.6
-            'fill-opacity': 0.6
+            // 'fill-opacity': 0.6
             }
           },'settlement-label');
 
           map.addLayer({
-            'id': 'highlighted',
+            'id': 'hover_state_highlighted',
             'type': 'fill',
             source:{
               type: 'geojson',
               data: res.data
             },
+            maxzoom: zoomThreshold,
             layout:{},
             filter: ['==', 'id', ''],
             paint:{
@@ -298,12 +299,13 @@ export default {
           },'settlement-label');
 
           map.addLayer({
-            'id': 'click_highlighted',
+            'id': 'click_state_highlighted',
             'type': 'fill',
             source:{
               type: 'geojson',
               data: res.data
             },
+            maxzoom: zoomThreshold,
             layout:{},
             filter: ['==', 'id', ''],
             paint:{
@@ -312,25 +314,51 @@ export default {
             }
           },'settlement-label');
 
+          map.addLayer({
+            'id': 'hover_county_highlighted',
+            'type': 'fill',
+            source:{
+              type: 'geojson',
+              data: res.data
+            },
+            minzoom: zoomThreshold,
+            layout:{},
+            filter: ['==', 'id', ''],
+            paint:{
+            'fill-color':  '#00ffff',  //fixed color
+            'fill-opacity': 0.6
+            }
+          },'settlement-label');
+
+          // map.addLayer({
+          //   'id': 'click_county_highlighted',
+          //   'type': 'fill',
+          //   source:{
+          //     type: 'geojson',
+          //     data: res.data
+          //   },
+          //   minzoom: zoomThreshold,
+          //   layout:{},
+          //   filter: ['==', 'id', ''],
+          //   paint:{
+          //   'fill-color':  '#00ffff',  //fixed color
+          //   'fill-opacity': 1
+          //   }
+          // },'settlement-label');
+
           map.on('click', 'states', function (e) {
-
-
           var feature = e.features[0];
-
           // Add feature that has the same state name to the highlighted layer.
-            map.setFilter('click_highlighted', [
-            '==',
-            'id',
-            feature.properties.id
-            ]);
-          
+            map.setFilter('click_state_highlighted', ['==', 'id', feature.properties.id]);
           drawPieChart(feature.properties.name)
-
-          
-          
-          // console.log(old);
-          // console.log(feature.properties.name);
           });
+
+          // map.on('click', 'counties', function (e) {
+          // var feature = e.features[0];
+          // // Add feature that has the same state name to the highlighted layer.
+          //   map.setFilter('click_county_highlighted', ['==', 'id', feature.properties.id]);
+          // drawPieChart(feature.properties.name)
+          // });
 
           map.on('mousemove', 'states', function (e) {
 
@@ -357,7 +385,7 @@ export default {
             overlay.style.display = 'block';
             
             // Add feature that has the same state name to the highlighted layer.
-            map.setFilter('highlighted', [
+            map.setFilter('hover_state_highlighted', [
             '==',
             'id',
             feature.properties.id
@@ -373,7 +401,7 @@ export default {
         map.on('mouseleave', 'states', function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
-            map.setFilter('highlighted', ['==', 'id', '']);
+            map.setFilter('hover_state_highlighted', ['==', 'id', '']);
             overlay.style.display = 'none';
             });
 
@@ -402,7 +430,7 @@ export default {
             overlay.style.display = 'block';
                 
             // Add features that share the same county name to the highlighted layer.
-            map.setFilter('highlighted', [
+            map.setFilter('hover_county_highlighted', [
             '==',
             'id',
             feature.properties.id
@@ -418,7 +446,7 @@ export default {
             map.on('mouseleave', 'counties', function () {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
-                map.setFilter('highlighted', ['==', 'id', '']);
+                map.setFilter('hover_county_highlighted', ['==', 'id', '']);
                 overlay.style.display = 'none';
                 });
                 
