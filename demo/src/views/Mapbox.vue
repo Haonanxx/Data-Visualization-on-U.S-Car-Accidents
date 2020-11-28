@@ -1,8 +1,9 @@
 <template>
-  <div style="display: table-row;">
+  <div>
 
-    <div style="display: table-cell;">
-      <div ref="basicMapbox" style="height:500px;width:800px;">
+    <div class="left">
+      <h3>Severity of traffic accidents of the states and counties in the US</h3>
+      <div ref="basicMapbox" style="height:500px;width:800px;margin-left:50px" >
         <div id="state-legend" class="legend">
         <h4>Severity</h4>
         <div><span style="background-color: #800026"></span>4</div>
@@ -15,9 +16,10 @@
       <div id="map-overlay" class="map-overlay"></div>
       </div>
     </div>
-    <div style="display: table-cell;">
+    <div class="right">
         <div id = "pie-title"></div>
-        <svg id = "pie_chart" width="600" height="450"></svg>
+        <br>
+        <svg id = "pie_chart" width="450" height="450"></svg>
       </div>
   </div>
 </template>
@@ -591,4 +593,17 @@ width: 10px;
     padding: 5px;
     text-align: center; 
     }
+.left {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+  /* background-color: lightblue; */
+  float: left;
+  width: 30%;
+  padding: 20px 25px;
+  margin-top: 20px;
+}
 </style>
