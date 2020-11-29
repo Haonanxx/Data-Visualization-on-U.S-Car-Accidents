@@ -1,0 +1,240 @@
+[
+  {
+    "Severity": 3,
+    "Name": "Amenity",
+    "Condition": "3_Amenity",
+    "Value": "966"
+  },
+  {
+    "Severity": 3,
+    "Name": "Bump",
+    "Condition": "3_Bump",
+    "Value": "41"
+  },
+  {
+    "Severity": 3,
+    "Name": "Crossing",
+    "Condition": "3_Crossing",
+    "Value": "5691"
+  },
+  {
+    "Severity": 3,
+    "Name": "Give_Way",
+    "Condition": "3_Give_Way",
+    "Value": "585"
+  },
+  {
+    "Severity": 3,
+    "Name": "Junction",
+    "Condition": "3_Junction",
+    "Value": "30724"
+  },
+  {
+    "Severity": 3,
+    "Name": "No_Exit",
+    "Condition": "3_No_Exit",
+    "Value": "263"
+  },
+  {
+    "Severity": 3,
+    "Name": "Railway",
+    "Condition": "3_Railway",
+    "Value": "1995"
+  },
+  {
+    "Severity": 3,
+    "Name": "Station",
+    "Condition": "3_Station",
+    "Value": "2686"
+  },
+  {
+    "Severity": 3,
+    "Name": "Stop",
+    "Condition": "3_Stop",
+    "Value": "688"
+  },
+  {
+    "Severity": 3,
+    "Name": "Traffic_Signal",
+    "Condition": "3_Traffic_Signal",
+    "Value": "17496"
+  },
+  {
+    "Severity": 2,
+    "Name": "Amenity",
+    "Condition": "2_Amenity",
+    "Value": "13493"
+  },
+  {
+    "Severity": 2,
+    "Name": "Bump",
+    "Condition": "2_Bump",
+    "Value": "153"
+  },
+  {
+    "Severity": 2,
+    "Name": "Crossing",
+    "Condition": "2_Crossing",
+    "Value": "80896"
+  },
+  {
+    "Severity": 2,
+    "Name": "Give_Way",
+    "Condition": "2_Give_Way",
+    "Value": "2481"
+  },
+  {
+    "Severity": 2,
+    "Name": "Junction",
+    "Condition": "2_Junction",
+    "Value": "23017"
+  },
+  {
+    "Severity": 2,
+    "Name": "No_Exit",
+    "Condition": "2_No_Exit",
+    "Value": "1072"
+  },
+  {
+    "Severity": 2,
+    "Name": "Railway",
+    "Condition": "2_Railway",
+    "Value": "7543"
+  },
+  {
+    "Severity": 2,
+    "Name": "Station",
+    "Condition": "2_Station",
+    "Value": "20532"
+  },
+  {
+    "Severity": 2,
+    "Name": "Stop",
+    "Condition": "2_Stop",
+    "Value": "16729"
+  },
+  {
+    "Severity": 2,
+    "Name": "Traffic_Signal",
+    "Condition": "2_Traffic_Signal",
+    "Value": "190560"
+  },
+  {
+    "Severity": 1,
+    "Name": "Amenity",
+    "Condition": "1_Amenity",
+    "Value": "9"
+  },
+  {
+    "Severity": 1,
+    "Name": "Bump",
+    "Condition": "1_Bump",
+    "Value": "0"
+  },
+  {
+    "Severity": 1,
+    "Name": "Crossing",
+    "Condition": "1_Crossing",
+    "Value": "50"
+  },
+  {
+    "Severity": 1,
+    "Name": "Give_Way",
+    "Condition": "1_Give_Way",
+    "Value": "1" },
+  {
+    "Severity": 1,
+    "Name": "Junction",
+    "Condition": "1_Junction",
+    "Value": "7"
+  },
+  {
+    "Severity": 1,
+    "Name": "No_Exit",
+    "Condition": "1_No_Exit",
+    "Value": "4"
+ },
+  {
+    "Severity": 1,
+    "Name": "Railway",
+    "Condition": "1_Railway",
+    "Value": "4"
+ },
+  {
+    "Severity": 1,
+    "Name": "Station",
+    "Condition": "1_Station",
+    "Value": "18"
+  },
+  {
+    "Severity": 1,
+    "Name": "Stop",
+    "Condition": "1_Stop",
+    "Value": "25"
+  },
+  {
+    "Severity": 1,
+    "Name": "Traffic_Signal",
+    "Condition": "1_Traffic_Signal",
+    "Value": "86"
+  },
+  {
+    "Severity": 4,
+    "Name": "Amenity",
+    "Condition": "4_Amenity",
+    "Value": "1"},
+  {
+    "Severity": 4,
+    "Name": "Bump",
+    "Condition": "4_Bump",
+    "Value": "0"
+  },
+  {
+    "Severity": 4,
+    "Name": "Crossing",
+    "Condition": "4_Crossing",
+    "Value": "39"
+  },
+  {
+    "Severity": 4,
+    "Name": "Give_Way",
+    "Condition": "4_Give_Way",
+    "Value": "7"
+  },
+  {
+    "Severity": 4,
+    "Name": "Junction",
+    "Condition": "4_Junction",
+    "Value": "297"
+  },
+  {
+    "Severity": 4,
+    "Name": "No_Exit",
+    "Condition": "4_No_Exit",
+    "Value": "5"
+  },
+  {
+    "Severity": 4,
+    "Name": "Railway",
+    "Condition": "4_Railway",
+    "Value": "5"
+  },
+  {
+    "Severity": 4,
+    "Name": "Station",
+    "Condition": "4_Station",
+    "Value": "5"
+  },
+  {
+    "Severity": 4,
+    "Name": "Stop",
+    "Condition": "4_Stop",
+    "Value": "5"
+  },
+  {
+    "Severity": 4,
+    "Name": "Traffic_Signal",
+    "Condition": "4_Traffic_Signal",
+    "Value": "126"
+  }
+]
