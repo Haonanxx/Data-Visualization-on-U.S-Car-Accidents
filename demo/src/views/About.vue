@@ -3,6 +3,11 @@
 
     <div class="title">Accidents and Drivers</div>
     <div class="sub-title">(Data from February 2016 to June 2020)</div>
+    <div id="selectItem">
+      <select class="selector" id="selector"></select>
+      <br/>
+      <br/>
+    </div>
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
 
     <div>
@@ -18,6 +23,9 @@
   import * as yixiang from '../../public/map_Driver.js'
   import * as cland from '../../public/clander.js'
   import * as barchart from '../../public/barchart.js'
+  import * as yixiang2 from '../../public/map.js'
+  import $ from "jquery";
+  //import * as lines from "../../public/timeline";
   cland.draw_clander()
   export default {
     name: 'd3Chart',
@@ -53,13 +61,37 @@
       }
     },
     mounted: function () {
-      var promises = [];
+      $(".selector").append(`<option value="Accident">Num of Accidents</option>`);
+      $(".selector").append(`<option value="Population">Population</option>`)
+      $(".selector").on("change",function(){
+        if($(".selector").find("option:selected").text()=="Num of Accidents"){
+          var promises = [];
 
+          promises.push(d3.json("counties-albers-10m.json"));
+          promises.push(d3.csv("ch_Data.csv"));
+
+          Promise.all(promises).then(function (values) {  //🚧  explain
+            yixiang2.drawMap(values)
+            //console.log(values)
+          });
+
+        }
+        else{
+          promises = [];
+          promises.push(d3.json("counties-albers-10m.json"));
+          promises.push(d3.csv("population_state.csv"));
+
+          Promise.all(promises).then(function (values) {  //🚧  explain
+            yixiang.drawMap(values)
+          });
+      }})
+
+      var promises = [];
       promises.push(d3.json("counties-albers-10m.json"));
-      promises.push(d3.csv("population_state.csv"));
+      promises.push(d3.csv("ch_Data.csv"));
 
       Promise.all(promises).then(function (values) {  //🚧  explain
-        yixiang.drawMap(values)
+        yixiang2.drawMap(values)
       });
       barchart.drawbarchart()
     }
@@ -98,5 +130,6 @@
     height: 350px;
     background-color: #ffeeee;
   }
+  #selectItem{ margin:1 ; width:320px; height:20px;}
 
 </style>

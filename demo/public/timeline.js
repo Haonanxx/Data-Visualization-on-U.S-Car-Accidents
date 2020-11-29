@@ -17,7 +17,7 @@ function draw_timeline(list){
             function(d,i){data.date[i]=dateParse(d)}
         )
         console.log(data.date)
-        var margin = ({top: 50, right: 50, bottom: 0, left: 40})
+        var margin = ({top: 80, right: 50, bottom: 20, left: 50})
         var height = 500
         var width = 1000
         //var data = {series: [{name: "A", value: [1, 2, 3, 4]}, {name: "B", value: [2, 4, 6, 8]}], date: [1, 2, 3, 4]}
@@ -28,9 +28,9 @@ function draw_timeline(list){
             .attr("font-size", 25)
 
         var titletext=svg.append('text')
-            .attr('x',180)
-            .attr('y',0)
-            .attr("font-size", 35)
+            .attr('x',300)
+            .attr('y',40)
+            .attr("font-size", 25)
         if(typeof (list[0])=='undefined')
         {titletext.text("the time line of Accident in U.S.")}
         else{
@@ -64,6 +64,9 @@ function draw_timeline(list){
             .call(xAxis);
         svg.append("g")
             .call(yAxis);
+        svg.append('text')
+            .attr("transform", `translate(0,70)`)
+            .text('number of accidents')
         const path = svg.append("g")
             .attr("fill", "none")
             .attr("stroke-width", 1.5)

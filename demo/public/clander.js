@@ -84,9 +84,9 @@ function draw_clander(){
     var list=[]
     var svgtitle=d3.select("#calander")
         var titletext=svgtitle.append('text')
-            .attr('x',180)
-            .attr('y',0)
-            .attr("font-size", 35)
+            .attr('x',350)
+            .attr('y',20)
+            .attr("font-size", 20)
     if(typeof (list[0])=='undefined')
     {titletext.text("the calender of Accident in U.S.")}
     else{

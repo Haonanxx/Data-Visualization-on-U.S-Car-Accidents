@@ -7,6 +7,7 @@ import 'jquery'
 /////////////////////////////////////////////////////////////
 //Choropleth code
 function drawMap(values){
+    document.getElementById("chart").innerHTML=""
     var us = values[0];
     var data = values[1];
 
@@ -173,6 +174,7 @@ function scartchart(list){
     })
 }
 export{
-    drawMap
+    drawMap,
+    scartchart
 }
 

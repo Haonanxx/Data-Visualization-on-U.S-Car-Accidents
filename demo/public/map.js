@@ -2,12 +2,15 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson'
 import 'jquery'
 
-import * as line from './timeline'
-
+//import * as line from './timeline'
+//import {scartchart} from "./map_Driver";
+import * as scart from './map_Driver.js'
+//import {scartchart} from "./map_Driver";
 
 /////////////////////////////////////////////////////////////
 //Choropleth code
 function drawMap(values){
+    document.getElementById("chart").innerHTML=""
     var us = values[0];
     var data = values[1];
 
@@ -77,7 +80,7 @@ function drawMap(values){
             outstatelist.push(this.__data__.properties.name)
             console.log(outstatelist)
             //.text(JSON.stringify(this.__data__.id, null, 2));
-            line.draw_timeline([this.__data__.properties.name])
+            scart.scartchart([this.__data__.id])
             console.log(d)
     });
 
@@ -90,7 +93,8 @@ function drawMap(values){
         .attr("stroke", "black")
         .attr("stroke-linejoin", "round")
         .attr("d", path);
-    line.draw_timeline(-1)
+
+    scart.scartchart(-1)
 
 }
 

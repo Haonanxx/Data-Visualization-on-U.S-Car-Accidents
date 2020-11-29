@@ -3,11 +3,18 @@
 
     <div class="title">Accidents and Time&Date</div>
     <div class="sub-title">(Data from February 2016 to June 2020)</div>
-    <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
+    <div id="selectItem">
+      <select class="selector" id="selector"></select>
+      <br/>
+      <br/>
+    </div>
+    <!--svg width="500" height="500" id="chart">
+    </--svg--><svg width="800" height="400" id="chart3"></svg>
 
     <div>
+      <br/><br/><br/><br/><br/><br/><br/><br/>
 
-      <div id="calander"></div>
+      <div id="calanderdiv"><svg id="calander" height="50" width="1000"></svg></div>
       <div><svg id="bar" height="50" width="1000"></svg></div>
       <svg id="maphead"></svg>
       <div id="chart4"></div>
@@ -18,8 +25,10 @@
 <script>
 
   import * as d3 from 'd3';
-  import * as yixiang from '../../public/map.js'
+  //import * as yixiang from '../../public/map.js'
+  import * as lines from '../../public/timeline.js'
   import * as cland from '../../public/clander.js'
+  import $ from 'jquery'
   cland.draw_clander()
   export default {
     name: 'd3Chart',
@@ -55,16 +64,38 @@
       }
     },
     mounted: function () {
+      $(".selector").val("pxx");
+
+      $(".selector").append(`<option value='U.S.'>U.S.</option>`);
+
+      d3.csv('population_state.csv').then(function(data){
+        for(var i=0;i<data.length;i++){
+          if(data[i].state!="Arkansas")
+          {var state=data[i].state
+          $(".selector").append(`<option value=${state}>${state}</option>`);}
+        }
+
+      })
+      $(".selector").on("change",function(){
+        if($(".selector").find("option:selected").text()=="U.S."){
+          lines.draw_timeline(-1)
+        }
+        else{
+          //alert($(".selector").find("option:selected").text())
+        lines.draw_timeline([$(".selector").find("option:selected").text()])}
+      })
+
       console.log('mounted');
       cland.draw_clander()
-
+      lines.draw_timeline(-1)
       var promises = [];
 
       promises.push(d3.json("counties-albers-10m.json"));
       promises.push(d3.csv("ch_Data.csv"));
 
       Promise.all(promises).then(function (values) {  //🚧  explain
-        yixiang.drawMap(values)
+        //yixiang.drawMap(values)
+        console.log(values)
       });
 
     }
@@ -76,7 +107,7 @@
   >>> text.label {  /* need to add >>> to gets passed to d3 because vue creates new mapping */
     text-anchor: end;
     alignment-baseline: middle;
-    font-size: 12px;
+    font-size: 24px;
     fill: black;
   }
 
@@ -101,4 +132,5 @@
     margin-bottom: 0px;
     font-size: 24px;
   }
+  #selectItem{ margin:1 ; width:320px; height:100px;}
 </style>
