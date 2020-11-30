@@ -61,7 +61,7 @@ export default {
 
       sel.append('rect')
         .attr('y', 50)
-        .attr('x', (d, i) => 20 + 3*i * 10)
+        .attr('x', (d, i) => 23 + 3*i * 10)
         .attr('height', d => d.accidents / d.population * 10000 + 100 )
         .attr('class', 'bar3')
         .on('mouseover', tip1.show)
@@ -81,7 +81,7 @@ export default {
 
       sel.append('rect')
         .attr('y', 50)
-        .attr('x', (d, i) => 20 + (3*i+2) * 10)
+        .attr('x', (d, i) => 17 + (3*i+2) * 10)
         .attr('height', d => d.visibility * 30)
         .attr('class', 'bar2')
         .on('mouseover', tip3.show)
@@ -215,7 +215,7 @@ export default {
 
       sel.append('rect')
         .attr('y', 50)
-        .attr('x', (d, i) => 20 + 3*i * 10)
+        .attr('x', (d, i) => 23 + 3*i * 10)
         .attr('height', d => d.accidents / d.population * 10000 + 100 )
         //.transition()
         //.duration(750)
@@ -233,7 +233,7 @@ export default {
 
       sel.append('rect')
         .attr('y', 50)
-        .attr('x', (d, i) => 20 + (3*i+2) * 10)
+        .attr('x', (d, i) => 17 + (3*i+2) * 10)
         .attr('height', d => d.visibility * 30)
         .attr('class', 'bar2')
         .on('mouseover', tip3.show)
