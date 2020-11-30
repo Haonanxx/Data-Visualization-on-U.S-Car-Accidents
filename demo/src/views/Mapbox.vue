@@ -20,6 +20,7 @@
         <div id = "pie-title"></div>
         <br>
         <svg id = "pie_chart" width="450" height="450"></svg>
+        <div id='pie-tooltip' class="tooltip"></div>
       </div>
 </div>
 <div>
@@ -832,9 +833,10 @@ resize()
                       g = svg.append('g')
                           .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
 
-                  var div = d3.select("body")
-                      .append("div")
-                      .attr("class", "tooltip");
+                //   var div = d3.select("body")
+                //       .append("div")
+                //       .attr("class", "tooltip");
+                var pie_tip = d3.select('#pie-tooltip')
 
                   var color = d3.scaleOrdinal(["#88CCEE", "#882255", "#332288", "#117733", "#44AA99", "#CC6677", "#f2ff00", "#AA4499", "#b2df8a", "#865EDA"]);
                   //pie layout
@@ -899,8 +901,8 @@ resize()
                           // console.log(this);
                           // d3.select(this)
                           //     .attr('opacity', '.7');
-                          div.style("display", "none");
-                          div.html("road condition: " + this.__data__.data.condition + "</br>" + "percentage: " + percent.toFixed(2) + '%')
+                        //   pie_tip.style("display", "none");
+                          pie_tip.html("road condition: " + this.__data__.data.condition + "</br>" + "percentage: " + percent.toFixed(2) + '%')
                               .style("left", (d.pageX + 12) + "px")
                               .style("top", (d.pageY - 10) + "px")
                               .style("opacity", 1)
@@ -911,7 +913,7 @@ resize()
                       // d3.select(this).transition()
                       //     .duration('50')
                       //     .attr('opacity', '1');
-                      div.html(" ").style("display", "none");
+                      pie_tip.html(" ").style("display", "none");
                   })
 
                   function pieTween(d, i) {
@@ -1120,7 +1122,7 @@ resize()
             title_state.style.color="red"
           pie_title.innerHTML = '';
           pie_title.textContent =
-            'The percentage of road conditions of traffic accidents in ';
+            'The percentage of appearance of infrastructures for traffic accidents in ';
              pie_title.style.fontSize = "18.72px"
             pie_title.style.fontWeight = "bold"
             pie_title.appendChild(title_state);
@@ -1137,7 +1139,7 @@ resize()
             title_state.style.color="red"
           pie_title.innerHTML = '';
           pie_title.textContent =
-            'The percentage of road conditions of traffic accidents in ';
+            'The percentage of appearance of infrastructures for traffic accidents in ';
              pie_title.style.fontSize = "18.72px"
             pie_title.style.fontWeight = "bold"
             pie_title.appendChild(title_state);         
