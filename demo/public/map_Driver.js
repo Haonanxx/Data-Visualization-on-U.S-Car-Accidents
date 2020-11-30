@@ -164,7 +164,7 @@ function scartchart(list){
             {
                 if(data[i].id==list[0]){
                     svg_chart.append("text")
-                        .attr("x", x(Math.log(data[i].rate))-20)
+                        .attr("x", x(data[i].rate/1000000)-50)
                         .attr("y",y(Math.log(+data[i].accident))
                         )
                         .text(data[i].state)

@@ -1,7 +1,7 @@
 <template>
   <div class="d3Chart">
 
-    <div class="title">Accidents and Time&Date&Drivers</div>
+    <div class="title">Accidents and Time&Date&Population</div>
     <div class="sub-title">(Data from February 2016 to June 2020)</div>
     <div id="selectItem">
       Type of Map: <select class="selector" id="selector"></select>
