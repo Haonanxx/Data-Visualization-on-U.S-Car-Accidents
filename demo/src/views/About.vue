@@ -1,14 +1,26 @@
 <template>
   <div class="d3Chart">
 
-    <div class="title">Accidents and Drivers</div>
+    <div class="title">Accidents and Time&Date&Drivers</div>
     <div class="sub-title">(Data from February 2016 to June 2020)</div>
     <div id="selectItem">
-      <select class="selector" id="selector"></select>
+      Type of Map: <select class="selector" id="selector"></select>
+
+      Choose State<select class="selector2" id="selector2"></select>
       <br/>
       <br/>
     </div>
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
+    <svg width="800" height="400" id="chartline"></svg>
+
+    <div>
+      <br/><br/><br/><br/><br/><br/><br/><br/>
+
+      <div id="calanderdiv"><svg id="calander" height="50" width="1000"></svg></div>
+      <div><svg id="bar" height="50" width="1000"></svg></div>
+      <svg id="maphead"></svg>
+      <div id="chart4"></div>
+    </div>
 
   </div>
 </template>
@@ -17,10 +29,13 @@
 
   import * as d3 from 'd3';
   import * as yixiang from '../../public/map_Driver.js'
-  import * as cland from '../../public/clander.js'
+  //import * as cland from '../../public/clander.js'
   //import * as barchart from '../../public/barchart.js'
   import * as yixiang2 from '../../public/map.js'
   import $ from "jquery";
+  //import * as lines from "../../public/timeline";
+  import * as lines from '../../public/timeline.js'
+  import * as cland from '../../public/clander.js'
   //import * as lines from "../../public/timeline";
   cland.draw_clander()
   export default {
@@ -57,6 +72,32 @@
       }
     },
     mounted: function () {
+      $(".selector2").val("pxx");
+
+      $(".selector2").append(`<option value='U.S.'>U.S.</option>`);
+
+      d3.csv('population_state.csv').then(function(data){
+        for(var i=0;i<data.length;i++){
+          if(data[i].state!="Arkansas")
+          {var state=data[i].state
+            $(".selector2").append(`<option value=${data[i].id}>${state}</option>`);}
+        }
+
+      })
+      $(".selector2").on("change",function(){
+        if($(".selector2").find("option:selected").text()=="U.S."){
+          lines.draw_timeline(-1)
+        }
+        else{
+          //alert($(".selector").find("option:selected").text())
+          lines.draw_timeline([$(".selector2").find("option:selected").text()])}
+        yixiang.scartchart([$(".selector2").val()])
+      })
+
+
+
+
+
       $(".selector").append(`<option value="Accident">Num of Accidents</option>`);
       $(".selector").append(`<option value="Population">Population</option>`)
       $(".selector").on("change",function(){
@@ -89,6 +130,8 @@
       Promise.all(promises).then(function (values) {  //🚧  explain
         yixiang2.drawMap(values)
       });
+      cland.draw_clander()
+      lines.draw_timeline(-1)
 
     }
 
@@ -121,11 +164,7 @@
     fill: black;
   }
 
-  #chart4 {
-    width: 100%;
-    height: 350px;
-    background-color: #ffeeee;
-  }
-  #selectItem{ margin:1 ; width:320px; height:20px;}
+
+  #selectItem{ margin:1 ; width:500px; height:20px;}
 
 </style>

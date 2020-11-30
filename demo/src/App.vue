@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Time&Date</router-link> |
-      <router-link to="/about">Driver</router-link> |
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">Time&Date&Driver</router-link> |
       <router-link to="/weather">Weather</router-link> |
       <router-link to="/mapbox">Severity&Infrastructure</router-link>
     </div>

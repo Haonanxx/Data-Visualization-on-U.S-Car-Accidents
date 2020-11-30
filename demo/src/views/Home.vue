@@ -1,12 +1,10 @@
 <template>
   <div class="d3Chart">
 
-    <div class="title">Accidents and Time&Date</div>
+    <div class="title">Accidents Data Visulization</div>
     <div class="sub-title">(Data from February 2016 to June 2020)</div>
-    <div id="selectItem">
-      <select class="selector" id="selector"></select>
-      <br/>
-      <br/>
+    <div>
+      <img src="cover.jpg"  alt="上海鲜花港 - 郁金香" />
     </div>
     <!--svg width="500" height="500" id="chart">
     </--svg--><svg width="800" height="400" id="chartline"></svg>
@@ -22,85 +20,7 @@
   </div>
 </template>
 
-<script>
 
-  import * as d3 from 'd3';
-  //import * as yixiang from '../../public/map.js'
-  import * as lines from '../../public/timeline.js'
-  import * as cland from '../../public/clander.js'
-  import $ from 'jquery'
-  cland.draw_clander()
-  export default {
-    name: 'd3Chart',
-    data: function () {
-      return {
-        chartData: null,
-      }
-    },
-    methods: {
-      barChart() {
-        var svg = d3.select('#chart');
-        var sel = svg.selectAll('rect')
-                .data(this.chartData)
-                .enter();
-
-        sel.append('rect')
-                .attr('x', 100)
-                .attr('y', (d, i) => 20 + i * 25)
-                .attr('width', d => d.value / 1000)
-                .attr('class', 'bar');
-
-        sel.append('text')
-                .attr('x', 90)
-                .attr('y', (d, i) => 30 + i * 25)
-                .attr('class', 'label')
-                .text(d => d.label);
-
-        sel.append('text')
-                .attr('x', d => 90 + d.value / 1000)
-                .attr('y', (d, i) => 30 + i * 25)
-                .attr('class', 'value')
-                .text(d => Number(d.value).toLocaleString());
-      }
-    },
-    mounted: function () {
-      $(".selector").val("pxx");
-
-      $(".selector").append(`<option value='U.S.'>U.S.</option>`);
-
-      d3.csv('population_state.csv').then(function(data){
-        for(var i=0;i<data.length;i++){
-          if(data[i].state!="Arkansas")
-          {var state=data[i].state
-          $(".selector").append(`<option value=${state}>${state}</option>`);}
-        }
-
-      })
-      $(".selector").on("change",function(){
-        if($(".selector").find("option:selected").text()=="U.S."){
-          lines.draw_timeline(-1)
-        }
-        else{
-          //alert($(".selector").find("option:selected").text())
-        lines.draw_timeline([$(".selector").find("option:selected").text()])}
-      })
-
-      console.log('mounted');
-      cland.draw_clander()
-      lines.draw_timeline(-1)
-      var promises = [];
-
-      promises.push(d3.json("counties-albers-10m.json"));
-      promises.push(d3.csv("ch_Data.csv"));
-
-      Promise.all(promises).then(function (values) {  //🚧  explain
-        //yixiang.drawMap(values)
-        console.log(values)
-      });
-
-    }
-  }
-</script>
 
 <!-- "scoped" attribute limits CSS to this component only -->
 <style scoped>
