@@ -29,7 +29,7 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.
 ## Project Summary
 
 ---
-Our visualization project is based on a car accident dataset from Kaggle, which contains 3.5 million accident records. The data are collected from February 2016 to June 2020, covering 49 states of the USA.
+In the presentation, we made a proposal and a final presentation to describe our project topic, the dataset we used, our goal, our challenges, the related work, our plan, and our contribution. In the demo, we divided the website into different pages based on the topic we analyzed. We analyzed the relationship between traffic accidents and time, the relationship between traffic accidents and weather, and the relationship between accident severities and infrastructures. Most of our charts are interactive. The d3 choropleth map we made can interact with a bubble chart and a line chart simultaneously. The content of the map is also changeable. The Traffic Severity Mapbox choropleth map interacts with an animated pie chart. We made highlight and tooltips for the charts. Additionally, information on the Mapbox map in different layers can be shown by zooming in and out. We also have a bar chart that is animated, interactive, and responsive. In the paper, we explained our motivation for our topic and visualization, related work, and relevant areas of our topic. We also explained the dataset, the approaches, and the technologies we used. Besides, we mentioned the contributions of each team member for ur project. Finally, we record a video to demonstrate the important features of our project.
 
 ## Contributions
 
