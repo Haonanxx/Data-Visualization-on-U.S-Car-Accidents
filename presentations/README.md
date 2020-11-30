@@ -1,8 +1,8 @@
 ## Artifacts
 
-__🍿  Proposal presentation__ [Transcript](presentations/proposal/TRANSCRIPT.md) | [PDF](presentations/proposal/presentation.pdf)
+__🍿  Proposal presentation__ [Transcript](proposal/TRANSCRIPT.md) | [PDF](proposal/presentation.pdf)
 
-__🍿  Final presentation__ [Transcript](presentations/final/PRESENTATION_TRANSCRIPT.md) | [PDF](presentations/final/presentation.pdf)
+__🍿  Final presentation__ [Transcript](final/PRESENTATION_TRANSCRIPT.md) | [PDF](final/presentation.pdf)
 
 ---
 

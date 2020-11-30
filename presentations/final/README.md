@@ -1,6 +1,6 @@
 ## Artifact
 
-__🍿  Final presentation__ [Transcript](presentations/final/PRESENTATION_TRANSCRIPT.md) | [PDF](presentations/final/presentation.pdf)
+__🍿  Final presentation__ [Transcript](PRESENTATION_TRANSCRIPT.md) | [PDF](presentation.pdf)
 
 ---
 
