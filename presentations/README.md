@@ -1,9 +1,36 @@
-# Presentations
+## Contributions
 
-To create PDFs:
+## Proposal presentation
 
-```bash
-npm install    #install js libraries
-npm run proposal-pdf  #for proposal presentation
-npm run final-pdf  #for final presentation
-```
+- [Qianqian Tang](mailto:tangq@usc.edu) 
+  
+  Slide 1, 2, 3, 4
+  
+  Introduced the topic, dataset, goal, and challenges of our project.
+- [Haonan Xu](mailto:haonanxu@usc.edu)
+  
+  Slide 5, 6
+  
+  Compared our plan with other visualizations in same area.
+- [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
+  Slide 7, 8, 9, 10
+  
+  Described our project development plan and all team members's contribution.
+
+## Final presentation
+
+- [Qianqian Tang](mailto:tangq@usc.edu) 
+  
+  Slide 1, 2, 3, 4
+  
+  Introduced the topic, dataset, goal, and challenges of our project.
+- [Haonan Xu](mailto:haonanxu@usc.edu)
+  
+  Slide 5, 6
+  
+  Compared our plan with other visualizations in same area.
+- [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
+  Slide 7, 8, 9, 10
+  
