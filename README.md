@@ -35,7 +35,7 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.
 ## Proposal presentation
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
-  Slide 1, 2, 3, 4
+    Slide 1, 2, 3, 4
   Introduced the topic, dataset, goal, and challenges of our project.
 - [Haonan Xu](mailto:haonanxu@usc.edu)
   Slide 5, 6
