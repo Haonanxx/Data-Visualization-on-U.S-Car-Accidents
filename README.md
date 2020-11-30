@@ -35,34 +35,49 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.
 ## Proposal presentation
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
-    Slide 1, 2, 3, 4
+  
+  Slide 1, 2, 3, 4
+  
   Introduced the topic, dataset, goal, and challenges of our project.
 - [Haonan Xu](mailto:haonanxu@usc.edu)
+  
   Slide 5, 6
+  
   Compared our plan with other visualizations in same area.
 - [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
   Slide 7, 8, 9, 10
+  
   Described our project development plan and all team members's contribution.
 
 ## Final presentation
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
+  
   Slide 1, 2, 3, 4
+  
   Introduced the topic, dataset, goal, and challenges of our project.
 - [Haonan Xu](mailto:haonanxu@usc.edu)
+  
   Slide 5, 6
+  
   Compared our plan with other visualizations in same area.
 - [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
   Slide 7, 8, 9, 10
+  
   Described our project development plan and all team members's contribution.
 
 ## Paper
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
+  
   System and Conclusion section
 - [Haonan Xu](mailto:haonanxu@usc.edu)
+  
   Related Work and Data section
 - [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
   Introduction and Approach section
 
 ## Demo
@@ -73,8 +88,12 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.
   
   Made the Mapbox choropleth map, the animated pie chart, and the interactive animated responsive bar chart.
 - [Haonan Xu](mailto:haonanxu@usc.edu)
+  
   Responsive for analyzing the relationship between traffic accidents and weather.
+  
   Made the interactive multi-bar chart. 
 - [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
   Responsible for analyzing the relationship between traffic accidents and time and population.
+  
   Made the interactive d3 choropleth map, timeline chart, bubble chart, and d3 calendar chart.
