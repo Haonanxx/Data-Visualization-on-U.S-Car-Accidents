@@ -1,24 +1,19 @@
-# demo
+## Contributions
 
-## Project setup
-```
-npm install
-```
+## Demo
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Qianqian Tang](mailto:tangq@usc.edu) 
+  
+  Responsible for analyzing the relationship between traffic accident severity and infrastructures.
+  
+  Made the Mapbox choropleth map, the animated pie chart, and the interactive animated responsive bar chart.
+- [Haonan Xu](mailto:haonanxu@usc.edu)
+  
+  Responsive for analyzing the relationship between traffic accidents and weather.
+  
+  Made the interactive multi-bar chart. 
+- [Yixiang Cao](mailto:yixiangc@usc.edu) 
+  
+  Responsible for analyzing the relationship between traffic accidents and time and population.
+  
+  Made the interactive d3 choropleth map, timeline chart, bubble chart, and d3 calendar chart.
