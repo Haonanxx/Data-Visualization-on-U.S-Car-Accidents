@@ -7,7 +7,7 @@
       <span class="sort" id="temperature">Sort by Temperature</span>
       <span class="sort" id="visibility">Sort by Visibility</span>
     </div>
-    <svg width="1600" height="800" id="chart"></svg>
+    <svg width="1600" height="800" id="chartw"></svg>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
   methods: {
     barChart() {
       
-      var svg = d3.select('#chart');
+      var svg = d3.select('#chartw');
       var sel = svg.selectAll('rect')
         .data(this.chartData)
         .enter();
@@ -169,7 +169,7 @@ export default {
       var delay = function (d, i) {
         return i * 50;
       };
-      var svg=d3.select('#chart');
+      var svg=d3.select('#chartw');
       var transition = svg.transition()
         .duration(750);
 
@@ -177,7 +177,7 @@ export default {
         .delay(delay);
     },
     redraw(){
-      var svg = d3.select('#chart');
+      var svg = d3.select('#chartw');
       svg.selectAll('rect').remove();
       svg.selectAll('text').remove();
       svg.selectAll('.legend').remove();
