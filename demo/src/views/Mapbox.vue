@@ -1356,8 +1356,8 @@ width: 10px;
   /* background-color: lightblue; */
   float: left;
   width: 30%;
-  padding: 20px 25px;
-  margin-top: 20px;
+  padding: 20px;
+  /* margin-top: 20px; */
 }
 
 .axis path,
