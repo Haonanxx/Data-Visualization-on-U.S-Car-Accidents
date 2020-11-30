@@ -1,6 +1,10 @@
-## Contributions
+## Artifact
 
-## Final presentation
+__🍿  Final presentation__ [Transcript](presentations/final/PRESENTATION_TRANSCRIPT.md) | [PDF](presentations/final/presentation.pdf)
+
+---
+
+## Contributions
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
   

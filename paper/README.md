@@ -1,6 +1,10 @@
-## Contributions
+## Artifact
 
-## Paper
+__📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmznsbs) | [PDF](paper/paper.pdf)
+
+---
+
+## Contributions
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
   

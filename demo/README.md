@@ -1,6 +1,10 @@
-## Contributions
+## Artifact
 
-## Demo
+__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.edu/dsci-554/projects/<team-name-slug>)
+
+---
+
+## Contributions
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
   

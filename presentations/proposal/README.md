@@ -1,12 +1,10 @@
-# Proposal presentation
-
-Update this README as needed.
+## Artifact
 
 __🍿  Proposal presentation__ [Transcript](presentations/proposal/TRANSCRIPT.md) | [PDF](presentations/proposal/presentation.pdf)
 
-## Contributions
+---
 
-## Proposal presentation
+## Contributions
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
   
