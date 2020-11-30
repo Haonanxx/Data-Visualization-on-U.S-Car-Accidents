@@ -15,28 +15,22 @@ Team members: Qianqian Tang, Yixiang Cao, Haonan Xu
 
 ---
 ##Introduction
-<<<<<<< HEAD
 Hi everyone, in this video, I will introduce our visualization system about data related to traffic accident to you. Our system contained four dimensions: Time&Date, Driver, Weather and Infrastructure. And since the data related to drivers is not enough, we comine it with the Time&Date
 
 ##Time&Date&Driver
-Now let's see the first section, Time&Date&Driver. There is a d3map at the top left, which is a choropleth map representing the number of accidents in different states. And from the type selector, user could select to see the choropleth map representing the population in each state. And at the top right, there is a scatter chart, whose x-axis is population and y-axis is accident. It is not difficult to see from this picture that the greater the population of an area, the greater the probability of a traffic accident.
+Now let's see the first section, Time&Date&Driver. There is a d3map at the top left, which is a choropleth map representing the number of accidents in different states. And from the type selector, user could select to see the choropleth map representing the population in each state. And here is a scatter chart, whose x-axis is population and y-axis is accident. It is not difficult to see from this picture that the greater the population of an area, the greater the probability of a traffic accident.
 This scatter graph is linked to the map. When you click on a state on the map, the scatter graph will highlight the point represented by the state. 
 At the same time, you can also select the selector you want from the state selector.
 
 
-Continue to look down, it is a timeline chart. 
+And in the right t is a timeline chart. whose x-axis is time zone in one day, and y-aixs is the number of accidents. Obviously, during the day, the probability of a car accident from 7 am to 9 am and from 4 pm to 6 pm is higher. This may be caused by the peak period of get off work. Also this time line chart is interactive with map and state selector.
+
+Continue to look down, Here is a calendar chart. 
+Each box represents a day, and the color of the box represents the number of car accidents that occurred during that day. 
+It can be inferred that the traffic safety risk is higher in the second half of each year, and the risk of working days is much higher than that of weekends.
 
 
-=======
-Hi everyone, in this video, I will introduce our visualization system about data related to traffic accidents to you. Our system contained four dimensions: Time&Date, Driver, Weather, and Infrastructure. 
 
-##Time&Date
-Now, let's see the first dimension, Time&Date. In this section, we visualized the relationship between the number of accidents and time&date. The first graph is the timeline of the accidents in the U.S. 
-The x-axis is the time of day, and the y-axis is the number of accidents in 4 years. In the selector on the left, you can select the state for more detailed observation. 
-
-##Drive
-
->>>>>>> 9c03ad7c6a217aeef6c5ddbb33d455d2ac98a4d5
 ##Weather
 When analyzing car accident data, the weather condition is necessary to be taken into consideration. This is a grouped bar chart that shows the relationship between the number of accidents, temperature, and visibility. These data collected from 2016 to 2020 are presented in three different sorted order. Users can press each button to change the sorted order. To look into the details of weather conditions in each state, one can hover over a bar to see the value of each of the data.
 
