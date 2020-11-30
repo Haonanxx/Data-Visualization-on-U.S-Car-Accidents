@@ -9,11 +9,7 @@
       <br/>
     </div>
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
-
-    <div>
-      <div id="calander"> Number of Accidents in different ages</div>
-      <svg id="chart4"></svg>
-    </div>
+    
   </div>
 </template>
 
