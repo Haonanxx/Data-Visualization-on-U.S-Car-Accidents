@@ -124,12 +124,12 @@ function scartchart(list){
             .call(yAxis);
         svg_chart.append('text')
             .attr("transform", `translate(${width/2},${height - margin.bottom/10})`)
-            .attr("font-size","2em")
+        
             .text('Population(million)')
         svg_chart.append('text')
             .attr("transform", `translate(10,${height/4}) rotate(90)`)
             .text('num of Accidents(log)')
-            .attr("font-size","2em")
+
         svg_chart.append('text')
             .attr('x',100)
             .attr('y',30)
