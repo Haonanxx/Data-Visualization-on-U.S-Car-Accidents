@@ -1,6 +1,6 @@
 ## Artifact
 
-__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.edu/dsci-554/projects/<team-name-slug>)
+__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivors/)
 
 ---
 
