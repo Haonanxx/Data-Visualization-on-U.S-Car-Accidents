@@ -2,9 +2,10 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson'
 import 'jquery'
 
-//import * as line from './timeline'
+import * as line from './timeline'
 //import {scartchart} from "./map_Driver";
 import * as scart from './map_Driver.js'
+//import * as line from "./timeline";
 //import {scartchart} from "./map_Driver";
 
 /////////////////////////////////////////////////////////////
@@ -81,6 +82,7 @@ function drawMap(values){
             console.log(outstatelist)
             //.text(JSON.stringify(this.__data__.id, null, 2));
             scart.scartchart([this.__data__.id])
+            line.draw_timeline([this.__data__.properties.name])
             console.log(d)
     });
 
