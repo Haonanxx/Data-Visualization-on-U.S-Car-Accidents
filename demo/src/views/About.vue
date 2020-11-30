@@ -93,7 +93,7 @@
       Promise.all(promises).then(function (values) {  //🚧  explain
         yixiang2.drawMap(values)
       });
-      barchart.drawbarchart()
+
     }
 
 
