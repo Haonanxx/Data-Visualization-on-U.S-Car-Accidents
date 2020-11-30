@@ -18,7 +18,7 @@ __🍿  Proposal presentation__ [Transcript](presentations/proposal/TRANSCRIPT.m
 
 __🍿  Final presentation__ [Transcript](presentations/final/PRESENTATION_TRANSCRIPT.md) | [PDF](presentations/final/presentation.pdf)
 
-__📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/btvmfhdyrbvk) | [PDF](paper/paper.pdf)
+__📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmznsbs) | [PDF](paper/paper.pdf)
 
 __🎥  Video__ [Transcript](video/TRANSCRIPT.md) | [YouTube link]()
 

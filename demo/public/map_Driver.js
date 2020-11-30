@@ -101,13 +101,13 @@ function scartchart(list){
     var svg_chart=d3.select('#chart3')
     var height = 500
     var width = 500
-    var margin = ({top: 50, right: 50, bottom: 50, left: 40})
+    var margin = ({top: 50, right: 20, bottom: 50, left: 60})
     d3.csv('population_data.csv').then(data=>{
         var y = d3.scaleLinear()
             .domain([Math.log(10), Math.log(816825)]).nice()
             .range([height-margin.bottom, margin.top])
         var x=d3.scaleLinear()
-            .domain([Math.log(578759), Math.log(39512223)]).nice()
+            .domain([578759/1000000, 39512223/1000000]).nice()
             .range([margin.left, width-margin.right])
         var r=d3.scaleLinear()
             .domain([Math.log(578759), Math.log(39512223)]).nice()
@@ -124,10 +124,10 @@ function scartchart(list){
             .call(yAxis);
         svg_chart.append('text')
             .attr("transform", `translate(${width/2},${height - margin.bottom/3})`)
-            .text('Population')
+            .text('Population(million)')
         svg_chart.append('text')
-            .attr("transform", `translate(0,${height/2}) rotate(90)`)
-            .text('num of Accidents')
+            .attr("transform", `translate(10,${height/4}) rotate(90)`)
+            .text('num of Accidents(log)')
         svg_chart.append('text')
             .attr('x',100)
             .attr('y',30)
@@ -137,7 +137,7 @@ function scartchart(list){
             .enter()
             .append("circle")
             .attr("cx", function(d) {
-                return x(Math.log(d.rate));
+                return x(d.rate/1000000);
             })
             .attr("cy", function(d) {
                 return y(Math.log(+d.accident));
