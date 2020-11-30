@@ -22,7 +22,7 @@
   import * as d3 from 'd3';
   import * as yixiang from '../../public/map_Driver.js'
   import * as cland from '../../public/clander.js'
-  import * as barchart from '../../public/barchart.js'
+  //import * as barchart from '../../public/barchart.js'
   import * as yixiang2 from '../../public/map.js'
   import $ from "jquery";
   //import * as lines from "../../public/timeline";
