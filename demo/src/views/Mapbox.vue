@@ -28,7 +28,7 @@
         <h3>The number of times the traffic accidents happened near the infrastructures in 49 states of the US from 2016 to 2020 with 4 different severities</h3>
     </div>
 
-    <div id="chart"></div>
+    <div id="bar-lollipop"></div>
   </div>
 <div class="right">
   <br><br><br><br><br><br>
@@ -77,7 +77,7 @@ var margin = { top: 20, left: 100, bottom: 50, right: 50 },
 width = 900 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
 
-var svg = d3.select('#chart').append('svg')
+var svg = d3.select('#bar-lollipop').append('svg')
 .attr('width', width + margin.left + margin.right)
 .attr('height', height + margin.top + margin.bottom)
 .append('g')
@@ -257,8 +257,8 @@ d3.select(id)
 
 //Define function to draw the initial bar chart
 function draw() {
-  width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
-        height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
+  width = parseInt(d3.select('#bar-lollipop').style('width')) - margin.left - margin.right;
+        height = parseInt(d3.select('#bar-lollipop').style('height')) - margin.top - margin.bottom;
   // console.log("HHHHHHH");
 //var x = d3.scaleBand();
 //Map the countries in current as the discrete domain of the axis in the translated group
@@ -361,7 +361,7 @@ svg.selectAll('.name')
     .attr('x', d => {
       // console.log(height+10);
       return x(d.Condition) + x.bandwidth() / 2})
-    .attr('y', height+10 );
+    .attr('y', height+15 );
 
 svg.selectAll('.value')
                 .data(current, d => +d.Value)
@@ -391,8 +391,8 @@ svg.append('text')
     function resize() {
 
       // console.log("RESIZE");
-        width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
-        height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
+        width = parseInt(d3.select('#bar-lollipop').style('width')) - margin.left - margin.right;
+        height = parseInt(d3.select('#bar-lollipop').style('height')) - margin.top - margin.bottom;
 
         svg.attr('width', width)
             .attr('height', height)
@@ -441,7 +441,7 @@ svg.append('text')
                 .attr('x', d => {
                   // console.log("resize name");
                   return pScale(d.Condition)})
-                .attr('y', height+10 )
+                .attr('y', height+15 )
                 .style('display', 'initial');
 
             svg.selectAll('.value')
@@ -489,7 +489,7 @@ svg.append('text')
                 .attr('x', d => {
                   // console.log(height+10);
                   return  x(d.Condition) + x.bandwidth() / 2})
-                .attr('y', height+10 )
+                .attr('y', height+15 )
             
 
             // yAxis.ticks(Math.max(height / 100, 2)); //one every 100 pixels
@@ -531,8 +531,8 @@ transition.selectAll('.name')
 
 //Redraw because the data change, the number of bars and x labels become smaller after filtering, so the shapes of bars change after rescaling. 
 function redraw() {
-  width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
-        height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
+  width = parseInt(d3.select('#bar-lollipop').style('width')) - margin.left - margin.right;
+        height = parseInt(d3.select('#bar-lollipop').style('height')) - margin.top - margin.bottom;
     //update scale
     x.domain(current.map(d => d.Condition))
 
@@ -567,12 +567,12 @@ var bars = svg.selectAll('.bar')
 // exit
 bars.exit()
     .transition()  
-    .duration(500)  
+    .duration(1000)  
     .style('opacity', 0)  
     .remove();
 // update
 bars.transition()
-    .duration(1500)
+    .duration(1000)
     .delay(delay)
     .attr('x', d => {
         // console.log(x(d.Condition));
@@ -589,7 +589,7 @@ bars.enter()
     .attr('width', x.bandwidth())
     .attr('class', 'bar')
     .transition()  
-    .duration(1500)  
+    .duration(1000)  
     .attr('class', 'bar')  
     .attr('x', d => x(d.Condition))  
     .attr('y', d => {
@@ -633,7 +633,7 @@ name.enter()
     .text(d => d.Name)
     .attr('class', 'name')
     .attr('x', d => (width<550?pScale(d.Condition):x(d.Condition) + x.bandwidth() / 2))
-    .attr('y', height+10 )
+    .attr('y', height+15 )
     .style('opacity', 1);
 
 
@@ -680,7 +680,7 @@ var lines = svg.selectAll('.line')
 
 // update
 lines.transition()
-    .duration(500)
+    .duration(1000)
     .delay(delay)
     .attr('x1', function (d) {
         return pScale(d.Condition);
@@ -699,7 +699,7 @@ lines.transition()
 // exit
 lines.exit()
     .transition()  
-    .duration(500)  
+    .duration(100)  
     .style('opacity', 0)  
     .remove();
 
@@ -718,7 +718,7 @@ lines.enter()
     .attr('y2', y(0)) 
     .attr('class', 'line')
     .transition()  
-    .duration(500)  
+    .duration(1000)  
     .attr('class', 'line')
     .attr('x1', function (d) {
         return pScale(d.Condition);
@@ -741,7 +741,7 @@ var circles = svg.selectAll('.circle')
 
 // update
 circles.transition()
-    .duration(500)
+    .duration(1000)
     .delay(delay)
     .attr('cx', function (d) {
         return pScale(d.Condition);
@@ -756,7 +756,7 @@ circles.transition()
 // exit
 circles.exit()
     .transition()  
-    .duration(500)  
+    .duration(100)  
     .style('opacity', 0)  
     .remove();
 
@@ -774,7 +774,7 @@ circles.enter()
     })
     .attr('r', 7) 
     .transition()  
-    .duration(500)  
+    .duration(1000)  
     .attr('class', 'circle')
     .attr('cx', function (d) {
         return pScale(d.Condition);
@@ -1249,7 +1249,7 @@ resize()
   
 }
 </script>
-<style>
+<style scoped>
   .basicMapbox {
       position: relative;
       height: 700px;
@@ -1332,7 +1332,7 @@ width: 10px;
 .arc path {
     stroke: #fff;
 }
-.tooltip{
+>>> .tooltip{
     position: absolute;
     display: none;
     width: auto;
@@ -1361,135 +1361,135 @@ width: 10px;
 }
 
 .axis path,
-        .axis line {
-            fill: none;
-            stroke: black;
-            shape-rendering: crispEdges;
-        }
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
 
-        .axis text {
-            font-family: Courier;
-            font-size: 0.85em;
-        }
+.axis text {
+    font-family: Courier;
+    font-size: 0.85em;
+}
 
-        text {
-            font-family: Courier;
-            font-size: 0.65em;
-        }
+text {
+    font-family: Courier;
+    font-size: 0.65em;
+}
 
-        div.commands {
-            font-family: Courier;
-            font-size: 0.85em;
-            font-weight: bold;
-            text-align: center;
-            cursor: default;
-            user-select: none;
-        }
+div.commands {
+    font-family: Courier;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+}
 
-        .bar {
-            fill: #FB6E51;
-        }
+>>> .bar {
+    fill: #FB6E51;
+}
 
-        text.xlabel {
-            text-anchor: middle;
-        }
+text.xlabel {
+    text-anchor: middle;
+}
 
-        text.ylabel {
-            font-size: 2em;
-            text-anchor: middle;
-            alignment-baseline: central;
-        }
+text.ylabel {
+    font-size: 2em;
+    text-anchor: middle;
+    alignment-baseline: central;
+}
 
-        text.name {
-            font-weight: bold;
-            text-anchor: middle;
-            alignment-baseline: central;
-        }
+text.name {
+    font-weight: bold;
+    text-anchor: middle;
+    alignment-baseline: central;
+}
 
-        .sort {
-            border-radius: 3px;
-            background-color: #eee;
-            display: inline-block;
-            cursor: default;
-        }
+.sort {
+    border-radius: 3px;
+    background-color: #eee;
+    display: inline-block;
+    cursor: default;
+}
 
-        .sort,
-        label {
-            font-family: Courier;
-            color: #444;
-            padding: 5px;
-            margin: 5px;
-        }
+.sort,
+label {
+    font-family: Courier;
+    color: #444;
+    padding: 5px;
+    margin: 5px;
+}
 
-        label {
-            vertical-align: text-bottom;
-        }
+label {
+    vertical-align: text-bottom;
+}
 
-        .filter {
-            border-radius: 3px;
-            background-color: #eee;
-            padding: 5px;
-            margin: 5px;
-            color: #444;
-            text-align: left;
-            display: inline-block;
-            cursor: default;
-        }
+.filter {
+    border-radius: 3px;
+    background-color: #eee;
+    padding: 5px;
+    margin: 5px;
+    color: #444;
+    text-align: left;
+    display: inline-block;
+    cursor: default;
+}
 
-        .init {
-            border-radius: 3px;
-            background-color: #eee;
-            padding: 5px;
-            margin: 5px;
-            color: #444;
-            text-align: left;
-            display: inline-block;
-            cursor: default;
-        }
-        .slider {
-            -webkit-appearance: none;
-            width: 190px;
-            height: 15px;
-            border-radius: 5px;  
-            background: #d3d3d3;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-          }
-          
-          .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%; 
-            background: #4CAF50;
-            cursor: pointer;
-          }
-          
-          .slider::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #4CAF50;
-            cursor: pointer;
-          }
-          .y-axis{
-            font-size: 24px;
-          }
+.init {
+    border-radius: 3px;
+    background-color: #eee;
+    padding: 5px;
+    margin: 5px;
+    color: #444;
+    text-align: left;
+    display: inline-block;
+    cursor: default;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 190px;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    }
+    
+    .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    }
+    .y-axis{
+    font-size: 24px;
+    }
 
-          text.name,
-          text.value {
-              text-anchor: middle;
-              fill: black;
-              font-size: 0.5em;
-          }
+    >>> text.name,
+    >>> text.value {
+        text-anchor: middle;
+        fill: black;
+        font-size: 0.7em;
+    }
 
-          #chart {
-              width: 100%;
-              height: 350px;
-              background-color: #ffeeee;
-          }
+    #bar-lollipop {
+        width: 100%;
+        height: 350px;
+        /* background-color: #ffeeee; */
+    }
 
 </style>
