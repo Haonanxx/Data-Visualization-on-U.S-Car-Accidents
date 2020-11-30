@@ -11,7 +11,7 @@ function isInArray(arr,value){
 
 function draw_timeline(list){
     d3.json("line_chart.json").then(data => {
-        document.getElementById("chart3").innerHTML=""
+        document.getElementById("chartline").innerHTML=""
         var dateParse = d3.timeParse("%H:%M");
         data.date.forEach(
             function(d,i){data.date[i]=dateParse(d)}
