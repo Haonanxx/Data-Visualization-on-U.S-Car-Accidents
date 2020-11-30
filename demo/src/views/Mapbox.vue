@@ -86,6 +86,20 @@ var svg = d3.select('#chart').append('svg')
 // Declare scale function for x axis and y axis
 var x = d3.scaleBand();
 var y = d3.scaleLinear();
+var pScale = d3.scalePoint();
+
+// Draw x axis at the bottom
+var xAxis;
+xAxis = d3.axisBottom()
+    .scale(x)
+    .ticks(0)
+    .tickSize(0)
+    .tickFormat('');
+
+//draw y axis with ticks on the left
+var yAxis = d3.axisLeft()
+    .scale(y)
+    .ticks(5, 'd');
 
 // Declare delay time for index of data based on their indice
 var delay = function (d, i) {
@@ -128,8 +142,15 @@ d3.json('severity_condition.json').then(data => {
             // toggleSort('#descending_value');
             
             redraw();
+            // resize()
     }
     
+        
+
+
+d3.select(window).on('resize', resize);
+
+resize(); //call resize in case we start small!
 
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
@@ -137,9 +158,10 @@ d3.json('severity_condition.json').then(data => {
     output.innerHTML = slider.value;
     // console.log(slider.value);
     slider.oninput = function() {
-      output.innerHTML = this.value;
-    //   console.log(this.value);
-    update(slider.value)
+        output.innerHTML = this.value;
+        //   console.log(this.value);
+        update(slider.value)
+        
     // console.log(slider.value);
     
       
@@ -151,20 +173,7 @@ d3.json('severity_condition.json').then(data => {
 
 });
 
-// reset event handlers, reset to sort alphabetically by name and filter all by clicking the reset button
-d3.select('#reset')
-.on('click', () => {
-// reset to initial settings (all 10 countries ordered alphabetic by name)
-filter('#all');
-sort('#descending_value');
 
-// change highlight button
-// toggleSort('#descending_value');
-toggleFilter('#all');
-// toggleReset('#reset')
-
-redraw();
-});
 
 
 //implement click events to sort descendingly by value
@@ -248,6 +257,9 @@ d3.select(id)
 
 //Define function to draw the initial bar chart
 function draw() {
+  width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
+        height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
+  // console.log("HHHHHHH");
 //var x = d3.scaleBand();
 //Map the countries in current as the discrete domain of the axis in the translated group
 x.domain(current.map(d => d.Condition))
@@ -255,12 +267,38 @@ x.domain(current.map(d => d.Condition))
     .paddingInner(0.3)
     .paddingOuter(0.3); //add outer padding to scaleBand
 
+pScale.domain(current.map(d => d.Condition))
+    .range([0, width]);
 
 //var y = d3.scaleLinear();
 // console.log(height)
 y.domain([0, d3.max(current, d => +d.Value)])
     .range([height, 0])
     .nice();
+
+// Draw x axis at the bottom
+
+xAxis = d3.axisBottom()
+    .scale(x)
+    .ticks(0)
+    .tickSize(0)
+    .tickFormat('');
+// Append the group translate height in vertical from the position translated last time, with ticks on the bottom then draw x axis 
+svg.append('g')
+    .attr('class', 'x-axis')
+    .attr('transform', 'translate(0,' + height + ')')
+    .call(xAxis);
+
+//draw y axis with ticks on the left
+yAxis = d3.axisLeft()
+    .scale(y)
+    .ticks(5, 'd');
+
+svg.append('g')
+    .attr('class', 'y-axis')
+    .call(yAxis);
+
+
 
 // Draw bars
     // The x coordernate of the star point of each bar is the value mapping from the discrete domain.
@@ -276,37 +314,69 @@ svg.selectAll('.bar')
     .attr('width', x.bandwidth())
     .attr('height', d => height - y(+d.Value));
 
-//Draw x label
-    // Draw labels for x axis
+
+svg.selectAll('.line')
+    .data(current, d => d.Condition)
+    .enter()
+    .append('line')
+    .attr('class', 'line')
+    .attr('x1', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y1', function (d) {
+        return y(+d.Value);
+    })
+    .attr('x2', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y2', y(0))
+    .attr('stroke', 'black')
+    .attr('stroke-width', '5px');
+
+    svg.selectAll('.circle')
+    .data(current, function (d) {
+        return d.Condition;
+    })
+    .enter()
+    .append('circle')
+    .attr('class', 'circle')
+    .attr('cx', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('cy', function (d) {
+        return y(+d.Value);
+    })
+    .attr('r', 7)
+    .attr('fill', '#FB6E51');
+
+    
 svg.selectAll('.name')
     .data(current, d => d.Condition)
     .enter()
     .append('text')
-    .text(d => d.Name)
+    .text(d => {
+      // console.log(d.Name);
+      return d.Name})
     .attr('class', 'name')
-    .attr('x', d => x(d.Condition) + x.bandwidth() / 2)
-    .attr('y', d => y(+d.Value) + (height - y(+d.Value)) +20 );
-// Draw x axis at the bottom
-var xAxis;
-xAxis = d3.axisBottom()
-    .scale(x)
-    .ticks(0)
-    .tickSize(0)
-    .tickFormat('');
-// Append the group translate height in vertical from the position translated last time, with ticks on the bottom then draw x axis 
-svg.append('g')
-    .attr('class', 'x-axis')
-    .attr('transform', 'translate(0,' + height + ')')
-    .call(xAxis);
+    .attr('x', d => {
+      // console.log(height+10);
+      return x(d.Condition) + x.bandwidth() / 2})
+    .attr('y', height+10 );
 
-//draw y axis with ticks on the left
-var yAxis = d3.axisLeft()
-    .scale(y)
-    .ticks(5, 'd');
-
-svg.append('g')
-    .attr('class', 'y-axis')
-    .call(yAxis);
+svg.selectAll('.value')
+                .data(current, d => +d.Value)
+                .enter()
+                .append('text')
+                
+                .text(d => {
+                  // console.log(d.Name);
+                  return +d.Value})
+                .attr('class', 'value')
+                .attr('x', d => {
+                  // console.log(height+10);
+                  return pScale(d.Condition)})
+                .attr('y', d=>y(+d.Value)-10 );
+                // .style('display', 'none');
 
 svg.append('text')
     .attr('x', - height / 2)
@@ -317,6 +387,133 @@ svg.append('text')
     .style('baseline-shift', 'super')
     .style('font-size', '15px');
 }
+
+    function resize() {
+
+      // console.log("RESIZE");
+        width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
+        height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
+
+        svg.attr('width', width)
+            .attr('height', height)
+
+        x.range([0, width]);
+        pScale.range([0, width]);
+        y.range([height, 0]).nice();
+
+        if (width < 550) {
+          // console.log("<550");
+            svg.selectAll('.circle')
+                .data(current, function (d) {
+                    return d.Condition;
+                }) //UPDATE
+                .attr('cx', function (d) {
+                    return pScale(d.Condition);
+                })
+                .attr('cy', function (d) {
+                    return y(+d.Value);
+                });
+
+            svg.selectAll('.line')
+                .data(current, function (d) {
+                    return d.Condition;
+                }) //UPDATE
+                .attr('x1', function (d) {
+                    return pScale(d.Condition);
+                })
+                .attr('y1', function (d) {
+                    return y(+d.Value);
+                })
+                .attr('x2', function (d) {
+                    return pScale(d.Condition);
+                })
+                .attr('y2', y(0));
+
+
+    
+            svg.selectAll('.name')
+                .data(current, d => d.Condition)
+                
+                .text(d => {
+                  // console.log(d.Name);
+                  return d.Name})
+                .attr('class', 'name')
+                .attr('x', d => {
+                  // console.log("resize name");
+                  return pScale(d.Condition)})
+                .attr('y', height+10 )
+                .style('display', 'initial');
+
+            svg.selectAll('.value')
+                .data(current, d => d.Condition)
+                
+                .text(d => {
+                  // console.log("resize value");
+                  return +d.Value})
+                .attr('class', 'value')
+                .attr('x', d => {
+                  return pScale(d.Condition)})
+                .attr('y', d=>y(+d.Value)-10 )
+                .style('display', 'initial');
+
+
+            svg.select('.x-axis').style('display', 'none');
+            svg.select('.y-axis').style('display', 'none');
+            svg.selectAll('.bar').style('display', 'none');
+            svg.selectAll('.circle').style('display', 'initial');
+            svg.selectAll('.line').style('display', 'initial');
+        } else {
+            svg.selectAll('.bar')
+                .data(current, function (d) {
+                    // console.log(current);
+                    return d.Condition;
+                }) //UPDATE
+                .attr('x', function (d) {
+                    return x(d.Condition);
+                })
+                .attr('y', function (d) {
+                    return y(+d.Value);
+                })
+                .attr('width', x.bandwidth())
+                .attr('height', function (d) {
+                    return height - y(+d.Value);
+                });
+
+            svg.selectAll('.name')
+                .data(current, d => d.Condition)
+                
+                .text(d => {
+                  // console.log(d.Name);
+                  return d.Name})
+                .attr('class', 'name')
+                .attr('x', d => {
+                  // console.log(height+10);
+                  return  x(d.Condition) + x.bandwidth() / 2})
+                .attr('y', height+10 )
+            
+
+            // yAxis.ticks(Math.max(height / 100, 2)); //one every 100 pixels
+            // xAxis.ticks(Math.max(width / 100, 2));
+
+            svg.select('.x-axis')
+                .attr('transform', 'translate(0,' + height + ')')
+                .call(xAxis);
+
+            svg.select('.y-axis')
+                .call(yAxis);
+
+            svg.select('.x-axis').style('display', 'initial');
+            svg.select('.y-axis').style('display', 'initial');
+            svg.selectAll('.name').style('display', 'initial');
+            svg.selectAll('.value').style('display', 'none');
+            svg.selectAll('.bar').style('display', 'initial');
+            svg.selectAll('.circle').style('display', 'none');
+            svg.selectAll('.line').style('display', 'none');
+        }
+    }
+
+
+
 
 //define function for transition
 function transition() {
@@ -334,14 +531,14 @@ transition.selectAll('.name')
 
 //Redraw because the data change, the number of bars and x labels become smaller after filtering, so the shapes of bars change after rescaling. 
 function redraw() {
+  width = parseInt(d3.select('#chart').style('width')) - margin.left - margin.right;
+        height = parseInt(d3.select('#chart').style('height')) - margin.top - margin.bottom;
     //update scale
     x.domain(current.map(d => d.Condition))
 
-    var xAxis = d3.axisBottom()
-    .scale(x)
-    .ticks(0)
-    .tickSize(0)
-    .tickFormat('');
+ pScale.domain(current.map(d => d.Condition))
+    .range([0, width]);
+
 // Append the group translate height in vertical from the position translated last time, with ticks on the bottom then draw x axis 
 svg.select('.x-axis')
     .attr('transform', 'translate(0,' + height + ')')
@@ -367,37 +564,46 @@ d3.select('.y-axis')
 var bars = svg.selectAll('.bar')
     .data(current, d => d.Condition);
 
+// exit
+bars.exit()
+    .transition()  
+    .duration(500)  
+    .style('opacity', 0)  
+    .remove();
 // update
 bars.transition()
-    .duration(1000)
+    .duration(1500)
     .delay(delay)
     .attr('x', d => {
         // console.log(x(d.Condition));
         return x(d.Condition)})
-    .attr('width', x.bandwidth());
+    .attr('width', x.bandwidth())
+    .attr('class','bar');
 
-// exit
-bars.exit()
-    .transition()  
-    .duration(1000)  
-    .style('opacity', 0)  
-    .remove();
 
 // enter
 bars.enter()
     .append('rect')
     .attr('x', d => x(d.Condition))  
     .attr('y', y(0))  
-    .attr('width', x.bandwidth())  
+    .attr('width', x.bandwidth())
+    .attr('class', 'bar')
     .transition()  
-    .duration(1000)  
+    .duration(1500)  
     .attr('class', 'bar')  
     .attr('x', d => x(d.Condition))  
     .attr('y', d => {
         // console.log(y(+d.Value));
         return y(+d.Value)})  
     .attr('width', x.bandwidth())  
-    .attr('height', d => height - y(+d.Value));  
+    .attr('height', d => height - y(+d.Value))
+    // .style('display','none')
+    ;  
+// console.log(width);
+// if(width<550){
+//   svg.selectAll('.bar').style('display', 'none');
+// }
+
 
 // DATA JOIN FOR NAMES.
 var name = svg.selectAll('.name')
@@ -407,29 +613,180 @@ var name = svg.selectAll('.name')
 name.transition()
     .duration(1000)
     .delay(delay)
-    .attr('x', (d) => x(d.Condition) + x.bandwidth() / 2);
-
-// ENTER.
-name.enter()
-    .append('text')
-    .attr('x', d => x(d.Condition) + x.bandwidth() / 2)
-    .attr('y', d => y(+d.Value) + (height - y(+d.Value)) +20 )
-    .style('opacity', 0)
-    .transition()
-    .duration(1000)
-    .text(d => d.Name)
-    .attr('class', 'name')
-    .attr('x', d => x(d.Condition) + x.bandwidth() / 2)
-    .attr('y', d => y(+d.Value) + (height - y(+d.Value)) +20 )
-    .style('opacity', 1);
-
+    .attr('x', d => (width<550?pScale(d.Condition):x(d.Condition) + x.bandwidth() / 2))
+    .attr('class', 'name');
 // EXIT.    
 name.exit()
     .transition()
     .duration(1000)
     .style('opacity', 0)
     .remove();
+// ENTER.
+name.enter()
+    .append('text')
+    .attr('x', d => (width<550?pScale(d.Condition):x(d.Condition) + x.bandwidth() / 2))
+    .attr('y', height +10 )
+    .attr('class', 'name')
+    .style('opacity', 0)
+    .transition()
+    .duration(1000)
+    .text(d => d.Name)
+    .attr('class', 'name')
+    .attr('x', d => (width<550?pScale(d.Condition):x(d.Condition) + x.bandwidth() / 2))
+    .attr('y', height+10 )
+    .style('opacity', 1);
 
+
+
+// DATA JOIN FOR VALUES.
+var value = svg.selectAll('.value')
+    .data(current, d => +d.Value)
+    .attr('class','value');
+// UPDATE.
+value.transition()
+    .duration(1000)
+    .delay(delay)
+    .attr('x', d => pScale(d.Condition))
+    .attr('class','value');
+// EXIT.    
+value.exit()
+    .transition()
+    .duration(1000)
+    .attr('class','value')
+    .style('opacity', 0)
+    .remove();
+// ENTER.
+value.enter()
+    .append('text')
+    .attr('x', d => pScale(d.Condition))
+    .attr('y', d=>y(+d.Value)-10 )
+    .attr('class','value')
+    .style('opacity', 0)
+    .transition()
+    .duration(1000)
+    .text(d => +d.Value)
+    .attr('class','value')
+    .attr('x', d => {
+        // console.log("fds",y(+d.Value)-10);
+        return pScale(d.Condition)})
+    .attr('y', d=>y(+d.Value)-10 )
+    .style('opacity', 1);
+
+
+
+// data join for lines
+var lines = svg.selectAll('.line')
+    .data(current, d => d.Condition);
+
+// update
+lines.transition()
+    .duration(500)
+    .delay(delay)
+    .attr('x1', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y1', function (d) {
+        return y(+d.Value);
+    })
+    .attr('x2', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y2', y(0))
+    .attr('stroke', 'black')
+    .attr('stroke-width', '5px')
+    .attr('class', 'line');
+
+// exit
+lines.exit()
+    .transition()  
+    .duration(500)  
+    .style('opacity', 0)  
+    .remove();
+
+// enter
+lines.enter()
+    .append('line')
+    .attr('x1', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y1', function (d) {
+        return y(+d.Value);
+    })
+    .attr('x2', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y2', y(0)) 
+    .attr('class', 'line')
+    .transition()  
+    .duration(500)  
+    .attr('class', 'line')
+    .attr('x1', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y1', function (d) {
+        return y(+d.Value);
+    })
+    .attr('x2', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('y2', y(0))
+    .attr('stroke', 'black')
+    .attr('stroke-width', '5px');
+
+
+// data join for lines
+var circles = svg.selectAll('.circle')
+    .data(current, d => d.Condition);
+
+
+// update
+circles.transition()
+    .duration(500)
+    .delay(delay)
+    .attr('cx', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('cy', function (d) {
+        return y(+d.Value);
+    })
+    .attr('r', 7)
+    .attr('fill', '#FB6E51')
+    .attr('class', 'circle');
+
+// exit
+circles.exit()
+    .transition()  
+    .duration(500)  
+    .style('opacity', 0)  
+    .remove();
+
+
+
+// enter
+circles.enter()
+    .append('circle')
+    .attr('class', 'circle')
+    .attr('cx', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('cy', function (d) {
+        return y(+d.Value);
+    })
+    .attr('r', 7) 
+    .transition()  
+    .duration(500)  
+    .attr('class', 'circle')
+    .attr('cx', function (d) {
+        return pScale(d.Condition);
+    })
+    .attr('cy', function (d) {
+        return y(+d.Value);
+    })
+    .attr('r', 7)
+    .attr('fill', '#FB6E51');
+   
+
+resize()
 }
 }
 
@@ -1121,4 +1478,18 @@ width: 10px;
           .y-axis{
             font-size: 24px;
           }
+
+          text.name,
+          text.value {
+              text-anchor: middle;
+              fill: black;
+              font-size: 0.5em;
+          }
+
+          #chart {
+              width: 100%;
+              height: 350px;
+              background-color: #ffeeee;
+          }
+
 </style>
