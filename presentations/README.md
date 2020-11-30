@@ -1,6 +1,12 @@
-## Contributions
+## Artifacts
 
-## Proposal presentation
+__🍿  Proposal presentation__ [Transcript](presentations/proposal/TRANSCRIPT.md) | [PDF](presentations/proposal/presentation.pdf)
+
+__🍿  Final presentation__ [Transcript](presentations/final/PRESENTATION_TRANSCRIPT.md) | [PDF](presentations/final/presentation.pdf)
+
+---
+
+## Contributions
 
 - [Qianqian Tang](mailto:tangq@usc.edu) 
   
