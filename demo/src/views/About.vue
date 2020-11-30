@@ -404,7 +404,6 @@
   #chart {
     width: 100%;
     height: 350px;
-    background-color: #ffeeee;
   }
 
 
