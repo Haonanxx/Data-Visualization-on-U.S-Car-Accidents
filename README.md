@@ -23,13 +23,13 @@ __📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmz
 __🎥  Video__ [Transcript](video/TRANSCRIPT.md) | [YouTube link](https://youtu.be/Uk672-b1vXk)
 
 __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.edu/dsci-554/projects/<team-name-slug>)
+__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivors/)
 
 ---
 
 ## Project Summary
 
 ---
-Our visualization project is based on a car accident dataset from Kaggle, which contains 3.5 million accident records. The data are collected from February 2016 to June 2020, covering 49 states of the USA.
 
 ## Contributions
 
