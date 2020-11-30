@@ -2,7 +2,7 @@
   <div>
     <div>
     <div class="left">
-      <h3>Severity of traffic accidents of the states and counties in the US</h3>
+      <h3>Severity of traffic accidents of the states and counties in the US from 2016 to 2020</h3>
       <div ref="basicMapbox" style="height:500px;width:800px;margin-left:50px" >
         <div id="state-legend" class="legend">
         <h4>Severity</h4>
