@@ -21,7 +21,7 @@ function draw_timeline(list){
         var height = 500
         var width = 1000
         //var data = {series: [{name: "A", value: [1, 2, 3, 4]}, {name: "B", value: [2, 4, 6, 8]}], date: [1, 2, 3, 4]}
-        var svg = d3.select('#chart3')
+        var svg = d3.select('#chartline')
             .attr("viewBox", [0, 0, width, height]);
         svg.append('text')
             .text('Num')
@@ -87,10 +87,24 @@ function draw_timeline(list){
                     {return "red"}
                     else{return "#f1f1f1"}
                 })
-        }
 
-        console.log(path)
-        console.log(isInArray([1,2],1))
+            svg.append("g")
+                .attr("fill", "none")
+                .attr("stroke-width", 1.5)
+                .attr("stroke-linejoin", "round")
+                .attr("stroke-linecap", "round")
+                .selectAll("path")
+                .data(data.series)
+                .join("path")
+                .style("mix-blend-mode", "null")
+                .attr("d", d => {
+                    if (isInArray(list,d.name)){
+                        return line(d.value)
+                    }
+                })
+                .attr("stroke", "red");
+
+        }
 
     });
 }

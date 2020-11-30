@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Time&Date</router-link> |
       <router-link to="/about">Driver</router-link> |
-      <router-link to="/weather">Weathergit </router-link> |
+      <router-link to="/weather">Weather</router-link> |
       <router-link to="/mapbox">Severity&Infrastructure</router-link>
     </div>
     <router-view/>

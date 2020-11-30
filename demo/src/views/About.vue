@@ -9,7 +9,7 @@
       <br/>
     </div>
     <svg width="500" height="500" id="chart"></svg><svg width="500" height="500" id="chart3"></svg>
-    
+
   </div>
 </template>
 

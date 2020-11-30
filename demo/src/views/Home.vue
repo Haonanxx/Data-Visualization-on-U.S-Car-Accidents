@@ -9,7 +9,7 @@
       <br/>
     </div>
     <!--svg width="500" height="500" id="chart">
-    </--svg--><svg width="800" height="400" id="chart3"></svg>
+    </--svg--><svg width="800" height="400" id="chartline"></svg>
 
     <div>
       <br/><br/><br/><br/><br/><br/><br/><br/>
