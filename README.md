@@ -22,7 +22,7 @@ __📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmz
 
 __🎥  Video__ [Transcript](video/TRANSCRIPT.md) | [YouTube link](https://youtu.be/Uk672-b1vXk)
 
-__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](https://pdms.usc.edu/dsci-554/projects/<team-name-slug>)
+__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivors/)
 
 ---
 
