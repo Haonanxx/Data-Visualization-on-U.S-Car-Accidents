@@ -2,7 +2,7 @@
   <div>
     <div>
     <div class="left">
-      <h3>Severity of traffic accidents of the states and counties in the US</h3>
+      <h3>Severity of traffic accidents of the states and counties in the US from 2016 to 2020</h3>
       <div ref="basicMapbox" style="height:500px;width:800px;margin-left:50px" >
         <div id="state-legend" class="legend">
         <h4>Severity</h4>
@@ -25,7 +25,7 @@
 <div>
   <div class="left">
     <div>
-        <h3>The number of times the traffic accidents happened near the infrastructure in 49 states of the US from 2016 to 2020 with 4 different severities</h3>
+        <h3>The number of times the traffic accidents happened near the infrastructures in 49 states of the US from 2016 to 2020 with 4 different severities</h3>
     </div>
 
     <div id="chart"></div>
@@ -383,7 +383,7 @@ svg.append('text')
     .attr('y', - margin.left * 0.7)
     .attr('transform', 'rotate(-90)')
     .attr('class', 'ylabel')
-    .append('tspan').text('Number of times')
+    .append('tspan').text('Number of accidents')
     .style('baseline-shift', 'super')
     .style('font-size', '15px');
 }
@@ -1105,7 +1105,7 @@ resize()
 
           pie_title.innerHTML = '';
           pie_title.textContent =
-            'The percentage of road conditions of traffic accidents in ';
+            'The percentage of appearance of infrastructures for traffic accidents in ';
             pie_title.style.fontSize = "18.72px"
             pie_title.style.fontWeight = "bold"
             pie_title.appendChild(title_state);
