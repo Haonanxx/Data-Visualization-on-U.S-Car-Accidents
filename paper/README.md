@@ -1,6 +1,6 @@
 ## Artifact
 
-__📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmznsbs) | [PDF](paper/paper.pdf)
+__📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmznsbs) | [PDF](paper.pdf)
 
 ---
 
