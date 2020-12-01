@@ -100,7 +100,7 @@ __🚢  Demo__ [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivo
   
   Made the interactive d3 choropleth map, timeline chart, bubble chart, and d3 calendar chart.
 
-  ### List of visualizations
+### List of visualizations
 | Requirement                            | Label        |
 | -------------------------------------- | ------------ |
 | responsive d3 chart                    | responsive   |
