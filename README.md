@@ -22,7 +22,7 @@ __📄  Paper__ [Overleaf read only link](https://www.overleaf.com/read/znxnjmmz
 
 __🎥  Video__ [Transcript](video/TRANSCRIPT.md) | [YouTube link](https://youtu.be/Uk672-b1vXk)
 
-__🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivors/)
+__🚢  Demo__ [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivors/)
 
 ---
 
@@ -109,8 +109,10 @@ __🚢  Demo__ [Transcript](video/TRANSCRIPT.md) | [Demo link](http://pdms.usc.e
 | d3 layout                              | layout       |
 | d3 map                                 | map          |
 | Mapbox map                             | mapbox       |
-Table 1: Table of minimum requirements, 1 of each category is required.
-In Table2, list all the charts and tables in your pages including minimum requirements labels when applicable.
+  
+  Table 1: Table of minimum requirements, 1 of each category is required.
+  
+  In Table2, list all the charts and tables in your pages including minimum requirements labels when applicable.
 | Page name                 | Chart description                 | Libraries used       | Requirement label                         |
 | ------------------------- | --------------------------------- | -------------------- | ----------------------------------------- |
 | Home page                 | cover                             |                      |                                           |
