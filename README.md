@@ -119,4 +119,5 @@ __🚢  Demo__ [Demo link](http://pdms.usc.edu/dsci-554-projects/project-survivo
 | Time & Date & Population  | d3 map, line, bubble, d3 calendar | d3, topojson, jquery | map, interactive ,layout                  |
 | Weather                   | Grouped Bar Chart                 | d3, d3-tip           | interactive                               |
 | Severity & Infrastructure | mapbox map, pie, bar, lollipop    | d3, mapbox-gl, axios | mapbox, interactive, animated, responsive |
-Table2: Table of visualizations
+  
+  Table2: Table of visualizations
